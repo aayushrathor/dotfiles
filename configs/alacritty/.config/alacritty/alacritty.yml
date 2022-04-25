@@ -7,6 +7,7 @@
 
 colors:
   primary:
+    #background: '#072227'
     background: '#222831'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'

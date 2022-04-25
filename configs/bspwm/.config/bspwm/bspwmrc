@@ -7,7 +7,7 @@
 #          |_|
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-bspc monitor -d I II III IV V VI VII VIII  
+bspc monitor -d I II III IV V VI VII VIII
 
 bspc config window_gap          10
 
@@ -17,14 +17,15 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 #border
-bspc config border_width          5 
-bspc config active_border_color 	"#ffffff"
-bspc config focused_border_color 	"#525E75"
-bspc config normal_border_color 	"#ffffff"
+bspc config border_width          4 
+bspc config active_border_color 	"#00FFFFFF"
+bspc config focused_border_color  "#9e9acc"
+#bspc config focused_border_color 	"#85586F"
+bspc config normal_border_color 	"#00FFFFFF"
 
 #rule
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Brave desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

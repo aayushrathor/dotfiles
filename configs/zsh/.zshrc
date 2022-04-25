@@ -202,7 +202,7 @@ alias course="dev && cd imp-docs"
 alias myweb="dev && cd WEB-DEV/vedant-website && code ."
 alias leet="dev && cd DSA/leetcode"
 alias dsprac="dev && cd DSA/DSA-self-prac"
-alias vedant="cd ~/"
+alias aayush="cd ~/"
 alias docs="devour sioyek"
 alias dev="cd ~/Desktop/DEV && nvim"
 alias sleep="systemctl suspend"
@@ -229,7 +229,7 @@ alias h='htop'
 alias p='pfetch'
 alias n='neofetch'
 alias s='sensors'
-alias b='bpytop'
+alias b='btop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
 # alias spr="command curl -fsLF 'sprunge=<-' http://sprunge.us"
 alias P='sudo powertop'
