@@ -122,7 +122,7 @@ super + {Left,Down,Up,Right}
 
 # Volume
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	amixer set Master -5%
 XF86AudioRaiseVolume
 	amixer set Master 5%+
 XF86AudioMute

@@ -18,14 +18,13 @@ bspc config gapless_monocle      true
 
 #border
 bspc config border_width          4 
-bspc config active_border_color 	"#00FFFFFF"
-bspc config focused_border_color  "#9e9acc"
-#bspc config focused_border_color 	"#85586F"
-bspc config normal_border_color 	"#00FFFFFF"
+bspc config active_border_color 	"#383838"
+bspc config focused_border_color  "#8D8DAA"
+bspc config normal_border_color 	"#383838"
 
 #rule
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Brave desktop='^2'
+bspc rule -a Brave-browser desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
@@ -35,6 +34,7 @@ bspc rule -a Screenkey manage=off
 zsh ~/.fehbg
 zsh $HOME/.config/polybar/launch.sh 
 
-picom --experimental-backend --config $HOME/.config/picom/picom.conf 
+picom --config $HOME/.config/picom/picom.conf
+#picom --experimental-backend --config $HOME/.config/picom/picom.conf 
 #/usr/bin/dunst &
 #wal -i ~/Pictures/phy.png 

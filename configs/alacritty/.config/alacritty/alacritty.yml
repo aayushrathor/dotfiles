@@ -1,4 +1,5 @@
-#Configuration for Alacritty, the GPU enhanced terminal emulator. _                 _ _   _
+#Configuration for Alacritty, the GPU enhanced terminal emulator.
+#        _                 _ _   _
 #   __ _| | __ _  ___ _ __(_) |_| |_ _   _
 #  / _` | |/ _` |/ __| '__| | __| __| | | |
 # | (_| | | (_| | (__| |  | | |_| |_| |_| |
@@ -8,7 +9,7 @@
 colors:
   primary:
     #background: '#072227'
-    background: '#222831'
+    background: '#191919'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:
@@ -33,7 +34,7 @@ colors:
       background: '#f1fa8c'
     end:
       foreground: '#f1fa8c'
-      background: '#282a36'
+      background: '#191919'
   line_indicator:
     foreground: None
     background: None
@@ -99,7 +100,7 @@ window:
 # Blank space added around the window in pixels. This padding is scaled
 # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 4 
+    x: 8 
     y: 4
 # Spread additional padding evenly around the terminal content.
 #dynamic_padding: false
@@ -117,7 +118,7 @@ window:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-opacity: 0.3 
+  opacity: 0.98 
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
