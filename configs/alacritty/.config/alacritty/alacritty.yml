@@ -40,7 +40,7 @@ colors:
     background: None
   selection:
     text: CellForeground
-    background: '#44475a'
+    background: '#191919'
   normal:
     black: '#21222c'
     red: '#ff5555'
