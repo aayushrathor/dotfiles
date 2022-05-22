@@ -1,3 +1,3 @@
 # Arch Linux Dotfiles
 
-<img src="preview.png" alt="arch rice preview" >
+![arch rice preview](https://raw.githubusercontent.com/aayushrathor/dotfiles/main/preview.png)
