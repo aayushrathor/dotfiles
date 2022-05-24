@@ -136,7 +136,7 @@ XF86MonBrightnessUp
 
 # Screenshot
 super + Print
-	scrot -zbp -F ~/home/aayush/Screenshot/screenshot-$(date + %F_%T).png
+	scrot -zbp -F ~/home/aayush/Screenshot/"screenshot-$(date + %F_%T).png"
 
 super + shift + S
 	flameshot gui
@@ -144,6 +144,3 @@ super + shift + S
 Print
 	scrot -zbp
 
-# make sxhkd reload its configuration files:
-super + Pause
-  pkill -USR1 -x sxhkd
