@@ -8,7 +8,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "350x8-36+36"
+#    geometry = "350x8-36+36"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -40,7 +40,7 @@
     show_indicators = no
     icon_position = left
     max_icon_size = 75
-    icon_path = /usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
+    icon_path = /usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
