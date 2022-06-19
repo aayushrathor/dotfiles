@@ -2,8 +2,8 @@
 # wm independent hotkeys
 #
 
-#Super_L
-#	systemctl suspend
+super + @x + @u + u
+	systemctl reboot
 # terminal emulator
 super + Return
 	alacritty
@@ -123,19 +123,19 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Volume
-#XF86AudioLowerVolume
-#	amixer -q set Master 5%-
-#XF86AudioRaiseVolume
-#	amixer -q set Master 5%+
-#XF86AudioMute
-#	amixer -q set Master toggle
-
-XF86AudioRaiseVolume
-	pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
+	amixer -q set Master 5%-
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+	amixer -q set Master toggle
+
+#XF86AudioRaiseVolume
+#	pactl set-sink-volume 0 +5%
+#XF86AudioLowerVolume
+#    pactl set-sink-volume 0 -5%
+#XF86AudioMute
+#    pactl set-sink-mute 0 toggle
 
 # Brightness
 XF86MonBrightnessDown
