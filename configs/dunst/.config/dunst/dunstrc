@@ -8,69 +8,71 @@
 [global]
     monitor = 0
     follow = mouse
-#    geometry = "350x8-36+36"
+    width = 300
+    height = 300
+    #offset = 155x40
+    scale = 0
+    notification_limit = 0
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
     indicate_hidden = yes
-    shrink = no
-    transparency = 0
-    notification_height = 0
-    separator_height = 1
-    padding = 8
-    horizontal_padding = 8
+    transparency = 25
+    separator_height = 2
+    padding = 4
+    horizontal_padding = 10
+    text_icon_padding = 0
     frame_width = 0
-    frame_color = "#2B3339"
-    separator_color = frame
+    frame_color = "#6E85B2"
+    separator_color = "#121212"
     sort = yes
-    idle_threshold = 120
-    corner_radius = 3
-
-    font = FiraCode Nerd Font 12
-    line_height = 0
+    font = Operator Mono 12
+    line_height = 8
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
-    vertical_alignment = center
+    #vertical_alignment = left
     show_age_threshold = 60
-    word_wrap = yes
     ellipsize = middle
-
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
+    show_indicators = yes
 
-    show_indicators = no
+    ## Icons
     icon_position = left
     max_icon_size = 75
     icon_path = /usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
+    
+    ## History
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/brave -new-tab
     always_run_script = true
-
     title = Dunst
-
     class = Dunst
     startup_notification = true
     verbosity = mesg
     corner_radius = 10
     ignore_dbusclose = false
     force_xinerama = false
+
+    ## Legacy
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_all
     mouse_right_click = do_action, close_current
 
-[experimental]
-    per_monitor_dpi = false
-
-[shortcuts]
-
+    ## Shortcuts
     close = ctrl+space
     close_all = ctrl+shift+space
     history = ctrl+grave
     context = ctrl+shift+period
 
-frame_color = "#2B3339"
-separator_color = "#263640"
+[experimental]
+    per_monitor_dpi = false
 
 [base16_low]
     msg_urgency = low

@@ -36,7 +36,7 @@ precmd_functions+=(set_win_title)
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Use autosuggestion
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -257,7 +257,10 @@ alias wall='feh --bg-scale --no-fehbg --random'
 alias code='devour code .'
 alias sz='du -sh ./* | sort -h'
 alias makecfile='echo "#include <stdio.h>\n#include <stdlib.h>\n\n\nint main(){\n}" >> '
-alias makecppfile='echo "#include <stdio.h>\n#include <stdlib.h>\n#include <iostream>\n#include <bits/stdc++.h>\n\nint main(){\n}" >> '
+alias makecppfile='echo "#include <stdio.h>\n#include <stdlib.h>\n#include <iostream>\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\nreturn 0;}" >> '
+
+#alias for ventoy
+alias vgui='sudo ventoygui'
 
 # Functions
 ushort(){

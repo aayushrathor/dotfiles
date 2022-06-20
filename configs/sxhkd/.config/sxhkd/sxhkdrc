@@ -2,8 +2,6 @@
 # wm independent hotkeys
 #
 
-super + @x + @u + u
-	systemctl reboot
 # terminal emulator
 super + Return
 	alacritty
@@ -122,20 +120,13 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Volume
+# Volume 
 XF86AudioLowerVolume
-	amixer -q set Master 5%-
+	amixer set Master 5%-
 XF86AudioRaiseVolume
-	amixer -q set Master 5%+
+	amixer set Master 5%+
 XF86AudioMute
-	amixer -q set Master toggle
-
-#XF86AudioRaiseVolume
-#	pactl set-sink-volume 0 +5%
-#XF86AudioLowerVolume
-#    pactl set-sink-volume 0 -5%
-#XF86AudioMute
-#    pactl set-sink-mute 0 toggle
+	amixer set Master toggle
 
 # Brightness
 XF86MonBrightnessDown
@@ -143,13 +134,30 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 5
 
-# Screenshot
-super + Print
-	scrot -zbp -F ~/home/aayush/Screenshot/"screenshot-$(date + %F_%T).png"
-
+#screenshot
 super + shift + S
 	flameshot gui
 
-Print
-	scrot -zbp
+# play pause toggle
+super + shift + v
+  term-menu play-pause & dunstify "Toggle player" -u NORMAL -h string:x-canonical-private-synchronous:playback
 
+# music controls
+super + shift + {Left , Right}
+  playerctl { prev , next} &
+
+# XF86AudioNext
+XF86AudioNext
+  playerctl next &
+
+# XF86AudioPrev
+XF86AudioPrev
+  playerctl previous &
+
+# XF86AudioPlay
+XF86AudioPlay
+  playerctl play-pause &
+
+# XF86AudioPause
+XF86AudioPause
+  playerctl play-pause &
