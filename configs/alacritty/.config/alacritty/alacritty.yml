@@ -9,8 +9,8 @@
 colors:
   primary:
     #background: '#072227'
-    background: '#191919'
-    foreground: '#f8f8f2'
+    background: '#0f0f0f'
+    foreground: '#f0f0f0'
     bright_foreground: '#ffffff'
   cursor:
     text: CellBackground
@@ -85,9 +85,9 @@ window:
 # Number of lines/columns (not pixels) in the terminal. The number of columns
 # must be at least `2`, while using a value of `0` for columns and lines will
 # fall back to the window manager's recommended size.
-#dimensions:
-#  columns: 0
-#  lines: 0
+  dimensions:
+    columns: 200
+    lines: 52
 # Window position (changes require restart)
 #
 # Specified in number of pixels.
@@ -101,7 +101,7 @@ window:
 # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 8 
-    y: 8
+    y: 0
 # Spread additional padding evenly around the terminal content.
 #dynamic_padding: false
 # Window decorations
@@ -118,7 +118,7 @@ window:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.96 
+  opacity: 0.9 
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
