@@ -1,0 +1,69 @@
+# Zathura configuration file
+# See man `man zathurarc'
+map r reload
+map p print
+map i recolor
+map J zoom out
+map K zoom in
+map R rotate
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# One page per row by default
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+#zoom settings
+set zoom-min 10
+set guioptions ""
+
+set font "Meslo LG S DZ"
+
+# zathurarc-dark
+set notification-error-bg       "#E06B74" 
+set notification-error-fg       "#EA757E" 
+set notification-warning-bg     "#E5C07A"
+set notification-warning-fg     "#EFCA84"
+set notification-bg             "#98C379"
+set notification-fg             "#A2CD83"
+
+set completion-group-bg         "#12161D"
+set completion-group-fg         "#FE96B7"
+set completion-bg               "#000000"
+set completion-fg               "#6D83CE"
+set completion-highlight-bg     "#202630"
+set completion-highlight-fg     "#A2CD83"
+
+set index-bg                   "#202630" # base02
+set index-fg                   "#cbd2df" # base1
+set index-active-bg             "#EFCA84" # base01
+set index-active-fg             "#55B6C2" # base2
+
+set inputbar-bg                 "#12161D"
+set inputbar-fg                 "#D282E7" # base2
+
+set statusbar-bg                "#12161D" # base02
+set statusbar-fg                "#D282E7" # base1
+
+set highlight-color             "#FE96B7" # base00  # hightlight match when search keyword(vim's /)
+set highlight-active-color      "#6D83CE" # blue
+
+set default-bg                  "#202630" # base02
+set default-fg                  "#cbd2df" # base1
+set render-loading              true
+set render-loading-fg           "#cbd2df" # base02
+set render-loading-bg           "#202630" # base02
+
+# Recolor book content's color
+set recolor                     true
+set recolor-lightcolor          "#202630" # base02
+set recolor-darkcolor           "#cbd2df" # base1
+set recolor-keephue             true      # keep original color
