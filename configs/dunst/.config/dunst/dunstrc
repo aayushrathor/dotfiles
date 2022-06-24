@@ -19,12 +19,12 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 25
-    separator_height = 2
+    transparency = 0
+    separator_height = 1
     padding = 4
     horizontal_padding = 10
     text_icon_padding = 0
-    frame_width = 0
+    frame_width = 2
     frame_color = "#6E85B2"
     separator_color = "#121212"
     sort = yes

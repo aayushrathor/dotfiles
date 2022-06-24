@@ -9,7 +9,7 @@
 colors:
   primary:
     #background: '#072227'
-    background: '#0f0f0f'
+    background: '0x000000'
     foreground: '#f0f0f0'
     bright_foreground: '#ffffff'
   cursor:
@@ -42,7 +42,7 @@ colors:
     text: CellForeground
     background: '#44475a'
   normal:
-    black: '#21222c'
+    black: '#000000'
     red: '#ff5555'
     green: '#50fa7b'
     yellow: '#f1fa8c'
@@ -59,7 +59,6 @@ colors:
     magenta: '#ff92df'
     cyan: '#a4ffff'
     white: '#ffffff'
-
 # Imports are loaded in order, skipping all missing files, with the importing
 # file being loaded last. If a field is already present in a previous import, it
 # will be replaced.
