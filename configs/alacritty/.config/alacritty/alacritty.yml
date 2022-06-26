@@ -86,7 +86,7 @@ window:
 # fall back to the window manager's recommended size.
   dimensions:
     columns: 200
-    lines: 48
+    lines: 52
 # Window position (changes require restart)
 #
 # Specified in number of pixels.
@@ -100,7 +100,7 @@ window:
 # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 4 
-    y: 0
+    y: 4
 # Spread additional padding evenly around the terminal content.
 #dynamic_padding: false
 # Window decorations
@@ -153,13 +153,13 @@ window:
 # Font configuration
 font:
   normal: 
-    family: mononoki Nerd Font 
+    family: mononoki nerd font 
     style: Regular
   bold:
-    family: mononoki Nerd Font 
+    family: mononoki nerd font
     style: Bold
   italic:
-    family: mononoki Nerd Font
+    family: mononoki nerd font
     style: Italic
 # Bold italic font face
 #bolditalic:
@@ -171,7 +171,7 @@ font:
 # The `style` can be specified to pick a specific face.
 #style: Bold Italic
 # Point size
-  size: 8.2
+  size: 8
 # Offset is the extra space around each character. `offset.y` can be thought
 # of as modifying the line spacing, and `offset.x` as modifying the letter
 # spacing.

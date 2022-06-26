@@ -40,7 +40,7 @@ killall dunst
 dunst --config $HOME/.config/dunst/dunstrc &
 
 # Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 picom --config $HOME/.config/picom/picom.conf
 #picom --experimental-backend --config $HOME/.config/picom/picom.conf 
