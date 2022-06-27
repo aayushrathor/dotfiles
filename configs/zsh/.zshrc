@@ -231,6 +231,7 @@ alias n='neofetch'
 alias s='sensors'
 alias b='btop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
+alias r='ranger'
 # alias spr="command curl -fsLF 'sprunge=<-' http://sprunge.us"
 alias P='sudo powertop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'

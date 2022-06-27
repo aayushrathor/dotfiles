@@ -161,3 +161,7 @@ XF86AudioPlay
 # XF86AudioPause
 XF86AudioPause
   playerctl play-pause &
+
+# tdrop
+#super + shift + r
+#	tdrop -ma -x '25%' -y '5%' -w '50%' -h '30%' -p 'bspc rule -a alacritty -o state=floating' alacritty -T ranger -e ranger 
