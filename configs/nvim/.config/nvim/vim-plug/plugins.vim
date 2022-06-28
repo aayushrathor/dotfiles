@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
     "Themes"
     Plug 'tiagovla/tokyodark.nvim'
+    Plug 'navarasu/onedark.nvim'
     "Copilot"
     Plug 'github/copilot.vim'    
     "Dracula theme"
@@ -50,6 +51,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 syntax enable
+"let g:onedark_config = {
+"    \ 'style': 'deep',
+"\}
+"colorscheme onedark
 colorscheme tokyodark
 :highlight MyGroup gui=bold
 :match MyGroup /./
