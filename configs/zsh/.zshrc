@@ -184,6 +184,7 @@ bindkey "^[[1;5D" backward-word
 
 ## Useful aliases
 # Replace ls with exa
+export LS_COLORS="di=0;36"
 alias ls='exa -a --icons --color=always --group-directories-first' # preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
