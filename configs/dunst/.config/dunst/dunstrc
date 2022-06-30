@@ -32,7 +32,7 @@
     separator_color = "#121212"
     sort = yes
     font = Operator Mono 12
-    line_height = 8
+    line_height = 6
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -47,7 +47,7 @@
     ## Icons
     icon_position = left
     max_icon_size = 75
-    icon_path = /usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
+    icon_path = /usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
     
     ## History
     sticky_history = yes
@@ -91,3 +91,13 @@
     msg_urgency = critical
     background = "#061115"
     foreground = "#D9D7D6"
+
+[signed_on]
+    appname = batteryWarning
+    msg_urgency = critical
+    summary = "*signed on*"
+    script = ~/github-scripts/battery_warning.sh
+
+[play_sound]
+    summary = "*"
+    script = ~/github-scripts/dunst-notif.sh
