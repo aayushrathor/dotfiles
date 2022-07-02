@@ -31,12 +31,12 @@ bspc config normal_border_color 	"#383838"
 #rule
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Brave-browser desktop='^2'
-bspc rule -a Google-Chrome desktop='^2'
+bspc rule -a Google-chrome desktop='^2'
 bspc rule -a "Vivaldi-stable" desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a "Thunar" state=floating rectangle=876x576+0+0 center=true
+bspc rule -a "Thunar" state=floating
 
 #auto-start
 zsh ~/.fehbg
@@ -48,6 +48,12 @@ dunst --config $HOME/.config/dunst/dunstrc &
 
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# gnome-keyrings
+/usr/bin/gnome-keyring-daemon --start --components=secrets &
+
+# network manager applet
+nm-applet &
 
 #picom --config $HOME/.config/picom/picom.conf
 picom --experimental-backend --config $HOME/.config/picom/picom.conf 
