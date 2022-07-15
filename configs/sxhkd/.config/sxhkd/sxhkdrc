@@ -4,14 +4,17 @@
 
 # terminal emulator
 super + Return
+	kitty
+
+super + shift + Return
 	alacritty
 
 # program launcher
 super + @space
 	rofi -show drun
 
-super + shift + space	
-	rofi  -show find -modi find:~/.config/rofi/scripts/finder.sh
+#super + shift + space	
+#	rofi  -show find -modi find:
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -45,7 +48,7 @@ super + g
 # state/flags
 #
 
-# set the window state
+# set the window stat
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
@@ -167,4 +170,6 @@ XF86AudioPause
 
 # tdrop
 super + shift + r
-	tdrop -ma -w 50% -h 648 -x 25% -y 15% -n 1 alacritty -o floating=on
+	tdrop -ma -w 50% -h 648 -x 25% -y 15% -n 1 alacritty -o floating=on window.opacity=0.8
+
+

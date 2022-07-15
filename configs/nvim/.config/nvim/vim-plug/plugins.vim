@@ -51,10 +51,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 syntax enable
-"let g:onedark_config = {
-"    \ 'style': 'deep',
-"\}
-"colorscheme onedark
-colorscheme tokyodark
+let g:onedark_config = {
+    \ 'style': 'deep',
+\}
+colorscheme onedark
+"colorscheme tokyodark
 :highlight MyGroup gui=bold
 :match MyGroup /./

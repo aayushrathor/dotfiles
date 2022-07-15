@@ -16,7 +16,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # export PATH=$PATH:$ANDROID_SDK/tools/bin/
 # export PATH=$PATH:$ANDROID/emulator
 # export PATH=$PATH:$ANDROID_SDK/tools/
-
+export LC_MESSAGES=en_US.UTF-8
+export LANGUAGE=en_US
+export LANG=en_US.UTF-8
 # Set $PATH if ~/.local/bin exist
 #if [ -d "$HOME/.local/bin" ]; then
 #    export PATH=$HOME/.local/bin:$PATH
@@ -186,7 +188,7 @@ bindkey "^[[1;5D" backward-word
 # Replace ls with exa
 export LS_COLORS="di=0;36"
 alias ls='exa -a --icons --color=always --group-directories-first' # preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias la='exa -a --icons --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.="exa -a | egrep '^\.'"
@@ -377,3 +379,5 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
+
+
