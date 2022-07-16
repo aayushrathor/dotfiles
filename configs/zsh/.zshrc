@@ -202,7 +202,6 @@ alias dot='cd ~/.config && nvim'
 alias minecraft='java -jar ~/Documents/TLauncher-2.841.jar'
 alias mpv="devour mpv"
 alias course="dev && cd imp-docs"
-alias myweb="dev && cd WEB-DEV/vedant-website && code ."
 alias leet="dev && cd DSA/leetcode"
 alias dsprac="dev && cd DSA/DSA-self-prac"
 alias aayush="cd ~/"
@@ -235,6 +234,7 @@ alias s='sensors'
 alias b='btop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
 alias r='ranger'
+alias cal='cal -3 -s'
 # alias spr="command curl -fsLF 'sprunge=<-' http://sprunge.us"
 alias P='sudo powertop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'

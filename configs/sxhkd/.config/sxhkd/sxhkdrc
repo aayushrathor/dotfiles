@@ -170,6 +170,10 @@ XF86AudioPause
 
 # tdrop
 super + shift + r
-	tdrop -ma -w 50% -h 648 -x 25% -y 15% -n 1 alacritty -o floating=on window.opacity=0.8
+	tdrop -ma -w 50% -h 648 -x 25% -y 15% -n 1 kitty -o floating=on
+
+#clipmenu
+F8
+	clipmenu
 
 

@@ -15,7 +15,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d I II III IV V VI VII VIII
 
-bspc config window_gap          6
+bspc config window_gap          8
 
 #ratio
 bspc config split_ratio          0.52
@@ -55,4 +55,5 @@ dunst --config $HOME/.config/dunst/dunstrc &
 #picom --config $HOME/.config/picom/picom.conf
 picom --experimental-backend --config $HOME/.config/picom/picom.conf
 
-
+#clipboard
+clipmenud &
