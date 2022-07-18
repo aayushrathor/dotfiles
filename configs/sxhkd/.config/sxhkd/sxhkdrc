@@ -176,4 +176,10 @@ super + shift + r
 F8
 	clipmenu
 
+F1
+	ffscreencast & dunstify "Started Recording..." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'press shift + F1 to stop recording.'
+
+shift + F1
+	pkill ffmpeg & dunstify "Stopped Recording." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'Saved at: Desktop/screenRecord'
+ 
 

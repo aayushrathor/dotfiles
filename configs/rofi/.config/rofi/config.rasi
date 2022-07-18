@@ -1,8 +1,8 @@
 configuration {
-  display-drun: "Applications:";
+  display-drun: " :";
   display-window: "Windows:";
-  drun-display-format: "  {name}";
-  font: "JetBrainsMono Nerd Font Medium 11";
+  drun-display-format: " {name}";
+  font: "JetBrainsMono Nerd Font Medium 10";
   modi: "window,run,drun,filebrowser";
   show-icons: true;
   icon-theme: "Papirus";

@@ -57,3 +57,6 @@ picom --experimental-backend --config $HOME/.config/picom/picom.conf
 
 #clipboard
 clipmenud &
+
+#batterWarning
+watch -n5 ~/./scripts/battery_warning.sh &
