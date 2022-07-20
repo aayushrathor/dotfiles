@@ -361,10 +361,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 # and finally, make sure zsh-autosuggestions does not interfere with it:
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
 
-# Powerline
-#powerline-daemon -q
-#. /usr/share/powerline/bindings/zsh/powerline.zsh
-
 # eval "$(ssh-agent -s)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
