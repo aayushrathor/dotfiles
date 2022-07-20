@@ -144,29 +144,32 @@ XF86MonBrightnessUp
 super + shift + S
 	flameshot gui
 
+Print
+	flameshot full -c -p /home/aayush/Desktop/screenshots/
+
 # play pause toggle
 super + shift + v
   term-menu play-pause & dunstify "Toggle player" -u NORMAL -h string:x-canonical-private-synchronous:playback
 
 # music controls
 super + shift + {Left , Right}
-  playerctl { prev , next} &
+  playerctl -a { prev , next} &
 
 # XF86AudioNext
 XF86AudioNext
-  playerctl next &
+  playerctl -a next &
 
 # XF86AudioPrev
 XF86AudioPrev
-  playerctl previous &
+  playerctl -a previous &
 
 # XF86AudioPlay
 XF86AudioPlay
-  playerctl play-pause &
+  playerctl -a play-pause &
 
 # XF86AudioPause
 XF86AudioPause
-  playerctl play-pause &
+  playerctl -a play-pause &
 
 # tdrop
 super + shift + r
@@ -176,10 +179,11 @@ super + shift + r
 F8
 	clipmenu
 
+#screenRecord
 F1
-	ffscreencast & dunstify "Started Recording..." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'press shift + F1 to stop recording.'
+	ffscreencast
 
 shift + F1
 	pkill ffmpeg & dunstify "Stopped Recording." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'Saved at: Desktop/screenRecord'
- 
+
 

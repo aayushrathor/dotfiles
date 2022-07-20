@@ -52,7 +52,7 @@
     ## History
     sticky_history = yes
     history_length = 20
-    #startup_notification = true
+    startup_notification = true
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = true

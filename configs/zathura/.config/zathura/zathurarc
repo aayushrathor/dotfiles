@@ -27,8 +27,8 @@ set guioptions			"sv"
 set statusbar-home-tilde	"true"
 set recolor			"true"
 
-set default-fg 			"#f0f0f0"
-set default-bg 			"#0f0f0f"
+set default-bg                  "#1e222a" # Background
+set default-fg                  "#abb2bf" # Foreground
 
 set completion-bg		"#0f0f0f"
 set completion-fg		"#f0f0f0"
@@ -52,8 +52,8 @@ set notification-warning-fg	"#0f0f0f"
 set inputbar-fg			"#f0f0f0"
 set inputbar-bg 		"#262626"
 
-set recolor-lightcolor		"#0f0f0f"
-set recolor-darkcolor		"#f0f0f0"
+set recolor-lightcolor          "#1e222a" # Background
+set recolor-darkcolor           "#abb2bf" # Foreground
 
 set index-fg			"#f0f0f0"
 set index-bg			"#0f0f0f"

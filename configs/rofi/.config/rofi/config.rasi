@@ -1,80 +1,177 @@
 configuration {
-  display-drun: " :";
-  display-window: "Windows:";
-  drun-display-format: " {name}";
-  font: "JetBrainsMono Nerd Font Medium 10";
-  modi: "window,run,drun,filebrowser";
-  show-icons: true;
-  icon-theme: "Papirus";
+  modi: [run,drun,window];
+    show-icons:               true;
+    display-drun:             "  Apps";
+    display-run:              "  Run";
+    display-window:           "  Window";
+    drun-display-format:      " {name}";
+    disable-history:          false;
+    click-to-exit:            true;
+    location:                 0;
+    sidebar-mode:             true;
 }
 
-@theme "/dev/null"
+@import "colors.rasi"
 
 * {
-  bg: #141E27;
-  bg-alt: #444b6A;
-
-  fg: #FFFFFF;
-  fg-alt: #787C99;
-
-  background-color: @bg;
-  
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+    font:                     "JetBrains Mono Nerd Font 10";
+    background-color:         @background;
 }
 
 window {
-  width: 30%;
+    border:                   0px;
+    border-color:             @brdr;
+    border-radius:            4px;
+    width:                    500px;
+    height:                   0px;
 }
 
-element {
-  padding: 8 0;
-  text-color: @fg-alt;
-}
-
-element selected {
-  text-color: @fg;
-}
-
-element-text {
-  background-color: inherit;
-  text-color: inherit;
-  vertical-align: 0.5;
-}
-
-element-icon {
-  size: 25;
+textbox-prompt-colon {
+    expand:                   false;
+    str:                      "  ";
+    padding:                  6px 4px 6px 4px;
+    text-color:               @background;
+    font:                     "Iosevka Nerd Font 10";
+    background-color:         @foreground;
+    border-radius:            8px;
 }
 
 entry {
-  background-color: @bg-alt;
-  padding: 12;
-  text-color: @fg;
+    spacing:                  0;
+    expand:                   true;
+    horizontal-align:         0;
+    text-color:               @foreground;
+    placeholder-color:        @foreground;
+    placeholder:              "Search...";
+    padding:                  6px 2px 6px 2px;
+    border:                   0px 0px 0px 0px;
+    border-color:             @selected;
+    border-radius:            0px;
+}
+
+case-indicator {
+    spacing:                  0;
+    text-color:               @foreground;
 }
 
 inputbar {
-  children: [prompt, entry];
-}
-
-listview {
-  padding: 8 12;
-  background-color: @bg;
-  columns: 1;
-  lines: 8;
+    spacing:                  0px;
+    text-color:               @foreground;
+    border:                   0px;
+    border-color:             @selected;
+    border-radius:            0px;
+    children:                 [ textbox-prompt-colon,entry ];
 }
 
 mainbox {
-  background-color: @bg;
-  children: [inputbar, listview];
+    border:                   0px;
+    border-color:             @selected;
+    spacing:                  15px;
+    padding:                  30px;
 }
 
-prompt {
-  background-color: @bg-alt;
-  enabled: true;
-  padding: 12 0 0 12;
-  text-color: @fg;
+listview {
+    lines:                    6;
+    columns:                  1;
+    fixed-height:             0;
+    border:                   0px;
+    border-color:             @foreground;
+    spacing:                  5px;
+    scrollbar:                true;
+    padding:                  5px 0px 0px;
+}
+
+element-text, element-icon {
+    background-color:         inherit;
+    text-color:               inherit;
+}
+
+element {
+    border:                   0px;
+    padding:                  8px;
+}
+element normal.normal {
+    background-color:         @background;
+    text-color:               @foreground;
+}
+element normal.urgent {
+    background-color:         @background;
+    text-color:               @off;
+}
+element normal.active {
+    background-color:         @background;
+    text-color:               @on;
+}
+element selected.normal {
+    background-color:         @selected;
+    text-color:               @foreground;
+    border:                   0px;
+    border-radius:            8px;
+    border-color:             @selected;
+}
+element selected.urgent {
+    background-color:         @background;
+    text-color:               @off;
+}
+element selected.active {
+    background-color:         @background;
+    text-color:               @selected;
+}
+element alternate.normal {
+    background-color:         @background;
+    text-color:               @foreground;
+}
+element alternate.urgent {
+    background-color:         @background;
+    text-color:               @foreground;
+}
+element alternate.active {
+    background-color:         @background;
+    text-color:               @foreground;
+}
+
+sidebar {
+    border:                   0px;
+    border-color:             @selected;
+    border-radius:            0px;
+}
+
+button {
+    margin:                   5px 10px 0px 10px;
+    horizontal-align:         0.5;
+    vertical-align:           0.5;
+    padding:                  8px;
+    background-color:         @background-alt;
+    text-color:               @foreground;
+    border:                   0px;
+    border-radius:            8px;
+    border-color:             @selected;
+}
+
+button selected {
+    background-color:         @foreground;
+    text-color:               @background;
+    border:                   0px;
+    border-radius:            8px;
+    border-color:             @selected;
+}
+
+scrollbar {
+    width:                    2px;
+    border:                   0px;
+    handle-color:             @foreground;
+    handle-width:             8px;
+    padding:                  0;
+}
+
+message {
+    border:                   0px;
+    border-color:             @selected;
+    padding:                  1px;
+}
+
+textbox {
+    text-color:               @foreground;
 }
 
 
