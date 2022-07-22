@@ -1,14 +1,8 @@
 configuration {
-  modi: [run,drun,window];
-    show-icons:               true;
-    display-drun:             "  Apps";
-    display-run:              "  Run";
-    display-window:           "  Window";
-    drun-display-format:      " {name}";
+    show-icons:               false;
     disable-history:          false;
     click-to-exit:            true;
     location:                 0;
-    sidebar-mode:             true;
 }
 
 @import "colors.rasi"
@@ -22,31 +16,23 @@ window {
     border:                   4px;
     border-color:             @brdr;
     border-radius:            12px;
-    width:                    500px;
-    height:                   0px;
+    width:                    450px;
+    height:                   268px;
 }
 
-textbox-prompt-colon {
-    expand:                   false;
-    str:                      "  ";
-    padding:                  6px 4px 6px 4px;
-    text-color:               @background;
-    font:                     "Iosevka Nerd Font 10";
-    background-color:         @foreground;
-    border-radius:            8px;
-}
-
-entry {
+prompt {
     spacing:                  0;
-    expand:                   true;
-    horizontal-align:         0;
-    text-color:               @foreground;
-    placeholder-color:        @foreground;
-    placeholder:              "Search...";
-    padding:                  6px 2px 6px 2px;
-    border:                   0px 0px 0px 0px;
-    border-color:             @selected;
-    border-radius:            0px;
+    border:                   0;
+    border-radius:            8px;
+    background-color:         @foreground;
+    text-color:               @background-alt;
+    padding:                  6px 14px 6px 14px;
+    font:                     "Iosevka Nerd Font 10";
+}
+
+dummy {
+    spacing:                  0;
+    border:                   0;
 }
 
 case-indicator {
@@ -60,7 +46,7 @@ inputbar {
     border:                   0px;
     border-color:             @selected;
     border-radius:            0px;
-    children:                 [ textbox-prompt-colon,entry ];
+    children:                 [ dummy,prompt,dummy ];
 }
 
 mainbox {
@@ -71,13 +57,13 @@ mainbox {
 }
 
 listview {
-    lines:                    8;
+    lines:                    7;
     columns:                  1;
     fixed-height:             0;
     border:                   0px;
     border-color:             @foreground;
     spacing:                  5px;
-    scrollbar:                true;
+    scrollbar:                false;
     padding:                  5px 0px 0px;
 }
 
@@ -130,12 +116,6 @@ element alternate.active {
     text-color:               @foreground;
 }
 
-sidebar {
-    border:                   0px;
-    border-color:             @selected;
-    border-radius:            0px;
-}
-
 button {
     margin:                   5px 10px 0px 10px;
     horizontal-align:         0.5;
@@ -149,15 +129,15 @@ button {
 }
 
 button selected {
-    background-color:         @foreground;
-    text-color:               @background;
+    background-color:         @background-alt;
+    text-color:               @foreground;
     border:                   0px;
     border-radius:            8px;
     border-color:             @selected;
 }
 
 scrollbar {
-    width:                    2px;
+    width:                    4px;
     border:                   0px;
     handle-color:             @foreground;
     handle-width:             8px;
@@ -173,5 +153,3 @@ message {
 textbox {
     text-color:               @foreground;
 }
-
-
