@@ -186,4 +186,11 @@ F1
 shift + F1
 	pkill ffmpeg & dunstify "Stopped Recording." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'Saved at: Desktop/screenRecord'
 
+#powermenu
+super + x
+	~/./.config/rofi/bin/powermenu.sh
+
+super + e
+	thunar
+
 

@@ -2,7 +2,6 @@ configuration {
     show-icons:               false;
     disable-history:          false;
     click-to-exit:            true;
-    location:                 0;
 }
 
 @import "colors.rasi"
@@ -13,11 +12,15 @@ configuration {
 }
 
 window {
-    border:                   4px;
+    border:                   2px;
     border-color:             @brdr;
     border-radius:            12px;
     width:                    450px;
     height:                   268px;
+    location:                 north east;
+    anchor:                   north east;
+    x-offset:                 -8px;
+    y-offset:                 36px;
 }
 
 prompt {

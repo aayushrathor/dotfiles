@@ -7,12 +7,12 @@
 #                              |_|
 
 [[battery.display]]
-threshold = 30
+threshold = 15
 style = "bold red"
 
 [character]
-success_symbol = "[ :](#95D1CC)"
-error_symbol = "[-_- :](#EA5455) "
+success_symbol = "[ :](#76BA99)"
+error_symbol = "[-_* :](#EA5455) "
 
 [cmd_duration]
 min_time = 10_000  
@@ -65,7 +65,8 @@ disabled = false
 disabled = true
 
 [username]
-format = " [$user]($style) "
+format = "[ ](#76BA99) "
+#format = " [$user]($style) "
 style_user = "bold cyan"
 style_root = "bold dimmed cyan"
 show_always = true
