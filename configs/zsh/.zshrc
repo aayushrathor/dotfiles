@@ -19,10 +19,17 @@ export PATH="$HOME/.local/bin:$PATH"
 export LC_MESSAGES=en_US.UTF-8
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
+#export EDITOR=vim
 # Set $PATH if ~/.local/bin exist
 #if [ -d "$HOME/.local/bin" ]; then
 #    export PATH=$HOME/.local/bin:$PATH
 #fi
+### nvm - node version manager ###
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+### zoxide ###
+eval "$(zoxide init zsh)"
 
 if [ -d "$HOME/.local/lib" ]; then
     export PATH=$HOME/.local/lib:$PATH
