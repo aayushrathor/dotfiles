@@ -19,7 +19,7 @@ configuration {
 }
 
 window {
-    border:                   4px;
+    border:                   2px;
     border-color:             @brdr;
     border-radius:            12px;
     width:                    500px;
