@@ -42,6 +42,9 @@ bspc rule -a "Thunar" state=floating
 zsh ~/.fehbg
 zsh $HOME/.config/polybar/launch.sh 
 
+#clipboard
+#clipmenud &
+
 # Notifications
 killall dunst
 dunst --config $HOME/.config/dunst/dunstrc &
@@ -53,10 +56,7 @@ dunst --config $HOME/.config/dunst/dunstrc &
 /usr/bin/gnome-keyring-daemon --start --components=secrets &
 
 #picom --config $HOME/.config/picom/picom.conf
-picom --experimental-backend --config $HOME/.config/picom/picom.conf
-
-#clipboard
-clipmenud &
+picom --experimental-backend --config $HOME/.config/picom/picom.conf &
 
 #batterWarning
-watch -n5 ~/./scripts/battery_warning.sh &
+#watch -n5 ~/./scripts/battery_warning.sh

@@ -173,7 +173,7 @@ XF86AudioPause
 
 # tdrop
 super + shift + r
-	tdrop -ma -w 50% -h 648 -x 25% -y 15% -n 1 kitty -o floating=on
+	tdrop -ma -w 60% -h 648 -x 20% -y 15% -n 1 kitty -o floating=on
 
 #clipmenu
 F8
