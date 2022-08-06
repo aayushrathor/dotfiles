@@ -173,18 +173,17 @@ XF86AudioPause
 
 # tdrop
 super + shift + r
-	tdrop -ma -w 60% -h 648 -x 20% -y 15% -n 1 kitty -o floating=on
+	tdrop -ma -w 60% -h 648 -x 20% -y 15% -n 1 kitty 
+
+super + shift + D
+	tdrop -ma -w 60% -h 40% -x 380 -y 640 kitty
 
 #clipmenu
 F8
-	clipmenu
-
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 #screenRecord
-F1
-	ffscreencast
-
-shift + F1
-	pkill ffmpeg & dunstify "Stopped Recording." -u NORMAL --icon=/usr/share/icons/Papirus/32x32/apps/deepin-screen-recorder.svg 'Saved at: Desktop/screenRecord'
+super + r
+	screenRecord
 
 #powermenu
 super + x
