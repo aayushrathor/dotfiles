@@ -4,6 +4,7 @@
 :set smarttab
 :set mouse+=a
 set clipboard=unnamedplus
+set completeopt=menu,menuone,noselect
 nnoremap <C-p> :Files<Cr>
 source $HOME/.config/nvim/vim-plug/plugins.vim
 

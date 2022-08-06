@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support"
-    Plug 'sheerun/vim-polyglot'
+    "Plug 'sheerun/vim-polyglot'
     " File Explorer"
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
@@ -43,6 +43,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     "HTML"
     Plug 'mattn/emmet-vim'
+    "nvim-cmp snip suggestion 
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
 call plug#end()
 
 "Config Section
@@ -51,10 +58,10 @@ if (has("termguicolors"))
     set termguicolors
 endif
 syntax enable
-let g:onedark_config = {
-    \ 'style': 'deep',
-\}
-colorscheme onedark
-"colorscheme tokyodark
+"let g:onedark_config = {
+"    \ 'style': 'deep',
+"\}
+"colorscheme onedark
+colorscheme tokyodark
 :highlight MyGroup gui=bold
 :match MyGroup /./
