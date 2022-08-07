@@ -1,7 +1,7 @@
 # :cartwheeling: arch bspwm dotfiles
 
 <p >
- <img  src="https://visitor-badge.glitch.me/badge?page_id=aayushrathor/dotstow.visitor-badge" >  
+ <img  src="https://visitor-badge.glitch.me/badge?page_id=aayushrathor/dotfiles.visitor-badge" >  
  <img  alt="" src="https://img.shields.io/github/repo-size/aayushrathor/dotfiles?style=flat&label=repo-size&color=fb9199&labelColor=1d212a"/>
 </p>
 
