@@ -12,7 +12,7 @@ configuration {
 }
 
 window {
-    border:                   2px;
+    border:                   0px;
     border-color:             @brdr;
     border-radius:            12px;
     width:                    450px;
