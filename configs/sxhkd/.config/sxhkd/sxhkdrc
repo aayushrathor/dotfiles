@@ -13,6 +13,8 @@ super + shift + Return
 super + @space
 	rofi -show drun
 
+super + period
+	rofimoji
 #super + shift + space	
 #	rofi  -show find -modi find:
 
