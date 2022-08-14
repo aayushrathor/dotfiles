@@ -149,14 +149,6 @@ super + shift + S
 Print
 	flameshot full -c -p /home/aayush/Desktop/screenshots/
 
-# play pause toggle
-super + shift + v
-  term-menu play-pause & dunstify "Toggle player" -u NORMAL -h string:x-canonical-private-synchronous:playback
-
-# music controls
-super + shift + {Left , Right}
-  playerctl -a { prev , next} &
-
 # XF86AudioNext
 XF86AudioNext
   playerctl -a next &
@@ -173,16 +165,31 @@ XF86AudioPlay
 XF86AudioPause
   playerctl -a play-pause &
 
-# tdrop
+### tdrop ###
+#center
 super + shift + r
-	tdrop -ma -w 60% -h 648 -x 20% -y 15% -n 1 kitty 
+	tdrop -ma -w 60% -h 50% -x 20% -y 15% -n 1 kitty 
 
+#bottom middle
 super + shift + D
-	tdrop -ma -w 60% -h 40% -x 380 -y 640 kitty
+	tdrop -ma -w 60% -h 40% -x 380 -y 640 -n 2 kitty
+#top left
+alt + h
+	tdrop -ma -w 50% -h 50% -x 0 -y 0 -n 1 alacritty -o window.opacity=1.0
+#top right
+alt + l
+	tdrop -ma -w 50% -h 50% -x 956 -y 0 -n 2 alacritty -o window.opacity=1.0
+#bottom left
+alt + j
+	tdrop -ma -w 50% -h 50% -x 0 -y 536 -n 3 alacritty -o window.opacity=1.0
+#bottom right
+alt + k
+	tdrop -ma -w 50% -h 50% -x 956 -y 536 -n 4 alacritty -o window.opacity=1.0
 
 #clipmenu
 F8
-	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -location 1
+
 #screenRecord
 super + r
 	screenRecord
