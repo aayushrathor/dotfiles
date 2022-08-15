@@ -165,6 +165,13 @@ XF86AudioPlay
 XF86AudioPause
   playerctl -a play-pause &
 
+# seekForward
+alt + f
+	seekFor
+# seekBackward
+alt + b
+	seekBack
+
 ### tdrop ###
 #center
 super + shift + r
