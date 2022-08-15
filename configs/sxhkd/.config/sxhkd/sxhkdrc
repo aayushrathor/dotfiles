@@ -7,7 +7,7 @@ super + Return
 	kitty
 
 super + shift + Return
-	alacritty
+	tabbed -f alacritty --embed
 
 # program launcher
 super + @space
@@ -174,16 +174,16 @@ super + shift + r
 super + shift + D
 	tdrop -ma -w 60% -h 40% -x 380 -y 640 -n 2 kitty
 #top left
-alt + h
+alt + shift + h
 	tdrop -ma -w 50% -h 50% -x 0 -y 0 -n 1 alacritty -o window.opacity=1.0
 #top right
-alt + l
+alt + shift + l
 	tdrop -ma -w 50% -h 50% -x 956 -y 0 -n 2 alacritty -o window.opacity=1.0
 #bottom left
-alt + j
+alt + shift + j
 	tdrop -ma -w 50% -h 50% -x 0 -y 536 -n 3 alacritty -o window.opacity=1.0
 #bottom right
-alt + k
+alt + shift + k
 	tdrop -ma -w 50% -h 50% -x 956 -y 536 -n 4 alacritty -o window.opacity=1.0
 
 #clipmenu
