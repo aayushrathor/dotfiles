@@ -192,6 +192,12 @@ alt + shift + j
 #bottom right
 alt + shift + k
 	tdrop -ma -w 50% -h 50% -x 956 -y 536 -n 4 alacritty -o window.opacity=1.0
+#tdropRight
+super + apostrophe
+	tdrop -ma -w 50% -h 1076 -x 956 -y 0 -n 5 alacritty -o window.opacity=1.0
+#tdropLeft
+super + semicolon
+	tdrop -ma -w 50% -h 1076 -x 0 -y 0 -n 6 alacritty -o window.opacity=1.0
 
 #clipmenu
 F8
