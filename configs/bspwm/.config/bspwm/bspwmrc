@@ -58,5 +58,5 @@ dunst --config $HOME/.config/dunst/dunstrc &
 #picom --config $HOME/.config/picom/picom.conf
 picom --experimental-backend --config $HOME/.config/picom/picom.conf &
 
-#batterWarning
-#watch -n5 ~/./scripts/battery_warning.sh
+# Network Applet
+nm-applet --indicator &
