@@ -22,13 +22,13 @@ window {
     border:                   0px;
     border-color:             @brdr;
     border-radius:            12px;
-    width:                    500px;
+    width:                    464px;
     height:                   0px;
 }
 
 textbox-prompt-colon {
     expand:                   false;
-    str:                      "  ";
+    str:                      "   ";
     padding:                  6px 4px 6px 4px;
     text-color:               @background;
     font:                     "Iosevka Nerd Font 10";
