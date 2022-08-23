@@ -179,25 +179,25 @@ super + shift + r
 
 #bottom middle
 super + shift + D
-	tdrop -ma -w 60% -h 40% -x 380 -y 640 -n 2 kitty
+	tdrop -ma -w 60% -h 45% -x 380 -y 560 -n 2 kitty
 #top left
 alt + shift + h
-	tdrop -ma -w 50% -h 50% -x 0 -y 0 -n 1 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 0 -y 34 -n 1 alacritty -o window.opacity=1.0
 #top right
 alt + shift + l
-	tdrop -ma -w 50% -h 50% -x 956 -y 0 -n 2 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 956 -y 34 -n 1 alacritty -o window.opacity=1.0
 #bottom left
 alt + shift + j
-	tdrop -ma -w 50% -h 50% -x 0 -y 536 -n 3 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 0 -y 500 -n 1 alacritty -o window.opacity=1.0
 #bottom right
 alt + shift + k
-	tdrop -ma -w 50% -h 50% -x 956 -y 536 -n 4 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 956 -y 500 -n 1 alacritty -o window.opacity=1.0
 #tdropRight
 super + apostrophe
-	tdrop -ma -w 50% -h 1076 -x 956 -y 0 -n 5 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 1008 -x 956 -y 34 -n 2 alacritty -o window.opacity=1.0
 #tdropLeft
 super + semicolon
-	tdrop -ma -w 50% -h 1076 -x 0 -y 0 -n 6 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 1008 -x 0 -y 34 -n 2 alacritty -o window.opacity=1.0
 
 #clipmenu
 F8
