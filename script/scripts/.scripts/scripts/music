@@ -2,7 +2,7 @@
 PL=$(playerctl -l)    # lists all working media players
 PLST=$(playerctl status)    # get current status of media(paused|playing|etc||)
 
-if [[ -z "$PL" ]]; then    # checking if there's NO players active
+if [[ "$PL" == "No players found" || "$PLST" == "No players found" ]]; then    # checking if there's NO players active
 	echo "%{F#ABC9FF} No music!?"    # no media OUTPUT
 else
         if [[ "$PLST" == "Playing" && "$PL" != "mpv" ]]; then # if_block in if_block :|

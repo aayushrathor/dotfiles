@@ -25,6 +25,8 @@ super + Escape
 #
 # bspwm hotkeys
 #
+alt + c
+	clipman daemon
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -198,10 +200,6 @@ super + apostrophe
 #tdropLeft
 super + semicolon
 	tdrop -ma -w 50% -h 1008 -x 0 -y 34 -n 2 alacritty -o window.opacity=1.0
-
-#clipmenu
-F8
-	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -location 1
 
 #screenRecord
 super + r

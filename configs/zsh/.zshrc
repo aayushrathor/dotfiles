@@ -3,7 +3,6 @@
 #  / /\___ \| |_| |
 # / /_ ___) |  _  |
 #/____|____/|_| |_|
-
 #export JAVA_HOME="$HOME/Desktop/android-studio/jre/"
 #export PATH=$JAVA_HOME/bin:$PATH 
 #export PATH="$PATH:/home/kshgrk/Documents/flutter/bin"
