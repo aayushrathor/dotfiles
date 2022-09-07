@@ -28,10 +28,10 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 2
-    frame_color = "#95D1CC"
+    frame_color = "#90FFFF"
     separator_color = "#121212"
     sort = yes
-    font = Operator Mono 12
+    font = "mononoki Nerd Font 12"
     line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
@@ -52,7 +52,7 @@
     ## History
     sticky_history = yes
     history_length = 20
-    startup_notification = true
+    #startup_notification = true
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = true
