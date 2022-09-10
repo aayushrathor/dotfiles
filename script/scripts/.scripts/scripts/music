@@ -6,12 +6,12 @@ if [[ "$PL" == "No players found" || "$PLST" == "No players found" ]]; then    #
 	echo "%{F#ABC9FF} No music!?"    # no media OUTPUT
 else
         if [[ "$PLST" == "Playing" && "$PL" != "mpv" ]]; then # if_block in if_block :|
-		echo "%{F#ABC9FF}奈 "$(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
+		echo "%{F#ABC9FF} "$(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 		#echo  $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 	elif [[ "$PLST" == "Playing" ]]; then	
-		echo "%{F#ABC9FF}奈 "$(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
+		echo "%{F#ABC9FF} "$(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 	elif [[ "$PLST" == "Paused" ]]; then
-		echo "%{F#ABC9FF}奈 Paused, but ready to go :D"
+		echo "%{F#ABC9FF} Paused, but ready to go :D"
 	else
 		echo "%{F#ABC9FF} Play some music :D" 
 	fi
