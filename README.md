@@ -8,7 +8,7 @@
 <!-- INFORMATION -->
 ## :herb: <samp>INFORMATION</samp> <img alt="" align="right" src="https://badges.pufler.dev/visits/janleigh/dotfiles?style=for-the-badge&color=A7D9B2&logoColor=white&labelColor=1C2325"/>
 
-   <img src="https://raw.githubusercontent.com/aayushrathor/dotfiles/main/showcase.jpg" alt="Rice Showcase" align="right" width="400px">
+   <img src="https://raw.githubusercontent.com/aayushrathor/dotfiles/main/showcase.png" alt="Rice Showcase" align="right" width="400px">
 
    Thanks for dropping by! This is my personal repository of my dotfiles.
 
