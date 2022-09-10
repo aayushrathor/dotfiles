@@ -31,7 +31,7 @@
     frame_color = "#90FFFF"
     separator_color = "#121212"
     sort = yes
-    font = "mononoki Nerd Font 12"
+    font = "CaskaydiaCove Nerd Font 10"
     line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
