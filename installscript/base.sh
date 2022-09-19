@@ -21,7 +21,7 @@ echo ""
 #cat /mnt/etc/fstab
 
 #arch chroot
-arch-chroot /mnt
+#arch-chroot /mnt
 
 #locales
 echo "#### TimeZone is set to India ####"
@@ -63,22 +63,20 @@ echo "#### enable services ####"
 systemctl enable NetworkManager
 
 #create user
-echo "#### Enter Username ####"
-read arch_username
-useradd -m $arch_username
-usermod -aG wheel $arch_username
+#echo "#### Enter Username ####"
+#read arch_username
+useradd -m aayush
+usermod -aG wheel aayush
 
 echo "#### Enter password ####"
-passwd $arch_username
+passwd aayush
 
 #set text editor
 echo "#### Uncomment '%wheel ALL=(ALL:ALL) ALL' ####"
 
-echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers.tmp
-#EDITOR=vim visudo
+#echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers.tmp
+EDITOR=vim visudo
 
 #install success
 #echo "#### Base Install Success ####"
 printf "\e[1;32mDone! Type exit umount -lR /mnt and reboot"
-sleep 3
-exit
