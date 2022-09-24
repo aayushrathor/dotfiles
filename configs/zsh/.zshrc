@@ -18,7 +18,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export LC_MESSAGES=en_US.UTF-8
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
-#export EDITOR=vim
+export EDITOR=nvim
 # Set $PATH if ~/.local/bin exist
 #if [ -d "$HOME/.local/bin" ]; then
 #    export PATH=$HOME/.local/bin:$PATH
