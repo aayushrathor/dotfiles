@@ -1,1 +1,3 @@
 configs/nvim/autoload/*
+configs/ranger/.config/ranger/colorschemes/__pycache__
+configs/ranger/.config/ranger/plugins/__pycache__
