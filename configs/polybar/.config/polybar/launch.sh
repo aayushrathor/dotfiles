@@ -5,21 +5,24 @@ killall -q polybar
 
 #wait untill all bars are not closed
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+echo "Polybar killed"
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
 # Launch Polybar, using default config location ~/.config/polybar/config.ini
 
 # Command for top bar
-echo "Top bar launched successfully ...."
-
-polybar top 2>&1 | tee -a /tmp/polybar.log & disown
+polybar -c ~/.config/polybar/config.ini top -r &
+echo "Top bar launched successfully"
 
 # Command for bottom bar
-echo "bottom bar launched successfully ...."
-
 polybar -c ~/.config/polybar/config.ini bottom -r &
+echo "bottom bar launched successfully"
 
-echo "Both bars launched successfully ...."
+# Command for system tray
+polybar -c ~/.config/polybar/config.ini systray -r &
+echo "system tray launched successfully"
 
-
+echo "Bars Launched Successfully"
+notify-send -u NORMAL -t 900 "Bars Launched Successfully"
