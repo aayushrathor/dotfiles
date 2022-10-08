@@ -19,4 +19,3 @@ elif [ "$battery_greped_status" == "charged" ]; then
         dunstify -a system -i "/usr/share/icons/Papirus/48x48/status/battery-full-charged.svg" -t 9000 -r 9990 -u normal "Battery ${battery_percentage_v}%" "Disconnect Charger please."
     fi
 fi
-

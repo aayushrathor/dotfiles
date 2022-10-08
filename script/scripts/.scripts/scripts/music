@@ -2,18 +2,18 @@
 PL=$(playerctl -l)    # lists all working media players
 PLST=$(playerctl status)    # get current status of media(paused|playing|etc||)
 
-if [[ "$PL" == "No players found" || "$PLST" == "No players found" ]]; then    # checking if there's NO players active
+if [[ -z "$PL" ]]; then    # checking if there's NO players active
 	echo "%{F#ABC9FF} No music!?"    # no media OUTPUT
 else
         if [[ "$PLST" == "Playing" && "$PL" != "mpv" ]]; then # if_block in if_block :|
-		echo "%{F#ABC9FF} "$(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
+		echo $(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 		#echo  $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 	elif [[ "$PLST" == "Playing" ]]; then	
-		echo "%{F#ABC9FF} "$(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
+		echo $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 	elif [[ "$PLST" == "Paused" ]]; then
-		echo "%{F#ABC9FF} Paused, but ready to go :D"
+		echo "Paused, but ready to go :D"
 	else
-		echo "%{F#ABC9FF} Play some music :D" 
+		echo "Play some music :D" 
 	fi
 fi
 
