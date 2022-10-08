@@ -22,16 +22,16 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 0
+    transparency = 10
     separator_height = 1
     padding = 4
-    horizontal_padding = 8
+    horizontal_padding = 12
     text_icon_padding = 0
     frame_width = 2
     frame_color = "#90FFFF"
     separator_color = "#121212"
     sort = yes
-    font = "CaskaydiaCove Nerd Font 10"
+    font = "Fira Code Nerd Font 10"
     line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
@@ -90,22 +90,9 @@
 
 [base16_critical]
     msg_urgency = critical
-    background = "#D82148"
-    foreground = "#151D3B"
-    frame_color = "#151D3B"
+    background = "#D20010"
+    foreground = "#FFFFFF"
     timeout = 0
-
-[signed_on]
-    appname = batteryWarning
-    summary = "*signed on*"
-    urgency = critical
-    script = ~/scripts/battery_warning.sh
-
-[signed_on]
-    appname = Pidgin
-    summary = "*signed on*"
-    urgency = critical
-    script = ~/scripts/battery_warning.sh
 
 [play_sound]
     summary = "*"

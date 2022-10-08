@@ -26,7 +26,7 @@ super + Escape
 # bspwm hotkeys
 #
 alt + c
-	clipman daemon
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -209,7 +209,10 @@ super + r
 super + x
 	~/./.config/rofi/bin/powermenu.sh
 
+#FileManager
 super + e
 	thunar
 
-
+#LockScreen
+alt + l
+	lockscreen

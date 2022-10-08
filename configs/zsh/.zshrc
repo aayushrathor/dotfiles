@@ -198,6 +198,7 @@ alias packages="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle --color=dark"
 # Replace ls with exa
 export LS_COLORS="di=0;36"
 alias ls='exa -a --icons --color=always --group-directories-first' # preferred listing
+alias sl='exa -a --icons --color=always --group-directories-first'
 alias la='exa -a --icons --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
@@ -207,7 +208,27 @@ alias lr='(exa -aR --color=always --group-directories-first) |bat '  # all files
 alias l='(exa -a --color=always --group-directories-first) |bat '  # all files and dirs
 alias ld='(exa -l --color=always --group-directories-first) | bat'  # long format
 
+# Docker & Kube
+#alias docker='podman'
+alias docker-compose='docker compose'
+alias kube='kubectl'
+alias dip='docker image prune'
+alias mstart='minikube start'
+alias mstat='minikube status'
+
+# Git
+alias gadd='git add .'
+alias gct='git commit -m'
+alias gst='git status'
+alias gpl='git pull'
+alias gps='git push origin --force'
+alias grb='git rebase'
+alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
+
 # Common use aliases
+alias cd='z'
+alias dc='z'
 alias dot='cd ~/.config && nvim'
 alias minecraft='java -jar ~/Documents/TLauncher-2.841.jar'
 alias mpv="devour mpv"
@@ -243,19 +264,13 @@ alias n='neofetch'
 alias s='sensors'
 alias b='btop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
-alias r='ranger'
+alias rr='ranger'
 alias cal='cal -3 -s'
 # alias spr="command curl -fsLF 'sprunge=<-' http://sprunge.us"
 alias P='sudo powertop'
 alias cc='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias bb='sudo sh -c "echo 2 > /proc/sys/vm/drop_caches"'
 alias cb='sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"'
-alias gst='git status'
-alias gc='git commit'
-alias ga='git add .'
-alias gps='git push'
-alias gpl='git pull'
-alias gph='git log --graph --oneline --all'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -265,7 +280,6 @@ alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 alias nv='nvim' 
-alias ryzenadj='sudo ryzenadj'
 alias sq='sudo mysql -u root'
 alias wall='feh --bg-scale --no-fehbg --random'
 alias code='devour code .'

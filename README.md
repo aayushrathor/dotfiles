@@ -42,7 +42,7 @@ git clone https://github.com/aayushrathor/dotfiles && cd dotfiles
 ```
 For whole setup run 
 ```sh
-stow */
+stow */ -t ~
 ```
 Or for particular package run
 ```sh
