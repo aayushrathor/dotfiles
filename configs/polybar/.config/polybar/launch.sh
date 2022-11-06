@@ -25,4 +25,4 @@ polybar -c ~/.config/polybar/config.ini systray -r &
 echo "system tray launched successfully"
 
 echo "Bars Launched Successfully"
-notify-send -u NORMAL -t 900 "Bars Launched Successfully"
+notify-send -u NORMAL -t 1500 "Bars Launched Successfully"

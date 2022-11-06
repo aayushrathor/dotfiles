@@ -24,7 +24,8 @@ ignore_windows="polybar:yad" # :-separated list of windows we want to ignore (ba
 case "$1" in
 raise_or_minimize)
 	if [ "$3" = "$2" ]; then
-		wmctrl -ir "$2" -b toggle,hidden
+		wmctrl -ir "$2" -b hidden
+		#wmctrl -ir "$2" -b toggle,hidden # toggle to show and hide window
 	else
 		wmctrl -ia "$2"
 	fi
