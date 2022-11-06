@@ -7,7 +7,7 @@ configuration {
 @import "colors.rasi"
 
 * {
-    font:                     "JetBrains Mono Nerd Font 10";
+    font:                     "JetBrains Mono Nerd Font 11";
     background-color:         @background;
 }
 
@@ -16,7 +16,7 @@ window {
     border-color:             @brdr;
     border-radius:            12px;
     width:                    450px;
-    height:                   268px;
+    height:                   272px;
     location:                 north east;
     anchor:                   north east;
     x-offset:                 -8px;
@@ -30,7 +30,7 @@ prompt {
     background-color:         @foreground;
     text-color:               @background-alt;
     padding:                  6px 14px 6px 14px;
-    font:                     "Iosevka Nerd Font 10";
+    font:                     "Iosevka Nerd Font 11";
 }
 
 dummy {

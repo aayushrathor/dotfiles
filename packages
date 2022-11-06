@@ -18,11 +18,12 @@ aom
 arandr
 archlinux-keyring
 argon2
-asciidoc
 at
 at-spi2-core
 atkmm
+atool
 attr
+audiofile
 audit
 auto-cpufreq
 autoconf
@@ -35,7 +36,6 @@ bat
 betterdiscord-installer-bin
 binutils
 bison
-blas
 blueberry
 bluez
 bluez-libs
@@ -43,6 +43,7 @@ bluez-tools
 bluez-utils
 boost-libs
 bridge-utils
+brightnessctl
 brotli
 bspwm
 btop
@@ -61,10 +62,11 @@ cantarell-fonts
 capstone
 catatonit
 cava
-cblas
 cdparanoia
-cmake
+chromaprint
+cifs-utils
 cmatrix
+conky-lua-nv
 conmon
 containerd
 containers-common
@@ -95,8 +97,6 @@ dmidecode
 dmraid
 dnsmasq
 dnssec-anchors
-docbook-xml
-docbook-xsl
 docker
 docker-compose
 dosfstools
@@ -143,6 +143,7 @@ gc
 gcc
 gcc-libs
 gcr
+gcr-4
 gdbm
 gdk-pixbuf2
 gettext
@@ -159,12 +160,12 @@ glslang
 glu
 gmp
 gnome-bluetooth
+gnome-calculator
 gnome-keyring
 gnome-themes-extra
 gnu-free-fonts
 gnupg
 gnutls
-go
 gobject-introspection-runtime
 goffice
 google-chrome
@@ -173,9 +174,7 @@ gpm
 gptfdisk
 granite
 graphene
-graphicsmagick
 graphite
-graphite-gtk-theme
 grep
 groff
 grub
@@ -191,6 +190,8 @@ gst-plugins-base-libs
 gst-plugins-good
 gstreamer
 gstreamer-vaapi
+gtk-engine-murrine
+gtk-engines
 gtk-update-icon-cache
 gtk-vnc
 gtk2
@@ -199,6 +200,7 @@ gtk4
 gtkmm3
 gtksourceview3
 gtksourceview4
+gtksourceview5
 guile
 gumbo-parser
 gvfs
@@ -210,6 +212,7 @@ hdparm
 helm
 hicolor-icon-theme
 hidapi
+htop
 http-parser
 httpie
 hwdata
@@ -221,7 +224,6 @@ icu
 ijs
 imlib2
 iniparser
-inkscape
 intel-ucode
 inxi
 iproute2
@@ -246,17 +248,18 @@ kitty-shell-integration
 kitty-terminfo
 kmod
 krb5
+kubecolor
 kubectl
 l-smash
 lame
-lapack
 lasem
 lcms2
+ldb
 ldns
 less
-lib2geom
 libadwaita
 libaio
+libao
 libappindicator-gtk3
 libarchive
 libass
@@ -273,13 +276,13 @@ libburn
 libbytesize
 libcaca
 libcacard
+libcamera
 libcanberra
 libcap
 libcap-ng
 libcddb
 libcdio
 libcdio-paranoia
-libcdr
 libcloudproviders
 libcolord
 libconfig
@@ -311,6 +314,7 @@ libgcrypt
 libgee
 libgit2
 libglvnd
+libgme
 libgnomekbd
 libgpg-error
 libgsf
@@ -318,6 +322,7 @@ libgtop
 libgudev
 libical
 libice
+libid3tag
 libidn
 libidn2
 libiec61883
@@ -340,7 +345,9 @@ libmanette
 libmatroska
 libmd
 libmfx
+libmikmod
 libmm-glib
+libmms
 libmnl
 libmodplug
 libmpc
@@ -364,6 +371,7 @@ libnotify
 libnsl
 libogg
 libomxil-bellagio
+libopenmpt
 libosinfo
 libp11-kit
 libpaper
@@ -379,15 +387,14 @@ libpsl
 libpulse
 libraqm
 libraw1394
-librevenge
 librsvg
 librsync
 libsamplerate
 libsasl
-libsass
 libseccomp
 libsecret
 libshout
+libsidplayfp
 libsigc++
 libsigc++-3.0
 libslirp
@@ -422,12 +429,12 @@ libusbmuxd
 libutempter
 libuv
 libva
+libva-intel-driver
 libvdpau
 libverto
 libvirt
 libvirt-glib
 libvirt-python
-libvisio
 libvisual
 libvorbis
 libvpx
@@ -435,9 +442,7 @@ libvterm
 libvterm01
 libwacom
 libwebp
-libwpd
 libwpe
-libwpg
 libx11
 libxau
 libxaw
@@ -463,6 +468,7 @@ libxkbfile
 libxklavier
 libxml2
 libxmu
+libxnvctrl
 libxpm
 libxrandr
 libxrender
@@ -488,6 +494,7 @@ linux-zen
 linux-zen-headers
 llvm-libs
 lm_sensors
+lmdb
 lolcat
 lsof
 lsp-plugins
@@ -505,13 +512,14 @@ man-db
 md4c
 mdadm
 mesa
-meson
 minikube
 minizip
 mkinitcpio
 mkinitcpio-busybox
 mlocate
 mobile-broadband-provider-info
+mpc
+mpd
 mpfr
 mpg123
 mpv
@@ -532,7 +540,6 @@ nettle
 network-manager-applet
 networkmanager
 nftables
-ninja
 nm-connection-editor
 node-gyp
 nodejs-lts-gallium
@@ -546,6 +553,7 @@ ntfs-3g
 numactl
 ocl-icd
 oniguruma
+openal
 openbsd-netcat
 opencore-amr
 openjpeg2
@@ -585,6 +593,7 @@ picom-jonaburg-fix
 pinentry
 pipewire
 pipewire-alsa
+pipewire-audio
 pipewire-docs
 pipewire-jack
 pipewire-pulse
@@ -597,11 +606,10 @@ polkit
 polkit-gnome
 polybar
 poppler
-poppler-glib
+poppler-data
 popt
 portaudio
 postman-bin
-potrace
 powertop
 powertop-auto-tune
 procps-ng
@@ -624,7 +632,6 @@ python-colorama
 python-commonmark
 python-configargparse
 python-cryptography
-python-cssselect
 python-dateutil
 python-defusedxml
 python-distlib
@@ -643,7 +650,6 @@ python-more-itertools
 python-msgpack
 python-multidict
 python-nspektr
-python-numpy
 python-ordered-set
 python-packaging
 python-pep517
@@ -674,7 +680,9 @@ python-typing_extensions
 python-urllib3
 python-validate-pyproject
 python-webencodings
+python-wheel
 python-xlib
+qogir-gtk-theme
 qpdf
 qt5-base
 qt5-declarative
@@ -687,7 +695,6 @@ qt5-wayland
 qt5-webchannel
 qt5-webengine
 qt5-x11extras
-ragel
 rancher-k3d-bin
 ranger
 rav1e
@@ -695,7 +702,6 @@ re2
 readline
 reflector
 rest
-rhash
 rnnoise
 rofi
 rofi-greenclip
@@ -765,9 +771,8 @@ ruby-uri
 rubygems
 run-parts
 runc
-rust
-sassc
 sbc
+scrcpy
 sdl2
 seabios
 sed
@@ -780,6 +785,7 @@ skopeo
 slang
 slirp4netns
 slop
+smbclient
 snappy
 sndio
 socat
@@ -808,11 +814,13 @@ systemd-libs
 systemd-sysvcompat
 tabbed-git
 taglib
+talloc
 tar
 tbb
 tcl
 tdb
 tdrop
+tevent
 texinfo
 thin-provisioning-tools
 thunar
@@ -824,7 +832,6 @@ tracker3
 tree
 tree-sitter
 tslib
-ttf-font-awesome
 ttf-iosevka-nerd
 ttf-liberation
 tty-clock-git
@@ -842,7 +849,6 @@ upower
 usbmuxd
 usbredir
 usbutils
-uthash
 util-linux
 util-linux-libs
 v4l-utils
@@ -861,11 +867,13 @@ vulkan-icd-loader
 wavpack
 wayland
 wayland-protocols
+webkit2gtk
 webkit2gtk-4.1
 webrtc-audio-processing
 wget
 when
 which
+wildmidi
 wireless_tools
 wireplumber
 wmctrl
@@ -891,7 +899,6 @@ xdg-utils
 xdotool
 xf86-input-libinput
 xf86-video-fbdev
-xf86-video-intel
 xf86-video-vesa
 xfce4-notifyd
 xfce4-power-manager
@@ -952,6 +959,7 @@ xorg-xwud
 xorgproto
 xvidcore
 xz
+yad
 yajl
 yarn
 yay
@@ -961,7 +969,6 @@ z
 zathura
 zathura-pdf-mupdf
 zathura-ps
-zenity
 zeromq
 zimg
 zip
@@ -975,3 +982,4 @@ zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
 zstd
+zziplib

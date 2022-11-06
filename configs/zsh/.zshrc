@@ -19,6 +19,7 @@ export LC_MESSAGES=en_US.UTF-8
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
 export EDITOR=nvim
+export TERM=xterm-256color
 # Set $PATH if ~/.local/bin exist
 #if [ -d "$HOME/.local/bin" ]; then
 #    export PATH=$HOME/.local/bin:$PATH
@@ -65,8 +66,9 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
+# preview directory's content with exa when completing cd or zoxide
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 # Arch Linux command-not-found support, you must have package pkgfile installed
@@ -193,7 +195,7 @@ bindkey "^[[1;5D" backward-word
 ### Useful aliases ###
 
 #find packages installed
-alias packages="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle --color=dark" 
+alias packs="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle --color=dark" 
 
 # Replace ls with exa
 export LS_COLORS="di=0;36"
@@ -226,9 +228,27 @@ alias grb='git rebase'
 alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
 
+# interactive git difference by https://github.com/rothgar/mastering-zsh
+function gd() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" \
+  | fzf --ansi --preview "echo {} \
+    | grep -o '[a-f0-9]\{7\}' \
+    | head -1 \
+    | xargs -I % sh -c 'git show --color=always %'" \
+        --bind "enter:execute:
+            (grep -o '[a-f0-9]\{7\}' \
+                | head -1 \
+                | xargs -I % sh -c 'git show --color=always % \
+                | less -R') << 'FZF-EOF'
+            {}
+FZF-EOF"
+}
+
 # Common use aliases
 alias cd='z'
 alias dc='z'
+alias pdf='zathura'
 alias dot='cd ~/.config && nvim'
 alias minecraft='java -jar ~/Documents/TLauncher-2.841.jar'
 alias mpv="devour mpv"
@@ -296,7 +316,7 @@ ushort(){
 }
 
 ufile(){
-  curl -F 'file='$1'' https://0x0.st
+  curl -F 'file=@'$1'' https://0x0.st
 }
 
 ushareg(){
@@ -343,6 +363,8 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+alias exc='atool --explain --extract'
 
 # Get fastest mirrors 
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose" 
@@ -410,4 +432,44 @@ man() {
     command man "$@"
 }
 
+# interactive man search by https://github.com/rothgar/mastering-zsh
+function  mans(){
+    man -k . \
+    | fzf -n1,2 --preview "echo {} \
+    | cut -d' ' -f1 \
+    | sed 's# (#.#' \
+    | sed 's#)##' \
+    | xargs -I% man %" --bind "enter:execute: \
+      (echo {} \
+      | cut -d' ' -f1 \
+      | sed 's# (#.#' \
+      | sed 's#)##' \
+      | xargs -I% man % \
+      | less -R)"
+}
 
+# Search and install packages with yay and fzf
+yi() {
+  SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -S $(echo $SELECTED_PKGS)
+  fi
+}
+
+# Search and remove packages with yay and fzf
+yr() {
+  SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -Rns $(echo $SELECTED_PKGS)
+  fi
+}
+
+feval(){
+echo | fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
+}
+
+dep() { echo -n " ಠ_ಠ \n" |tee /dev/tty| xclip -selection clipboard; }
+
+flip() { echo -n "（╯°□°）╯ ┻━┻\n" |tee /dev/tty| xclip -selection clipboard; }
+
+shrug() { echo -n "¯\_(ツ)_/¯\n" |tee /dev/tty| xclip -selection clipboard; }

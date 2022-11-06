@@ -140,9 +140,9 @@ XF86AudioMute
 
 # Brightness
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	brightnessctl -q s 5%-
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	brightnessctl -q s +5%
 
 #screenshot
 super + shift + S
@@ -214,5 +214,5 @@ super + e
 	thunar
 
 #LockScreen
-alt + l
+ctrl + shift + l
 	lockscreen

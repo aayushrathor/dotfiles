@@ -14,7 +14,7 @@ configuration {
 @import "colors.rasi"
 
 * {
-    font:                     "JetBrains Mono Nerd Font 10";
+    font:                     "JetBrains Mono Nerd Font 11";
     background-color:         @background;
 }
 
@@ -31,7 +31,7 @@ textbox-prompt-colon {
     str:                      "   ";
     padding:                  6px 4px 6px 4px;
     text-color:               @background;
-    font:                     "Iosevka Nerd Font 10";
+    font:                     "Iosevka Nerd Font 11";
     background-color:         @foreground;
     border-radius:            8px;
 }

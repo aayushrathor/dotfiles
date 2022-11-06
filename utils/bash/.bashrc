@@ -11,4 +11,4 @@ PS1='[\u@\h \W]\$ '
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #auto startx
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
