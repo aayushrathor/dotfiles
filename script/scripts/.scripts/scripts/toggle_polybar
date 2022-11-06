@@ -1,0 +1,12 @@
+#!/bin/sh
+
+padding=$( bspc config window_gap )
+
+# Show/hide polybar
+if pgrep "polybar"; then
+	polybar-msg cmd toggle
+else
+~/.config/polybar/launch.sh &
+fi
+
+bspc config window_gap $padding
