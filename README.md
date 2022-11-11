@@ -91,20 +91,22 @@ stow <package_name> -t ~
 all keybinds are available in <kbd>sxhdrc</kbd> config file
 
 <details>
- <summary>&nbsp <kbd>:ghost: <samp>Appearance</samp></kbd></summary>
+ <summary><kbd>:ghost: <samp>Appearance</samp></kbd></summary>
  <div>
+ 
 Install the following <kbd>theme</kbd>, <kbd>icon pack</kbd>, <kbd>cursor</kbd> and <kbd>fonts</kbd> for overall appearance.
 
 - GTK Theme : [Qogir theme](https://github.com/vinceliuice/Qogir-theme)
 - Icon Theme : [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Cursor Theme : [Oreo cursor theme](https://github.com/varlesh/oreo-cursors)
 - Fonts : JetBrains Nerd Fonts, Fira Code, and CaskaydiaCove Nerd Fonts
+
  </div>
 </details>
 
 
 <details>
- <summary>&nbsp <kbd>:computer: <samp>Program list</samp></kbd></summary>
+ <summary><kbd>:computer: <samp>Program list</samp></kbd></summary>
  <div>
  
 | Program | Name |
@@ -122,6 +124,7 @@ Install the following <kbd>theme</kbd>, <kbd>icon pack</kbd>, <kbd>cursor</kbd> 
 | Scratch pad | [tdrop](https://github.com/noctuid/tdrop) |
 
 list of all programs I use can be found here [program-list](https://github.com/aayushrathor/dotfiles/blob/main/packages)<br>
+
  </div>
 </details>
 
