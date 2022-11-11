@@ -1,3 +1,0 @@
-#!/bin/sh
-
-yt-dlp -P $HOME/Music --extract-audio --audio-format mp3 "$@"

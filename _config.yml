@@ -1,0 +1,5 @@
+title: Dotstow
+description: A curated collection of bspwm config files and bash scripts managed with GNU stow. 
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-cayman
