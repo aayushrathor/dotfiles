@@ -1,0 +1,27 @@
+# install and setup mysql locally 
+
+#!/usr/bin/env bash
+
+# install mysql using pacman
+sudo pacman -Syy
+sudo pacman -S mysql
+
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+# enable and start mariadb service
+systemctl enable mariadb.service
+systemctl start mariadb.service
+
+sudo mysql_secure_installation
+
+sudo mysql -u root -p
+
+## create user and set password
+## CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
+
+## grant permission to user
+## GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'localhost';
+
+## flush privileges;
+
+## quit
