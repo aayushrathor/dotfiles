@@ -422,15 +422,14 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-v:execute(code {+})'
 "
 ### colored man page ###
-man() {
-    LESS_TERMCAP_md=$'\e[03;36m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[0;100m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[04;31m' \
-    command man "$@"
-}
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-r
 
 # interactive man search by https://github.com/rothgar/mastering-zsh
 function  mans(){
@@ -462,6 +461,10 @@ yr() {
   if [ -n "$SELECTED_PKGS" ]; then
     yay -Rns $(echo $SELECTED_PKGS)
   fi
+}
+
+md () {
+      command mkdir -p "$1" && cd "$1"
 }
 
 feval(){

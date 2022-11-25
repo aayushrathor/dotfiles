@@ -214,5 +214,5 @@ super + e
 	thunar
 
 #LockScreen
-ctrl + shift + l
+ctrl + alt + space
 	lockscreen
