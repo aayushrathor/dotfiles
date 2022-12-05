@@ -22,11 +22,17 @@ super + period
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# url shortner
+alt + s
+    i
+
+# clipboard 
+alt + c
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 #
 # bspwm hotkeys
 #
-alt + c
-	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -204,10 +210,6 @@ super + semicolon
 #screenRecord
 super + r
 	screenRecord
-
-#powermenu
-super + x
-	~/./.config/rofi/bin/powermenu.sh
 
 #FileManager
 super + e

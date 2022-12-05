@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support"
-    "Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
     " File Explorer"
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
@@ -43,6 +43,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     "HTML"
     Plug 'mattn/emmet-vim'
+    " startup screen
+    Plug 'mhinz/vim-startify'
 call plug#end()
 
 "Config Section

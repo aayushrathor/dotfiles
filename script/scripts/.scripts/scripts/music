@@ -4,7 +4,7 @@ PLST=$(playerctl status)    # get current status of media(paused|playing|etc||)
 MPC=$(mpc current)
 
 if [[ -z "$PL" && -z "$MPC" ]]; then    # checking if there's NO players active
-	echo "%{F#ABC9FF} No music!?"    # no media OUTPUT
+	echo "No music ¯\_(ツ)_/¯"    # no media OUTPUT
 else
         if [[ "$PLST" == "Playing" && "$PL" != "mpv" && -z "$MPC" ]]; then # if_block in if_block :|
 		echo $(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."

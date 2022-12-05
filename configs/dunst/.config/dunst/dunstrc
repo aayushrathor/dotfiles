@@ -22,16 +22,16 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 10
+    transparency = 0
     separator_height = 1
-    padding = 4
+    padding = 12
     horizontal_padding = 12
     text_icon_padding = 0
-    frame_width = 2
+    frame_width = 0
     frame_color = "#90FFFF"
     separator_color = "#121212"
     sort = yes
-    font = "Fira Code Nerd Font 11"
+    font = "Operator Mono Bold 12"
     line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
@@ -58,7 +58,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 12
+    corner_radius = 0
     ignore_dbusclose = false
     force_xinerama = false
 
@@ -96,7 +96,7 @@
 
 [play_sound]
     summary = "*"
-    script = ~/scripts/dunst-notif.sh
+    script = ~/.scripts/scripts/dunst-notif.sh
 
 #: Dunstrc {{{
 # See dunst(5) for all configuration options

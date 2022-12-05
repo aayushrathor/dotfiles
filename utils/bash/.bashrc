@@ -19,8 +19,11 @@ PS1="[\[\033[32m\]\w]\[\033[0m\]<arch>\n</arch>\[\033[1;36m\]\u\[\033[1;33m\]-> 
 # set vim mode in cli
 set -o vi
 
-### Useful aliases ###
+eval "$(zoxide init bash)"
 
+source ~/.scripts/scripts/pacman.sh 
+
+### Useful aliases ###
 #find packages installed
 alias packs="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle --color=dark" 
 

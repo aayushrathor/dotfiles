@@ -1,3 +1,3 @@
 #!/bin/sh
 #dunst-sound
-paplay ~/scripts/dunst-notif.ogg
+paplay ~/Desktop/notif.ogg

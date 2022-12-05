@@ -31,6 +31,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ### zoxide ###
 eval "$(zoxide init zsh)"
 
+## set vim mode ##
+set -o vi
+
 if [ -d "$HOME/.local/lib" ]; then
     export PATH=$HOME/.local/lib:$PATH
 fi
@@ -246,6 +249,7 @@ FZF-EOF"
 }
 
 # Common use aliases
+alias cat='bat'
 alias cd='z'
 alias dc='z'
 alias pdf='zathura'

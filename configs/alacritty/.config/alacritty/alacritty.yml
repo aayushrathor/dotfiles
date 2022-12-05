@@ -153,13 +153,13 @@ window:
 # Font configuration
 font:
   normal: 
-    family: mononoki nerd font 
+    family: "Hack Nerd Font" 
     style: Bold
   bold:
-    family: mononoki nerd font
+    family: "Hack Nerd Font"
     style: Bold
   italic:
-    family: mononoki nerd font
+    family: "Hack Nerd Font"
     style: Italic
 # Bold italic font face
 #bolditalic:
