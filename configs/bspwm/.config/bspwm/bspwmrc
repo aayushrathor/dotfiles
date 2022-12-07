@@ -67,5 +67,8 @@ nm-applet --indicator &
 pkill -9 conky
 conky -c $HOME/.config/conky/Lesath/Lesath.conf &> /dev/null &
 
+# xfce4-power-manager
+xfce4-power-manager --daemon
+
 #notify
 notify-send -u NORMAL -t 3000 "bspwm go brrrrr......"

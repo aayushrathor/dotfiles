@@ -1,0 +1,11 @@
+# notify if battery is less than 15%
+*/1 * * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 batteryWarning
+
+# pacman updates
+0 */3 * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 update_pacman
+
+# aur updates
+0 */3 * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 aur_update
+
+# xfce4 power manager
+@reboot xfce4-power-manager --daemon

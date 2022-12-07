@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xclip -in -sel clip
