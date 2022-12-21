@@ -17,7 +17,7 @@ char_case="normal" # options: normal, upper, lower
 add_spaces="true"
 resize_increment=30
 wm_border_width=0 # setting this might be required for accurate resize position
-ignore_windows="polybar:yad" # :-separated list of windows we want to ignore (bars, desktop managers, etc.)
+ignore_windows="polybar:yad:N/A" # :-separated list of windows we want to ignore (bars, desktop managers, etc.)
 
 # --- }}}
 

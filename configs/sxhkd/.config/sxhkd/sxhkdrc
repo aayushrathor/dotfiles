@@ -30,6 +30,14 @@ alt + s
 alt + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
+# ocr
+alt + shift + t
+	ocr
+
+# toggle polybar
+alt + p
+    toggle_polybar
+
 #
 # bspwm hotkeys
 #
@@ -187,25 +195,31 @@ super + shift + r
 
 #bottom middle
 super + shift + D
-	tdrop -ma -w 60% -h 45% -x 380 -y 560 -n 2 kitty
+	tdrop -ma -w 60% -h 45% -x 380 -y 556 -n 2 kitty
 #top left
 alt + shift + h
-	tdrop -ma -w 50% -h 50% -x 0 -y 34 -n 1 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 0 -y 38 -n 3 kitty 
 #top right
 alt + shift + l
-	tdrop -ma -w 50% -h 50% -x 956 -y 34 -n 1 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 952 -y 38 -n 3 kitty 
 #bottom left
 alt + shift + j
-	tdrop -ma -w 50% -h 50% -x 0 -y 500 -n 1 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 4 -y 502 -n 3 kitty 
 #bottom right
 alt + shift + k
-	tdrop -ma -w 50% -h 50% -x 956 -y 500 -n 1 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 50% -x 952 -y 502 -n 3 kitty 
 #tdropRight
 super + apostrophe
-	tdrop -ma -w 50% -h 1008 -x 956 -y 34 -n 2 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 1004 -x 952 -y 38 -n 4 kitty 
 #tdropLeft
 super + semicolon
-	tdrop -ma -w 50% -h 1008 -x 0 -y 34 -n 2 alacritty -o window.opacity=1.0
+	tdrop -ma -w 50% -h 1004 -x 4 -y 38 -n 4 kitty 
+#tdropup
+super + u
+    tdrop -ma -w 1912 -h 50% -x 4 -y 38 -n 5 kitty
+#tdropdown
+super + d
+    tdrop -ma -w 1912 -h 50% -x 4 -y 502 -n 5 kitty
 
 #screenRecord
 super + r
