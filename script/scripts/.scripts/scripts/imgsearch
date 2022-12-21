@@ -1,0 +1,13 @@
+#!/bin/bash
+
+maim -u -o -s > /tmp/imgsearch.png
+input_file=/tmp/imgsearch.png
+
+if [ $? -eq 0 ]; then
+  sleep 2
+  xdg-open "https://www.google.com/searchbyimage?&image_url=file://$input_file"
+  notify-send -t 2000 -u NORMAL "Image Search" "Done, Check new google search"
+else
+  notify-send -t 2000 "Maim" "Error taking screenshot"
+  exit 1
+fi

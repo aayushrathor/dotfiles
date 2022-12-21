@@ -1,4 +1,5 @@
 #!/bin/bash
+
 PL=$(playerctl -l | tail -n 1)    # lists all working media players
 PLST=$(playerctl status)    # get current status of media(paused|playing|etc||)
 MPC=$(mpc current)

@@ -1,3 +1,3 @@
 #!/bin/sh
 #dunst-sound
-paplay ~/Desktop/notif.ogg
+paplay --volume=250 ~/Desktop/notif.ogg

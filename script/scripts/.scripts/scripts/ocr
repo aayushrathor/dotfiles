@@ -1,0 +1,14 @@
+#!/bin/bash
+
+maim -u -o -s > /tmp/ss.png
+if ! test -f /tmp/ss.png; then
+   notify-send -t 2000 "Maim" "Error taking screenshot !?"
+   exit 1
+fi
+tesseract /tmp/ss.png /tmp/outputess
+if [ $0 -ne 0 ]; then
+   notify-send -t 3000 "Screenshot OCR" "Scan Again"
+   exit 1
+fi
+xclip -in -selection clipboard /tmp/outputess.txt > /dev/null 2>&1
+notify-send -t 2000 "Screenshot OCR" "Text copied from screenshot"

@@ -1,0 +1,38 @@
+#!/bin/env bash
+
+# Options for powermenu
+lock="   Lock"
+logout="   Logout"
+shutdown="   Shutdown"
+reboot="   Reboot"
+sleep="   hibernate"
+
+# Get answer from user via rofi
+selected_option=$(echo "$lock
+$logout
+$sleep
+$reboot
+$shutdown" | fzf )
+
+# Do something based on selected option
+if [ "$selected_option" == "$lock" ]
+then
+ lockscreen
+elif [ "$selected_option" == "$logout" ]
+then
+  ps -ef | grep hideIt | grep -v grep | awk '{print $2}' | xargs killall
+  pkill touchegg
+  pkill xsel
+  bspc quit
+elif [ "$selected_option" == "$shutdown" ]
+then
+  sudo systemctl poweroff
+elif [ "$selected_option" == "$reboot" ]
+then
+  sudo systemctl reboot
+elif [ "$selected_option" == "$sleep" ]
+then
+  sudo systemctl hybrid-sleep
+else
+  echo "No match"
+fi
