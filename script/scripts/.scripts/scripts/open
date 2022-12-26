@@ -30,7 +30,7 @@ case "$file_ext" in
             launch mpv "$file_path" ;;
 
         jpg|jpeg|png)
-            launch sxiv -a -b -N sxiv -p -r "$file_path" ;;
+            launch feh "$file_path" ;;
 
         otf|ttf|woff)
             launch fontpreview "$file_path" ;;
@@ -39,7 +39,7 @@ case "$file_ext" in
             launch mpv "$file_path" ;;
 
         pdf|epub)
-            launch evince "$file_path" ;;
+            launch zathura "$file_path" ;;
 
         docx|rtf|odt|ods|pptx|xlsx|csv)
             launch libreoffice "$file_path" ;;
@@ -51,10 +51,10 @@ case "$file_ext" in
             launch wireshark "$file_path" ;;
 
         svg)
-            launch firefox "$file_path" ;;
+            launch google-chrome-stable "$file_path" ;;
 
         html|htm|xhtml)
-            launch firefox "$file_path" ;;
+            launch google-chrome-stable "$file_path" ;;
 
         openshot|osp)
             launch openshot-qt "$file_path" ;;

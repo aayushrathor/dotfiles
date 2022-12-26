@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# You can call this script like this:
+# $./volume.sh up
+# $./volume.sh down
+# $./volume.sh mute
+
+down() {
+pamixer -d 5
+volume=$(pamixer --get-volume)
+[ $volume -gt 0 ] && volume=`expr $volume`
+icon_name=/usr/share/icons/Papirus-Light/24x24/panel/xfce4-mixer-volume-high.svg
+dunstify -a "VOLUME" "Volume is at $volume%" -h int:value:"$volume" -i $icon_name -r 2593 -u normal
+}
+
+up() {
+pamixer -i 5
+volume=$(pamixer --get-volume)
+[ $volume -lt 100 ] && volume=`expr $volume`  
+icon_name=/usr/share/icons/Papirus-Light/24x24/panel/xfce4-mixer-volume-high.svg
+dunstify -a "VOLUME" "Volume is at $volume%" -h int:value:"$volume" -i $icon_name -r 2593 -u normal
+}
+
+mute() {
+muted="$(pamixer --get-mute)"
+if $muted; then
+  pamixer -u
+  icon_name=/usr/share/icons/Papirus-Light/24x24/panel/xfce4-mixer-no-muted.svg
+  dunstify -a "VOLUME" "UNMUTED" -i $icon_name -r 2593 -u normal
+else 
+  pamixer -m
+  icon_name=/usr/share/icons/Papirus-Light/24x24/panel/xfce4-mixer-muted.svg
+  dunstify -a "VOLUME" "MUTED" -i $icon_name -r 2593 -u normal
+fi
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+  mute) mute;;
+esac
