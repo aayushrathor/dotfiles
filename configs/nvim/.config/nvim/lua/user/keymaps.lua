@@ -39,6 +39,14 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-Up>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-Down>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- markdown preview
+keymap("n", "A-S-M", ":MarkdownPreview", opts)
+
+-- formatter
+keymap("n", "C-S-I", '<ESC>:Format<CR>', opts)
+keymap("i", "C-S-I", '<ESC>:Format<CR>', opts)
+keymap("v", "C-S-I", '<ESC>:Format<CR>', opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)

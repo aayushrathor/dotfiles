@@ -40,50 +40,50 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-  use("wbthomason/packer.nvim")                       -- Have packer manage itself
-  use("nvim-lua/plenary.nvim")                        -- Useful lua functions used by lots of plugins
-  use("windwp/nvim-autopairs")                        -- Autopairs, integrates with both cmp and treesitter
-  use("numToStr/Comment.nvim")
-  use("JoosepAlviste/nvim-ts-context-commentstring")
-  use("kyazdani42/nvim-web-devicons")
-  use("kyazdani42/nvim-tree.lua")
-  use("akinsho/bufferline.nvim")
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("kyazdani42/nvim-web-devicons")
+	use("kyazdani42/nvim-tree.lua")
+	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
-  use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use("akinsho/toggleterm.nvim")
-  use("ahmedkhalf/project.nvim")
-  use("lewis6991/impatient.nvim")
-  use("lukas-reineke/indent-blankline.nvim")
-  use("goolord/alpha-nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+	use("akinsho/toggleterm.nvim")
+	use("ahmedkhalf/project.nvim")
+	use("lewis6991/impatient.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("goolord/alpha-nvim")
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-  use("folke/tokyonight.nvim")
-  use("lunarvim/darkplus.nvim")
-  use("navarasu/onedark.nvim")
-  use("tiagovla/tokyodark.nvim")
+	use("folke/tokyonight.nvim")
+	-- use("lunarvim/darkplus.nvim")
+	use("navarasu/onedark.nvim")
+	use("tiagovla/tokyodark.nvim")
 
-	-- Cmp 
-  use("hrsh7th/nvim-cmp")                             -- The completion plugin
-  use("hrsh7th/cmp-buffer")                           -- buffer completions
-  use("hrsh7th/cmp-path")                             -- path completions
-	use("saadparwaiz1/cmp_luasnip")                     -- snippet completions
+	-- Cmp
+	use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- Snippets
-  use("L3MON4D3/LuaSnip")                             --snippet engine
-  use("rafamadriz/friendly-snippets")                 -- a bunch of snippets to use
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
-	use("neovim/nvim-lspconfig")                        -- enable LSP
-  use("williamboman/mason.nvim")                      -- simple to use language server installer
-  use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")              -- for formatters and linters
-  use("RRethy/vim-illuminate")
+	use("neovim/nvim-lspconfig") -- enable LSP
+	use("williamboman/mason.nvim") -- simple to use language server installer
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("RRethy/vim-illuminate")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -93,6 +93,11 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
+
+	-- other utils
+	use("mg979/vim-visual-multi") -- multi line cursor
+	use("andweeb/presence.nvim") -- discord plugin
+	use("davidgranstrom/nvim-markdown-preview") -- preview markdown files
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

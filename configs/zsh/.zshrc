@@ -3,29 +3,14 @@
 #  / /\___ \| |_| |
 # / /_ ___) |  _  |
 #/____|____/|_| |_|
-#export JAVA_HOME="$HOME/Desktop/android-studio/jre/"
-#export PATH=$JAVA_HOME/bin:$PATH 
-#export PATH="$PATH:/home/kshgrk/Documents/flutter/bin"
-#export PATH="$PATH:/home/kshgrk/Documents/flutter/bin/cache/dart-sdk"
-#export PATH="$HOME/.emacs.d/bin:$PATH"
+#
 export PATH="$HOME/.local/bin:$PATH"
-#export CHROME_EXECUTABLE='/usr/bin/google-chrome-stable'
-#export PATH="$HOME/.emacs.d/bin:$PATH"
-# export ANDROID_SDK= '$HOME/Android/Sdk'
-# export PATH=$PATH:$ANDROID_SDK/tools/bin/
-# export PATH=$PATH:$ANDROID/emulator
-# export PATH=$PATH:$ANDROID_SDK/tools/
 export LC_MESSAGES=en_US.UTF-8
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export TERM=xterm-256color
 export TESSDATA_PREFIX="$HOME/.config/tesseract/tessdata/"
-# Set $PATH if ~/.local/bin exist
-#if [ -d "$HOME/.local/bin" ]; then
-#    export PATH=$HOME/.local/bin:$PATH
-#fi
-### nvm - node version manager ###
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -36,13 +21,13 @@ eval "$(zoxide init zsh)"
 set -o vi
 
 if [ -d "$HOME/.local/lib" ]; then
-    export PATH=$HOME/.local/lib:$PATH
+  export PATH=$HOME/.local/lib:$PATH
 fi
 
-# PS1='%F{green}%f%F{blue}%1~%f%F{green}%f$vcs_info_msg_0_ %F{magenta} %f '
+# starship
 eval "$(starship init zsh)"
 function set_win_title(){
-    echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
+  echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
 }
 precmd_functions+=(set_win_title)
 
@@ -85,7 +70,7 @@ zstyle ':completion:*' cache-path ~/.cache/zcache
 autoload -U +X bashcompinit && bashcompinit
 
 #fzf-tab
-source ~/zsh/fzf-tab.zsh
+source $HOME/zsh/fzf-tab.plugin.zsh
 
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
@@ -106,89 +91,10 @@ HISTFILE=~/.zhistory
 HISTSIZE=50000
 SAVEHIST=10000
 
-
-## Keys
-# Use emacs key bindings
-bindkey -e
-
-# [PageUp] - Up a line of history
-if [[ -n "${terminfo[kpp]}" ]]; then
-  bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
-  bindkey -M viins "${terminfo[kpp]}" up-line-or-history
-  bindkey -M vicmd "${terminfo[kpp]}" up-line-or-history
-fi
-# [PageDown] - Down a line of history
-if [[ -n "${terminfo[knp]}" ]]; then
-  bindkey -M emacs "${terminfo[knp]}" down-line-or-history
-  bindkey -M viins "${terminfo[knp]}" down-line-or-history
-  bindkey -M vicmd "${terminfo[knp]}" down-line-or-history
-fi
-
-# Start typing + [Up-Arrow] - fuzzy find history forward
-if [[ -n "${terminfo[kcuu1]}" ]]; then
-  autoload -U up-line-or-beginning-search
-  zle -N up-line-or-beginning-search
-
-  bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
-  bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
-  bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-beginning-search
-fi
-# Start typing + [Down-Arrow] - fuzzy find history backward
-if [[ -n "${terminfo[kcud1]}" ]]; then
-  autoload -U down-line-or-beginning-search
-  zle -N down-line-or-beginning-search
-
-  bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
-  bindkey -M viins "${terminfo[kcud1]}" down-line-or-beginning-search
-  bindkey -M vicmd "${terminfo[kcud1]}" down-line-or-beginning-search
-fi
-
-# [Home] - Go to beginning of line
-if [[ -n "${terminfo[khome]}" ]]; then
-  bindkey -M emacs "${terminfo[khome]}" beginning-of-line
-  bindkey -M viins "${terminfo[khome]}" beginning-of-line
-  bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
-fi
-# [End] - Go to end of line
-if [[ -n "${terminfo[kend]}" ]]; then
-  bindkey -M emacs "${terminfo[kend]}"  end-of-line
-  bindkey -M viins "${terminfo[kend]}"  end-of-line
-  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
-fi
-
-# [Shift-Tab] - move through the completion menu backwards
-if [[ -n "${terminfo[kcbt]}" ]]; then
-  bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
-fi
-
-# [Backspace] - delete backward
-bindkey -M emacs '^?' backward-delete-char
-bindkey -M viins '^?' backward-delete-char
-bindkey -M vicmd '^?' backward-delete-char
-# [Delete] - delete forward
-if [[ -n "${terminfo[kdch1]}" ]]; then
-  bindkey -M emacs "${terminfo[kdch1]}" delete-char
-  bindkey -M viins "${terminfo[kdch1]}" delete-char
-  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
-else
-  bindkey -M emacs "^[[3~" delete-char
-  bindkey -M viins "^[[3~" delete-char
-  bindkey -M vicmd "^[[3~" delete-char
-
-  bindkey -M emacs "^[3;5~" delete-char
-  bindkey -M viins "^[3;5~" delete-char
-  bindkey -M vicmd "^[3;5~" delete-char
-fi
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+#find packages installed
+alias packs="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle" 
 
 ### Useful aliases ###
-
-#find packages installed
-alias packs="pacman -Qq | fzf --preview 'pacman -Qi {}' --cycle --color=dark" 
-
 # Replace ls with exa
 export LS_COLORS="di=0;36"
 alias ls='exa -a --icons --color=always --group-directories-first' # preferred listing
@@ -205,7 +111,7 @@ alias ld='(exa -l --color=always --group-directories-first) | bat'  # long forma
 # Docker & Kube
 #alias docker='podman'
 alias docker-compose='docker compose'
-alias kube='kubectl'
+alias k='kubectl'
 alias dip='docker image prune'
 alias mstart='minikube start'
 alias mstat='minikube status'
@@ -223,19 +129,19 @@ alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
 # interactive git difference by https://github.com/rothgar/mastering-zsh
 function gd() {
   git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" \
-  | fzf --ansi --preview "echo {} \
+    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" \
+    | fzf --ansi --preview "echo {} \
     | grep -o '[a-f0-9]\{7\}' \
     | head -1 \
     | xargs -I % sh -c 'git show --color=always %'" \
-        --bind "enter:execute:
-            (grep -o '[a-f0-9]\{7\}' \
-                | head -1 \
-                | xargs -I % sh -c 'git show --color=always % \
-                | less -R') << 'FZF-EOF'
-            {}
-FZF-EOF"
-}
+    --bind "enter:execute:
+      (grep -o '[a-f0-9]\{7\}' \
+        | head -1 \
+        | xargs -I % sh -c 'git show --color=always % \
+        | less -R') << 'FZF-EOF'
+              {}
+              FZF-EOF"
+            }
 
 # Common use aliases
 alias cat='bat -Pp'
@@ -317,47 +223,47 @@ ushareg(){
 }
 
 spr (){
-    cat "$@" \
+  cat "$@" \
     | command curl -fsLF 'sprunge=<-' http://sprunge.us/ \
     | tr -d "\n" \
     | xclip -in -sel clip && \
     notify-send -t 900 -u low "Sprunge copied to clipboard!"
-}
+  }
 
-em (){
-  devour emacsclient -cq $1
-}
+  em (){
+    devour emacsclient -cq $1
+  }
 
-iso (){
-  sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
-}
+  iso (){
+    sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
+  }
 
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+# ex ()
+# {
+#   if [ -f $1 ] ; then
+#     case $1 in
+#       *.tar.bz2)   tar xjf $1   ;;
+#       *.tar.gz)    tar xzf $1   ;;
+#       *.bz2)       bunzip2 $1   ;;
+#       *.rar)       unrar x $1   ;;
+#       *.gz)        gunzip $1    ;;
+#       *.tar)       tar xf $1    ;;
+#       *.tbz2)      tar xjf $1   ;;
+#       *.tgz)       tar xzf $1   ;;
+#       *.zip)       unzip $1     ;;
+#       *.Z)         uncompress $1;;
+#       *.7z)        7z x $1      ;;
+#       *.deb)       ar x $1      ;;
+#       *.tar.xz)    tar xf $1    ;;
+#       *.tar.zst)   unzstd $1    ;;
+#       *)           echo "'$1' cannot be extracted via ex()" ;;
+#     esac
+#   else
+#     echo "'$1' is not a valid file"
+#   fi
+# }
 
-alias exc='atool --explain --extract'
+alias ex='atool --explain --extract'
 
 # Get fastest mirrors 
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose" 
@@ -368,14 +274,12 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age"
 # Replace yay with paru if installed
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
-alias yayup='sudo pacman -Sy && sudo powerpill -Su && paru -Su'
+alias yayup='sudo pacman -Sy && paru -Su'
 
 # Set your countries like --country France --country Germany -- or more.
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && sudo updatedb'
 
 alias cleanup='yay -Rns $(yay -Qtdq)'
-## Run paleofetch
-#paleofetch
 
 # Then load url-quote-magic and bracketed-paste-magic as above
 autoload -U url-quote-magic bracketed-paste-magic
@@ -410,8 +314,8 @@ export FZF_DEFAULT_OPTS="
 --prompt='∼ ' --pointer='▶' --marker='✓'
 --bind '?:toggle-preview'
 --bind 'ctrl-a:select-all'
---bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
---bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+--bind 'ctrl-y:execute-silent(echo {+} | copy)'
+--bind 'ctrl-e:execute(echo {+} | xargs -o nvim)'
 --bind 'ctrl-v:execute(code {+})'
 "
 ### colored man page ###
@@ -426,19 +330,19 @@ export LESS=-r
 
 # interactive man search by https://github.com/rothgar/mastering-zsh
 function  mans(){
-    man -k . \
+  man -k . \
     | fzf -n1,2 --preview "echo {} \
     | cut -d' ' -f1 \
     | sed 's# (#.#' \
     | sed 's#)##' \
     | xargs -I% man %" --bind "enter:execute: \
-      (echo {} \
-      | cut -d' ' -f1 \
-      | sed 's# (#.#' \
-      | sed 's#)##' \
-      | xargs -I% man % \
-      | less -R)"
-}
+    (echo {} \
+    | cut -d' ' -f1 \
+    | sed 's# (#.#' \
+    | sed 's#)##' \
+    | xargs -I% man % \
+    | less -R)"
+  }
 
 # Search and install packages with yay and fzf
 yi() {
@@ -457,15 +361,9 @@ yr() {
 }
 
 md () {
-      command mkdir -p "$1" && cd "$1"
+  command mkdir -p "$1" && cd "$1"
 }
 
 feval(){
-echo | fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
+  echo | fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
 }
-
-dep() { echo -n " ಠ_ಠ \n" |tee /dev/tty| xclip -selection clipboard; }
-
-flip() { echo -n "（╯°□°）╯ ┻━┻\n" |tee /dev/tty| xclip -selection clipboard; }
-
-shrug() { echo -n "¯\_(ツ)_/¯\n" |tee /dev/tty| xclip -selection clipboard; }

@@ -12,7 +12,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   update_focused_file = {
-
+    enable = true,
     update_cwd = true,
   },
   renderer = {
@@ -22,8 +22,8 @@ nvim_tree.setup {
         default = "",
         symlink = "",
         folder = {
-          arrow_open = "",
-          arrow_closed = "",
+          arrow_open = "",
+          arrow_closed = "",
           default = "",
           open = "",
           empty = "",

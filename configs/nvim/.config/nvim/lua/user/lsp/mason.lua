@@ -1,13 +1,13 @@
 local servers = {
 	"sumneko_lua",
-	-- "cssls",
+	"cssls",
 	"html",
 	"tsserver",
 	"pyright",
 	"bashls",
 	"jsonls",
 	"yamlls",
-  "clangd",
+	"clangd",
 }
 
 local settings = {
@@ -51,3 +51,21 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
+
+-- import mason-null-ls plugin safely
+local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ls_status then
+	return
+end
+
+mason_null_ls.setup({
+	-- list of formatters & linters for mason to install
+	ensure_installed = {
+		"prettier", -- ts/js formatter
+		"stylua", -- lua formatter
+		"eslint_d", -- ts/js linter
+		-- "rustfmt", -- Switch to rust-analyzer's formatter
+	},
+	-- auto-install configured formatters & linters (with null-ls)
+	automatic_installation = true,
+})
