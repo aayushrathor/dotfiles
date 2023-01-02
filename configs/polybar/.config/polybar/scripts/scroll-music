@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pst=$(playerctl status)
+
+if [ $pst == "Paused" ]; then
+  music
+elif [ $pst == "Playing" ]; then
+  # music | zscroll -l 60 -d 0.5
+  zscroll -l 60 -d 0.5 \
+    --match-command "playerctl status" \
+		--update-check true "music" &
+  wait
+fi

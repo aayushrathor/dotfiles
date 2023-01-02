@@ -16,6 +16,10 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d I II III IV V VI VII VIII
 
 bspc config window_gap          4
+# bspc config top_padding         32
+# bspc config bottom_padding      32
+# bspc config right_padding       4
+# bspc config left_padding        4
 
 # This prevents from loading multiple times the same options on reload
 bspc rule -r "*"
@@ -68,7 +72,7 @@ nm-applet --indicator &
 
 #conky
 pkill -9 conky
-conky -c $HOME/.config/conky/Lesath/Lesath.conf &> /dev/null &
+conky -c $HOME/.config/conky/Mimosa-Dark/Mimosa.conf &> /dev/null &
 
 # xfce4-power-manager
 xfce4-power-manager --daemon &
