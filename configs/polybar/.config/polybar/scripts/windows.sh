@@ -3,7 +3,7 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#ABC9FF"
+active_text_color="#7aacac"
 active_underline=
 active_underline_color=
 inactive_text_color="#DFDFDF"
@@ -12,7 +12,7 @@ inactive_underline_color=
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 char_limit=20 # useful with window_title
-max_windows=4 # maximum number of displayed windows
+max_windows=5 # maximum number of displayed windows
 char_case="normal" # options: normal, upper, lower
 add_spaces="true"
 resize_increment=30

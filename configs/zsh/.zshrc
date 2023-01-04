@@ -70,7 +70,7 @@ zstyle ':completion:*' cache-path ~/.cache/zcache
 autoload -U +X bashcompinit && bashcompinit
 
 #fzf-tab
-source $HOME/zsh/fzf-tab.plugin.zsh
+[ -f ~/zsh/fzf-tab.plugin.zsh ] && source $HOME/zsh/fzf-tab.plugin.zsh
 
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook

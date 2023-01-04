@@ -7,11 +7,8 @@ MPC=$(mpc current)
 if [[ -z "$PL" && -z "$MPC" ]]; then    # checking if there's NO players active
 	echo "No music ¯\_(ツ)_/¯"    # no media OUTPUT
 else
-        if [[ "$PLST" == "Playing" && "$PL" != "mpv" && -z "$MPC" ]]; then # if_block in if_block :|
+        if [[ "$PLST" == "Playing" && -z "$MPC" ]]; then # if_block in if_block :|
 		echo $(playerctl metadata artist): $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
-		#echo  $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
-	elif [[ "$PLST" == "Playing" && -z "$MPC" ]]; then
-		echo $(playerctl metadata title)    # edit this to fit yourself, default OUTPUT is: "artist: song."
 	elif [[ -z "$MPC" && "$PLST" == "Paused" ]]; then
 		echo "Paused, but ready to go :D"
 	elif [[ -n "$MPC" ]]; then
