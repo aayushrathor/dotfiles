@@ -1,0 +1,41 @@
+## cron jobs
+# # notify if battery is less than 15%
+# */1 * * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 batteryWarning
+#
+# # pacman updates
+# 0 */3 * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 update_pacman
+#
+# # aur updates
+# 0 */3 * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 aur_update
+
+## symlinks
+sudo ln -sf ~/.scripts/scripts/0x0 /usr/local/bin/0x0
+sudo ln -sf ~/.scripts/scripts/aur_update /usr/local/bin/aur_update
+sudo ln -sf ~/.scripts/scripts/batteryWarning /usr/local/bin/batteryWarning
+sudo ln -sf ~/.scripts/scripts/bt-device /usr/local/bin/bt-device
+sudo ln -sf ~/.scripts/scripts/copy /usr/local/bin/copy
+sudo ln -sf ~/.scripts/scripts/dunst-notif.sh /usr/local/bin/dunst-notif.sh
+sudo ln -sf ~/.scripts/scripts/fshare /usr/local/bin/fshare
+sudo ln -sf ~/.scripts/scripts/fzfbluetooth /usr/local/bin/fzfbluetooth
+sudo ln -sf ~/.scripts/scripts/fzfpower /usr/local/bin/fzfpower
+sudo ln -sf ~/.scripts/scripts/i /usr/local/bin/i
+sudo ln -sf ~/.scripts/scripts/imgsearch /usr/local/bin/imgsearch
+sudo ln -sf ~/.scripts/scripts/ipinfo /usr/local/bin/ipinfo
+sudo ln -sf ~/.scripts/scripts/lockscreen /usr/local/bin/lockscreen
+sudo ln -sf ~/.scripts/scripts/music /usr/local/bin/music
+sudo ln -sf ~/.scripts/scripts/mysql_setup /usr/local/bin/mysql_setup
+sudo ln -sf ~/.scripts/scripts/ocr /usr/local/bin/ocr
+sudo ln -sf ~/.scripts/scripts/open /usr/local/bin/open
+sudo ln -sf ~/.scripts/scripts/pacman.sh /usr/local/bin/pacman.sh
+sudo ln -sf ~/.scripts/scripts/pipenv /usr/local/bin/pipenv
+sudo ln -sf ~/.scripts/scripts/popup_cal /usr/local/bin/popup_cal
+sudo ln -sf ~/.scripts/scripts/rofi_keybinds.sh /usr/local/bin/rofi_keybinds.sh
+sudo ln -sf ~/.scripts/scripts/screenRecord /usr/local/bin/screenRecord
+sudo ln -sf ~/.scripts/scripts/seekBack /usr/local/bin/seekBack
+sudo ln -sf ~/.scripts/scripts/seekFor /usr/local/bin/seekFor
+sudo ln -sf ~/.scripts/scripts/sleep /usr/local/bin/sleep
+sudo ln -sf ~/.scripts/scripts/toggleBT /usr/local/bin/toggleBT
+sudo ln -sf ~/.scripts/scripts/toggle_polybar /usr/local/bin/toggle_polybar
+sudo ln -sf ~/.scripts/scripts/update_pacman /usr/local/bin/update_pacman
+sudo ln -sf ~/.scripts/scripts/volume /usr/local/bin/volume
+sudo ln -sf ~/.scripts/scripts/yt-mp3 /usr/local/bin/yt-mp3
