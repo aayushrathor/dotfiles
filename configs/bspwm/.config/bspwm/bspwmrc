@@ -16,8 +16,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d I II III IV V VI VII VIII
 
 bspc config window_gap          4
-# bspc config top_padding         32
-# bspc config bottom_padding      32
+bspc config top_padding         32
+bspc config bottom_padding      32
 # bspc config right_padding       4
 # bspc config left_padding        4
 
@@ -46,6 +46,9 @@ bspc rule -a Screenkey manage=off
 bspc rule -a "Thunar" state=floating
 bspc rule -a gnome-calculator state=floating
 bspc rule -a "discord" desktop='^8'
+bspc rula -a "YouTube Music" desktop='^6' state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Lxappearance state=floating
 
 #auto-start
 zsh ~/.fehbg

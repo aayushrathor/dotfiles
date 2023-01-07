@@ -14,6 +14,10 @@ export TESSDATA_PREFIX="$HOME/.config/tesseract/tessdata/"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# pnpm
+export PNPM_HOME="/home/aayush/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 ### zoxide ###
 eval "$(zoxide init zsh)"
 
@@ -144,6 +148,7 @@ function gd() {
             }
 
 # Common use aliases
+alias npm='pnpm'
 alias cat='bat -Pp'
 alias cd='z'
 alias dc='z'

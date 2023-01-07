@@ -150,3 +150,8 @@ spr (){
     | xclip -in -sel clip && \
     notify-send -t 900 -u low "Sprunge copied to clipboard!"
 }
+
+# pnpm
+export PNPM_HOME="/home/aayush/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
