@@ -9,14 +9,14 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+	modi:                         "drun";
     show-icons:                 true;
     display-drun:               " ";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
-	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	window-format:              "{w} · {c} · {t}";
+	  drun-display-format:        "{name}";
+    font:                       "Operator Mono Bold 12";
 }
 
 /*****----- Global Properties -----*****/
@@ -88,7 +88,6 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     0px 0px 10px 10px;
     border:                      0px;
     border-radius:               0px;
     border-color:                @border-colour;

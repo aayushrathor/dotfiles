@@ -38,6 +38,10 @@ alt + shift + t
 alt + p
     toggle_polybar
 
+# qrgen
+F8
+  qrgen --rofi
+
 #
 # bspwm hotkeys
 #
