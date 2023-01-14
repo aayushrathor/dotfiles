@@ -165,9 +165,9 @@ XF86AudioMute
 
 # Brightness
 XF86MonBrightnessDown
-	brightnessctl -q s 5%-
+	brightness dec
 XF86MonBrightnessUp
-	brightnessctl -q s +5%
+	brightness inc
 
 #screenshot
 super + shift + S

@@ -35,6 +35,7 @@ axel
 base
 bash
 bat
+bc
 betterdiscord-installer-bin
 binutils
 bison
@@ -89,6 +90,7 @@ dbus
 dbus-glib
 dbus-python
 dconf
+debugedit
 default-cursors
 desktop-file-utils
 device-mapper
@@ -369,6 +371,7 @@ libisoburn
 libisofs
 libjpeg-turbo
 libksba
+liblc3
 libldac
 libldap
 liblqr
@@ -541,7 +544,7 @@ lua52
 luajit
 lv2
 lvm2
-lxappearance
+lxappearance-gtk3
 lz4
 lzo
 m4
@@ -627,6 +630,7 @@ pavucontrol
 pciutils
 pcre
 pcre2
+pcsclite
 perl
 perl-error
 perl-mailtools
@@ -727,6 +731,8 @@ python-validate-pyproject
 python-webencodings
 python-wheel
 python-xlib
+qpdf
+qrencode
 qt5-base
 qt5-declarative
 qt5-location
@@ -818,6 +824,7 @@ ruby-uri
 rubygems
 run-parts
 runc
+rustup
 sbc
 scrcpy
 screenkey-git
@@ -845,7 +852,6 @@ speexdsp
 spice
 spice-gtk
 spirv-tools
-spotify
 sqlite
 sratom
 srt
@@ -868,6 +874,7 @@ tbb
 tcl
 tdb
 tdrop
+terraform
 tesseract
 tesseract-data-eng
 tesseract-data-osd
@@ -900,6 +907,7 @@ upower
 usbmuxd
 usbredir
 usbutils
+uthash
 util-linux
 util-linux-libs
 v4l-utils
@@ -1023,6 +1031,8 @@ youtube-music-bin
 yt-dlp
 z
 zathura
+zathura-pdf-mupdf
+zathura-ps
 zeromq
 zimg
 zip

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+selected_file=$(find . -maxdepth 1 -type f | fzf)
+
+extension="${selected_file##*.}"
+
+if [ "$extension" == "c" ];
+then
+    gcc $selected_file -o ${selected_file%.*} && ./${selected_file%.*}
+elif [ "$extension" == "cpp" ];
+then
+    g++ $selected_file -o ${selected_file%.*} && ./${selected_file%.*}
+elif [ "$extension" == "py" ];
+then
+    python $selected_file
+elif [ "$extension" == "js" ];
+then
+    node $selected_file
+elif [ "$extension" == "ts" ];
+then
+    tsc $selected_file && node ${selected_file%.*}.js
+elif [ "$extension" == "sh" ];
+then
+    bash $selected_file
+elif [ "$extension" == "lua" ];
+then
+    lua $selected_file
+elif [ "$extension" == "rs" ];
+then
+    rustc $selected_file && ./${selected_file%.*}
+else
+    echo "File type not supported"
+fi

@@ -98,6 +98,15 @@ return packer.startup(function(use)
 	use("mg979/vim-visual-multi") -- multi line cursor
 	use("andweeb/presence.nvim") -- discord plugin
 	use("davidgranstrom/nvim-markdown-preview") -- preview markdown files
+	use("norcalli/nvim-colorizer.lua")
+	use("rcarriga/nvim-notify")
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

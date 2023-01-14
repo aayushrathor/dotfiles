@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# control brightness with brightnessctl
+
+# You can call this script like this:
+# $./brightness inc
+# $./brightness dec
+# $./brightness get
+
+brightness_now=$(brightnessctl g)
+brightness_max=$(brightnessctl m)
+current_brightness=$( awk "BEGIN {print ($brightness_now / $brightness_max) * 100}" )
+
+increase_brightness() {
+  if [ "$current_brightness" -lt 100 ]; then
+    brightnessctl -q s +5% 
+    icon_name=/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg
+    dunstify -h int:value:"$((current_brightness + 5))" -u NORMAL -i "$icon_name" -r 9999 "Brightness is at $((current_brightness + 5))%" 
+  else
+    echo "error"
+  fi 
+}
+
+decrease_brightness() {
+  if [ "$current_brightness" -gt 0 ]; then
+    brightnessctl -q s 5%-
+    icon_name=/usr/share/icons/Papirus/32x32/apps/brightnesssettings.svg
+    dunstify -h int:value:"$((current_brightness - 5))" -u NORMAL -i "$icon_name" -r 9999 "Brightness is at $((current_brightness - 5))%"
+  else
+    echo "error"
+  fi 
+}
+
+get_brightness() {
+  if [ -z "$current_brightness" ]; then
+    echo "brightnessctl command not returning any value. Please check the command"
+  else
+    echo $current_brightness%
+  fi
+}
+
+case "$1" in
+  inc) increase_brightness;;
+  dec) decrease_brightness;;
+  get) get_brightness;;
+  *) echo "Invalid argument. Use --inc to increase, --dec to decrease, or --get to get the current brightness.";;
+esac
