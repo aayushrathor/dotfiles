@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+# credits: https://github.com/umgbhalla
+
+#bspc rule -a Alacritty -o state=floating rectangle=680x360+620+630
+bspc rule -a Alacritty -o state=floating rectangle=848x432+536+220 focus=on
+alacritty -e $@

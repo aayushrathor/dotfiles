@@ -13,6 +13,10 @@
 #                    \▓▓                                
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+
+# increase keyrate
+keybitrate &
+
 bspc monitor -d I II III IV V VI VII VIII
 
 bspc config window_gap          4
@@ -51,7 +55,7 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 
 #auto-start
-zsh ~/.fehbg
+zsh ~/.fehbg &> /dev/null &
 zsh $HOME/.config/polybar/launch.sh &
 
 #clipboardManager

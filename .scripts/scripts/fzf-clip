@@ -1,0 +1,4 @@
+#!/bin/bash
+
+greenclip print | grep . | fzf -e | xargs -r -d'\n' -I '{}' greenclip print '{}'
+sleep 1

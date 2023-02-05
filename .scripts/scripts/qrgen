@@ -4,7 +4,7 @@
 # https://github.com/aayushrathor
 
 if [ "$1" == "--rofi" ]; then
-  input=$(rofi -dmenu -i -l 0 -p "QR Input:")
+  input=$(rofi -dmenu -i -l 0 -p "QR Input:" -theme-str 'entry { placeholder: "Hello World"; placeholder-color: grey;}')
 else
   input=$1
 fi

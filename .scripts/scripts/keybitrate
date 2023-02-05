@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+keyb(){
+  # setxkbmap -option caps:swapescape && xset r rate 180 50
+  xset r rate 180 50
+  notify-send -a xset -u NORMAL -t 1500 "keyrate set to 180::50"
+}
+
+keyb

@@ -23,12 +23,20 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # url shortner
-alt + s
-    i
+alt + shift + s
+  i
+
+# is.gd url shortner
+alt + s 
+  isgd_rofi 
 
 # clipboard 
-alt + c
+# alt + shift + c
+	# rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+alt + c 
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+  # term-menu fzf-clip
 
 # ocr
 alt + shift + t
@@ -36,11 +44,31 @@ alt + shift + t
 
 # toggle polybar
 alt + p
-    toggle_polybar
+  toggle_polybar
 
 # qrgen
 F8
-  qrgen --rofi
+  qrgen --rofi && kitty --hold sh -c "cat /tmp/qrgen.txt"
+
+# shutdown
+super + F8
+  poweroff
+
+# restart
+super + shift + F8
+  reboot
+
+# fzf-pass
+super + p 
+  term-menu fzf-pass
+
+# bluetooth
+super + b 
+  term-menu fzfbluetooth
+
+# draw terminal
+super + shift + D 
+  draw-term
 
 #
 # bspwm hotkeys
@@ -174,7 +202,7 @@ super + shift + S
 	flameshot gui
 
 Print
-	flameshot full -c -p /home/aayush/Desktop/screenshots/
+	scmenu
 
 # XF86AudioNext
 XF86AudioNext
@@ -203,10 +231,6 @@ alt + b
 #center
 super + shift + r
 	tdrop -ma -w 60% -h 50% -x 20% -y 15% -n 1 kitty 
-
-#bottom middle
-super + shift + D
-	tdrop -ma -w 60% -h 45% -x 380 -y 556 -n 2 kitty
 #top left
 alt + shift + h
 	tdrop -ma -w 50% -h 50% -x 0 -y 38 -n 3 kitty 

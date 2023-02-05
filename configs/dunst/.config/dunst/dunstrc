@@ -14,21 +14,22 @@
     width = 350
     height = 300
     offset = 75x45
+    origin = top-right
     scale = 0
     notification_limit = 0
     progress_bar = true
-    progress_bar_height = 14
+    progress_bar_height = 6
     progress_bar_frame_width = 0
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 0
-    separator_height = 1
-    padding = 12
-    horizontal_padding = 12
+    transparency = 20
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
     text_icon_padding = 0
     frame_width = 0
-    frame_color = "#90FFFF"
+    frame_color = "#111111"
     separator_color = "#121212"
     sort = yes
     font = "Operator Mono Bold 12"
@@ -46,8 +47,8 @@
 
     ## Icons
     icon_position = left
-    max_icon_size = 75
-    icon_path = /usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
+    max_icon_size = 32
+    icon_path = /usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
     
     ## History
     sticky_history = yes
@@ -61,6 +62,7 @@
     corner_radius = 0
     ignore_dbusclose = false
     force_xinerama = false
+    force_wayland = false
 
     ## Legacy
     mouse_left_click = close_current

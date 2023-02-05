@@ -7,7 +7,7 @@
 # to use fzf instead of rofi
 
 # Constants
-divider="═══════════════════"
+divider="══════════════════════════════════════"
 goback="Back"
 showinfo="Info"
 
@@ -219,7 +219,7 @@ device_menu() {
     options="$connected\n$paired\n$trusted\n$showinfo\n$divider\n$goback"
 
     # Open rofi menu, read chosen option
-    chosen="$(echo -e "$options" | $fzf_command --header="$device_name")"
+    chosen="$(echo -e "$options" | fzf "--prompt= > " --header="$device_name")"
 
     # Match chosen option to command
     case $chosen in
@@ -268,7 +268,7 @@ show_menu() {
     fi
 
     # Open rofi menu, read chosen option
-    chosen="$(echo -e "$options" | $fzf_command --header="Bluetooth")"
+    chosen="$(echo -e "$options" | fzf "--prompt= > " --header="Bluetooth")"
 
     # Match chosen option to command
     case $chosen in
@@ -294,9 +294,6 @@ show_menu() {
             ;;
     esac
 }
-
-# Rofi command to pipe into, can add any options here
-fzf_command="fzf --prompt=  $@"
 
 case "$1" in
     --status)

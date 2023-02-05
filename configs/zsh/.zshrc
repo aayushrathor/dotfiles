@@ -18,6 +18,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export PNPM_HOME="/home/aayush/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+START=$(date +%s.%N)
+
 ### zoxide ###
 eval "$(zoxide init zsh)"
 
@@ -72,9 +74,6 @@ zstyle ':completion:*' cache-path ~/.cache/zcache
 
 # automatically load bash completion functions
 autoload -U +X bashcompinit && bashcompinit
-
-#fzf-tab
-[ -f ~/zsh/fzf-tab.plugin.zsh ] && source $HOME/zsh/fzf-tab.plugin.zsh
 
 # Arch Linux command-not-found support, you must have package pkgfile installed
 # https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
@@ -148,6 +147,7 @@ function gd() {
             }
 
 # Common use aliases
+alias s='startx'
 alias npm='pnpm'
 alias cat='bat -Pp'
 alias cd='z'
@@ -185,7 +185,6 @@ alias e='exit'
 alias h='htop'
 alias p='pfetch'
 alias n='neofetch'
-alias s='sensors'
 alias b='btop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
 alias rr='ranger'
@@ -307,22 +306,24 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
 
 # eval "$(ssh-agent -s)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="
---layout=reverse
---info=inline
---height=80%
---multi
---preview-window=:nohidden
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
---color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
---prompt='∼ ' --pointer='▶' --marker='✓'
---bind '?:toggle-preview'
---bind 'ctrl-a:select-all'
---bind 'ctrl-y:execute-silent(echo {+} | copy)'
---bind 'ctrl-e:execute(echo {+} | xargs -o nvim)'
---bind 'ctrl-v:execute(code {+})'
+export FZF_DEFAULT_OPTS=" -1 -i 
+--prompt '⯈ ' 
+--marker=+ 
+--cycle
+--keep-right  
+--reverse 
+--height 100%
+--color=fg:250,fg+:15,hl:203,hl+:203  
+--bind 'btab:toggle-up,tab:toggle-down'
+--bind='?:toggle-preview'
+--bind='ctrl-u:preview-page-up'
+--bind='ctrl-d:preview-page-down'
+--preview-window 'right:60%:wrap'
 "
+
+#fzf-tab
+[[ -f ~/zsh/fzf-tab.plugin.zsh ]] && source $HOME/zsh/fzf-tab.plugin.zsh
+
 ### colored man page ###
 export LESS_TERMCAP_mb=$'\E[01;32m'
 export LESS_TERMCAP_md=$'\E[01;32m'
@@ -372,3 +373,16 @@ md () {
 feval(){
   echo | fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
 }
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+# Performance Warning
+END=$(date +%s.%N)
+ZSHRC_PERF=$(printf %.2f $(echo "$END - $START" | bc))
+if (( $ZSHRC_PERF > 0.14)); then
+  echo "\033[0;31mperformance warning!"
+  echo ".zshrc startup time" $ZSHRC_PERF "seconds\e[0m"
+fi

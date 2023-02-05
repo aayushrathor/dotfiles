@@ -1,0 +1,14 @@
+#!/bin/bash
+url=$(rofi -dmenu -i -l 0 -p 'SURL is.gd>' -theme-str 'entry { placeholder: "example.com"; placeholder-color: grey;}' )
+
+if [ -z "$url" ]; then
+  exit 1
+else
+  short=$(curl -s -X POST -F url="$url" https://is.gd/create.php \
+    |  sed -n '/Your shortened URL/{s/.*value="\([^"]*\).*/\1/p;}')
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+  echo $short | xclip -sel clip
+  notify-send -t 2500 -u low "is.gd" "$short" -a is.gd_urlshortner  # Send notification
+fi   

@@ -9,9 +9,9 @@
 colors:
   primary:
     #background: '#072227'
-    background: '0x000000'
-    foreground: '#f0f0f0'
-    bright_foreground: '#ffffff'
+    background: "0x000000"
+    foreground: "#f0f0f0"
+    bright_foreground: "#ffffff"
   cursor:
     text: CellBackground
     cursor: CellForeground
@@ -20,45 +20,63 @@ colors:
     cursor: CellForeground
   search:
     matches:
-      foreground: '#44475a'
-      background: '#50fa7b'
+      foreground: "#44475a"
+      background: "#50fa7b"
     focused_match:
-      foreground: '#44475a'
-      background: '#ffb86c'
+      foreground: "#44475a"
+      background: "#ffb86c"
     colors.footer_bar:
-      background: '#282a36'
-      foreground: '#f8f8f2'
+      background: "#282a36"
+      foreground: "#f8f8f2"
   hints:
     start:
-      foreground: '#282a36'
-      background: '#f1fa8c'
+      foreground: "#282a36"
+      background: "#f1fa8c"
     end:
-      foreground: '#f1fa8c'
-      background: '#191919'
+      foreground: "#f1fa8c"
+      background: "#191919"
   line_indicator:
     foreground: None
     background: None
   selection:
     text: CellForeground
-    background: '#44475a'
+    background: "#44475a"
   normal:
-    black: '#000000'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#bd93f9'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#f8f8f2'
+    black: "#1d1f21"
+    red: "#cc6666"
+    green: "#b5bd68"
+    yellow: "#f0c674"
+    blue: "#81a2be"
+    magenta: "#b294bb"
+    cyan: "#8abeb7"
+    white: "#c5c8c6"
   bright:
-    black: '#6272a4'
-    red: '#ff6e6e'
-    green: '#69ff94'
-    yellow: '#ffffa5'
-    blue: '#d6acff'
-    magenta: '#ff92df'
-    cyan: '#a4ffff'
-    white: '#ffffff'
+    black: "#666666"
+    red: "#d54e53"
+    green: "#b9ca4a"
+    yellow: "#e7c547"
+    blue: "#7aa6da"
+    magenta: "#c397d8"
+    cyan: "#70c0b1"
+    white: "#eaeaea"
+  # normal:
+  #   black: "#000000"
+  #   red: "#ff5555"
+  #   green: "#50fa7b"
+  #   yellow: "#f1fa8c"
+  #   blue: "#bd93f9"
+  #   magenta: "#ff79c6"
+  #   cyan: "#8be9fd"
+  #   white: "#f8f8f2"
+  # bright:
+  #   black: "#6272a4"
+  #   red: "#ff6e6e"
+  #   green: "#69ff94"
+  #   yellow: "#ffffa5"
+  #   blue: "#d6acff"
+  #   magenta: "#ff92df"
+  #   cyan: "#a4ffff"
+  #   white: "#ffffff"
 # Imports are loaded in order, skipping all missing files, with the importing
 # file being loaded last. If a field is already present in a previous import, it
 # will be replaced.
@@ -79,45 +97,45 @@ colors:
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
 window:
-# Window dimensions (changes require restart)
-#
-# Number of lines/columns (not pixels) in the terminal. The number of columns
-# must be at least `2`, while using a value of `0` for columns and lines will
-# fall back to the window manager's recommended size.
+  # Window dimensions (changes require restart)
+  #
+  # Number of lines/columns (not pixels) in the terminal. The number of columns
+  # must be at least `2`, while using a value of `0` for columns and lines will
+  # fall back to the window manager's recommended size.
   dimensions:
-    columns: 200
-    lines: 52
-# Window position (changes require restart)
-#
-# Specified in number of pixels.
-# If the position is not set, the window manager will handle the placement.
-#position:
-#  x: 0
-#  y: 0
-# Window padding (changes require restart)
-#
-# Blank space added around the window in pixels. This padding is scaled
-# by DPI and the specified value is always added at both opposing sides.
+    columns: 133
+    lines: 40
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  #position:
+  #  x: 0
+  #  y: 0
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6 
+    x: 6
     y: 4
-# Spread additional padding evenly around the terminal content.
-#dynamic_padding: false
-# Window decorations
-#
-# Values for `decorations`:
-#     - full: Borders and title bar
-#     - none: Neither borders nor title bar
-#
-# Values for `decorations` (macOS only):
-#     - transparent: Title bar, transparent background and title bar buttons
-#     - buttonless: Title bar, transparent background and no title bar buttons
-#decorations: full
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.725 
+  # Spread additional padding evenly around the terminal content.
+  #dynamic_padding: false
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  #decorations: full
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 1.0
 # Startup Mode (changes require restart)
 #
 # Values for `startup_mode`:
@@ -152,26 +170,26 @@ window:
 
 # Font configuration
 font:
-  normal: 
-    family: "Hack Nerd Font" 
+  normal:
+    family: "Operator Mono"
     style: Bold
   bold:
-    family: "Hack Nerd Font"
+    family: "Operator Mono"
     style: Bold
   italic:
-    family: "Hack Nerd Font"
-    style: Italic
-# Bold italic font face
-#bolditalic:
-# Font family
-#
-# If the bold italic family is not specified, it will fall back to the
-# value specified for the normal font.
-#family: monospace
-# The `style` can be specified to pick a specific face.
-#style: Bold Italic
-# Point size
-  size: 12
+    family: "Operator Mono"
+    style: Bold
+  # Bold italic font face
+  #bolditalic:
+  # Font family
+  #
+  # If the bold italic family is not specified, it will fall back to the
+  # value specified for the normal font.
+  #family: monospace
+  # The `style` can be specified to pick a specific face.
+  #style: Bold Italic
+  # Point size
+  size: 10
 # Offset is the extra space around each character. `offset.y` can be thought
 # of as modifying the line spacing, and `offset.x` as modifying the letter
 # spacing.
@@ -833,4 +851,3 @@ ipc_socket: true
 #log_level: Warn
 # Print all received window events.
 #print_events: false_
-
