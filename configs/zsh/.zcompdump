@@ -1,4 +1,4 @@
-#files: 979	version: 5.9
+#files: 985	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -147,6 +147,7 @@ _comps=(
 'cal' '_cal'
 'calendar' '_calendar'
 'cap' '_cap'
+'cargo' '_cargo'
 'cask' '_cask'
 'cat' '_cat'
 'catchsegv' '_precommand'
@@ -720,7 +721,6 @@ _comps=(
 'killall5' '_killall'
 'kioclient' '_kfmclient'
 'kitchen' '_kitchen'
-'kitty' '_kitty'
 'knife' '_knife'
 'knock' '_knock'
 'konqueror' '_webbrowser'
@@ -992,10 +992,10 @@ _comps=(
 'padsp' '_pulseaudio'
 'pandoc' '_pandoc'
 'paplay' '_pulseaudio'
-'parallel' '_parallel'
 '-parameter-' '_parameter'
 'parec' '_pulseaudio'
 'parecord' '_pulseaudio'
+'paru' '_paru'
 'passwd' '_users'
 'paste' '_paste'
 'pasuspender' '_pulseaudio'
@@ -1046,6 +1046,7 @@ _comps=(
 'pinfo' '_texinfo'
 'ping' '_ping'
 'ping6' '_ping'
+'pipenv' '_pipenv'
 'pixz' '_pixz'
 'pkcon' '_pkcon'
 'pkgadd' '_pkgadd'
@@ -1216,6 +1217,7 @@ _comps=(
 'run-help' '_run-help'
 'rup' '_hosts'
 'rusage' '_precommand'
+'rustup' '_rustup'
 'rview' '_vim'
 'rvim' '_vim'
 'rwho' '_hosts'
@@ -1392,6 +1394,7 @@ _comps=(
 'teamocil' '_teamocil'
 'tee' '_tee'
 'telnet' '_telnet'
+'terraform' '_terraform'
 'tex' '_tex'
 'texi2any' '_texinfo'
 'texi2dvi' '_texinfo'
@@ -1710,6 +1713,7 @@ _comps=(
 'zparseopts' '_zparseopts'
 'zpool' '_zfs'
 'zpty' '_zpty'
+'zscroll' '_zscroll'
 'zsetattr' '_zattr'
 'zsh' '_zsh'
 'zsh-mime-handler' '_zsh-mime-handler'
@@ -1845,46 +1849,47 @@ bindkey '^[~' _bash_complete-word
 autoload -Uz _afew _alacritty _android _archlinux-java _artisan \
             _atach _bat _bitcoin-cli _bluetoothctl _bootctl \
             _bower _bspc _bundle _busctl _bwrap \
-            _caffeinate _cap _cask _ccache _cf \
-            _checkupdates _choc _chromium _cmake _code \
-            _coffee _composer _conan _concourse _console \
-            _coredumpctl _cppcheck _curl _dad _debuild \
-            _dget _dhcpcd _diana _docker _docpad \
-            _drush _ecdsautil _emulator _envdir _exa \
-            _exportfs _fab _fail2ban-client _fd _ffind \
-            _fleetctl _flutter _force _fwupdmgr _gas \
-            _gh _ghc _gist _git-flow _git-journal \
-            _git-pulls _git-revise _git-wtf _glances _golang \
-            _google _gpgconf _gtk-launch _hello _helm \
-            _hledger _homestead _hostnamectl _httpie _ibus \
-            _include-what-you-use _inxi _jmeter _jmeter-plugins _jonas \
-            _journalctl _jrnl _k9s _kak _kernel-install \
-            _kitchen _kitty _knife _kubectl _language_codes \
-            _libinput _lilypond _localectl _loginctl _lunchy \
-            _machinectl _mc _middleman _mina _minikube \
-            _mix _mkinitcpio _mpv _mssh _mussh \
-            _mvn _nano _nanoc _networkctl _nftables \
-            _node _nvm _oomctl _openssl _openvpn3 \
-            _optirun _opustools _paccache _pacdiff _paclist \
-            _paclog-pkglist _pacman _pacscripts _pacsearch _pacsort \
-            _pactree _parallel _patool _perf _periscope \
-            _pgsql_utils _phing _pixz _pkcon _play \
-            _playerctl _pm2 _podman _podman-remote _polybar \
-            _polybar_msg _port _protoc _pulseaudio _pygmentize \
-            _qmk _qpdf _rails _ralio _rankmirrors \
-            _redis-cli _resolvectl _rfkill _rg _rkt \
-            _rmlint _rslsync _rspec _rsvm _rubocop \
-            _sbt _scala _scrcpy _scrub _sdd \
-            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _setcap \
-            _setup.py _sfdx _shellcheck _showoff _skopeo \
-            _srm _stack _starship _subl _subliminal \
-            _supervisorctl _svm _systemctl _systemd _systemd-analyze \
-            _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \
-            _systemd-tmpfiles _tarsnap _teamocil _thor _timedatectl \
-            _tmuxinator _tmuxp _tox _udevadm _udisksctl \
-            _ufw _updpkgsums _virtualbox _vnstat _wemux \
-            _wg-quick _xinput _xsel _yaourt _yarn \
-            _yay _yt-dlp _zathura _zcash-cli _zoxide \
+            _caffeinate _cap _cargo _cask _ccache \
+            _cf _checkupdates _choc _chromium _cmake \
+            _code _coffee _composer _conan _concourse \
+            _console _coredumpctl _cppcheck _curl _dad \
+            _debuild _dget _dhcpcd _diana _docker \
+            _docpad _drush _ecdsautil _emulator _envdir \
+            _exa _exportfs _fab _fail2ban-client _fd \
+            _ffind _fleetctl _flutter _force _fwupdmgr \
+            _gas _gh _ghc _gist _git-flow \
+            _git-journal _git-pulls _git-revise _git-wtf _glances \
+            _golang _google _gpgconf _gtk-launch _hello \
+            _helm _hledger _homestead _hostnamectl _httpie \
+            _ibus _include-what-you-use _inxi _jmeter _jmeter-plugins \
+            _jonas _journalctl _jrnl _k9s _kak \
+            _kernel-install _kitchen _knife _kubectl _language_codes \
+            _less _libinput _lilypond _localectl _loginctl \
+            _lunchy _machinectl _mc _middleman _mina \
+            _minikube _mix _mkinitcpio _mpv _mssh \
+            _mussh _mvn _nano _nanoc _networkctl \
+            _nftables _node _nvm _oomctl _openssl \
+            _openvpn3 _optirun _opustools _paccache _pacdiff \
+            _paclist _paclog-pkglist _pacman _pacscripts _pacsearch \
+            _pacsort _pactree _paru _patool _perf \
+            _periscope _pgsql_utils _phing _pipenv _pixz \
+            _pkcon _play _playerctl _pm2 _podman \
+            _podman-remote _polybar _polybar_msg _port _protoc \
+            _pulseaudio _pygmentize _qmk _qpdf _rails \
+            _ralio _rankmirrors _redis-cli _resolvectl _rfkill \
+            _rg _rkt _rmlint _rslsync _rspec \
+            _rsvm _rubocop _rustup _sbt _scala \
+            _scrcpy _scrub _sdd _sd_hosts_or_user_at_host _sd_machines \
+            _sd_outputmodes _sd_unit_files _setcap _setup.py _sfdx \
+            _shellcheck _showoff _skopeo _srm _stack \
+            _starship _subl _subliminal _supervisorctl _svm \
+            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
+            _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _tarsnap \
+            _teamocil _terraform _thor _timedatectl _tmuxinator \
+            _tmuxp _tox _udevadm _udisksctl _ufw \
+            _updpkgsums _virtualbox _vnstat _wemux _wg-quick \
+            _xinput _xsel _yaourt _yarn _yay \
+            _yt-dlp _zathura _zcash-cli _zoxide _zscroll \
             _cdr _all_labels _all_matches _alternative _approximate \
             _arg_compile _arguments _bash_completions _cache_invalid _call_function \
             _combination _complete _complete_debug _complete_help _complete_help_generic \
