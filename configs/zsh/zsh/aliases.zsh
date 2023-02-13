@@ -89,3 +89,17 @@ alias makecppfile='echo "#include <stdio.h>\n#include <stdlib.h>\n#include <iost
 
 # exractor
 alias ex='atool --explain --extract'
+
+# get fastest mirrors 
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose" 
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay" 
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score" 
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age" 
+
+# set your countries like --country France --country Germany -- or more.
+alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && sudo updatedb'
+
+# package manager
+alias yay="paru"
+alias yayup='sudo pacman -Sy && paru -Su'
+alias cleanup='yay -Rns $(yay -Qtdq)'
