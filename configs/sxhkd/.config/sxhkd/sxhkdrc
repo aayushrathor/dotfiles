@@ -7,7 +7,7 @@ super + Return
 	kitty
 
 super + shift + Return
-	tabbed -f alacritty --embed
+	alacritty
 
 # program launcher
 super + @space
