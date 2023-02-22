@@ -1,5 +1,10 @@
 # functions zsh
 
+# Show $PATH
+path(){
+  echo -e ${PATH//:/\\n}
+}
+
 # git log
 function gd() {
   git log --graph --color=always \
@@ -121,3 +126,182 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+findEmptyDirsAndFiles(){
+  find . -type f -exec bash -c 'if [ `cat "{}" |wc -w` -eq 0 ]; then echo "file - {}";fi' \; -or -empty -exec bash -c "echo dir - {}" \;
+}
+
+# Get cheat sheet of command from cheat.sh. h <cmd>
+cheat() {
+    curl cheat.sh/${@:-cheat}
+    # curl cheat.sh/$@
+}
+
+ssh-docker() {
+    docker exec -it "$@" bash
+}
+
+fkill() {
+    local pid
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+    if [ "x$pid" != "x" ]; then
+        echo $pid | xargs kill -${1:-9}
+    fi
+}
+
+#USAGE: mdrender README.md
+mdrender() {
+    HTMLFILE="$(mktemp -u).html"
+        jq --slurp --raw-input '{"text": "\(.)", "mode": "markdown"}' "$1" |
+        curl -s --data @- https://api.github.com/markdown >"$HTMLFILE"
+    echo Opening "$HTMLFILE"
+    open "$HTMLFILE"
+}
+
+convertAllMDFilesToTabs(){
+ find . -name '*.md' ! -type d -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+}
+
+# Search aliases/functions
+falias() {
+    CMD=$(
+        (
+            (alias)
+            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+        ) | fzf | cut -d '=' -f1
+    );
+
+    eval $CMD
+}
+
+# Lowercase every file in current dir
+lowercaseCurrentDir(){
+  for i in *; do mv $i ${(L)i}; done
+}
+
+# zs - Search for most visited directories from z index and open them in finder.
+zs() {
+  z $1 && open .
+}
+
+# server - Create server of current dir on port 8000 and open it in browser.
+server() {
+	local port="${1:-8000}"
+	sleep 1 && open "http://localhost:${port}/" &
+	# set the default content-type to `text/plain` instead of `application/octet-stream`
+	# and serve everything as utf-8 (although not technically correct, this doesn’t break anything for binary files)
+	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+# compress <file/dir> - Compress <file/dir>.
+compress()
+  {
+    dirPriorToExe=`pwd`
+    dirName=`dirname $1`
+    baseName=`basename $1`
+
+    if [ -f $1 ] ; then
+      echo "It was a file change directory to $dirName"
+      cd $dirName
+      case $2 in
+        tar.bz2)
+          tar cjf $baseName.tar.bz2 $baseName
+          ;;
+        tar.gz)
+          tar czf $baseName.tar.gz $baseName
+          ;;
+        gz)
+          gzip $baseName
+          ;;
+        tar)
+          tar -cvvf $baseName.tar $baseName
+          ;;
+        zip)
+          zip -r $baseName.zip $baseName
+          ;;
+        *)
+          echo "Method not passed compressing using tar.bz2"
+          tar cjf $baseName.tar.bz2 $baseName
+          ;;
+      esac
+      echo "Back to Directory $dirPriorToExe"
+      cd $dirPriorToExe
+    else
+      if [ -d $1 ] ; then
+        echo "It was a Directory change directory to $dirName"
+        cd $dirName
+        case $2 in
+          tar.bz2)
+            tar cjf $baseName.tar.bz2 $baseName
+            ;;
+          tar.gz)
+            tar czf $baseName.tar.gz $baseName
+            ;;
+          gz)
+            gzip -r $baseName
+            ;;
+          tar)
+            tar -cvvf $baseName.tar $baseName
+            ;;
+          zip)
+            zip -r $baseName.zip $baseName
+            ;;
+          *)
+            echo "Method not passed compressing using tar.bz2"
+            tar cjf $baseName.tar.bz2 $baseName
+            ;;
+        esac
+        echo "Back to Directory $dirPriorToExe"
+        cd $dirPriorToExe
+      else
+        echo "'$1' is not a valid file/folder"
+      fi
+    fi
+    echo "Done"
+    echo "###########################################"
+  }
+
+# ram <process-name> - Find how much RAM a process is taking.
+ram() {
+  local sum
+  local items
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+  else
+    sum=0
+    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$(($i + $sum))
+    done
+    sum=$(echo "scale=2; $sum / 1024.0" | bc)
+    if [[ $sum != "0" ]]; then
+      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
+    else
+      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
+    fi
+  fi
+}
+
+# activate python virtual env
+penv () {
+  [ ! -d "venv/" ] && python3 -m venv venv
+  source venv/bin/activate
+}
+
+# Colour/Color echo prompt outputs
+#USAGE: cecho @b@green[[Success]]
+cecho() (
+  echo "$@" | sed \
+    -e "s/\(\(@\(red\|green\|yellow\|blue\|magenta\|cyan\|white\|reset\|b\|u\)\)\+\)[[]\{2\}\(.*\)[]]\{2\}/\1\4@reset/g" \
+    -e "s/@red/$(tput setaf 1)/g" \
+    -e "s/@green/$(tput setaf 2)/g" \
+    -e "s/@yellow/$(tput setaf 3)/g" \
+    -e "s/@blue/$(tput setaf 4)/g" \
+    -e "s/@magenta/$(tput setaf 5)/g" \
+    -e "s/@cyan/$(tput setaf 6)/g" \
+    -e "s/@white/$(tput setaf 7)/g" \
+    -e "s/@reset/$(tput sgr0)/g" \
+    -e "s/@b/$(tput bold)/g" \
+    -e "s/@u/$(tput sgr 0 1)/g"
+)

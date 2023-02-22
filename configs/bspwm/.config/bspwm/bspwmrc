@@ -55,7 +55,7 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 
 #auto-start
-zsh ~/.fehbg &> /dev/null &
+zsh ~/.fehbg &> /dev/null 
 zsh $HOME/.config/polybar/launch.sh &
 
 #clipboardManager
@@ -79,10 +79,18 @@ nm-applet --indicator &
 
 #conky
 pkill -9 conky
-conky -c $HOME/.config/conky/Mimosa-Dark/Mimosa.conf &> /dev/null &
+conky -c $HOME/.config/conky/Mimosa-Dark/Mimosa.conf &> /dev/null 
 
 # xfce4-power-manager
 xfce4-power-manager --daemon &
+
+# kde-connect
+pkill -9 kdeconnect-indi && sleep 1
+kdeconnect-indicator &
+
+# redshift bluelightfilter
+# pkill -9 redshift
+# zsh $HOME/scripts/redshift.sh &
 
 #notify
 notify-send -u NORMAL -t 3000 "bspwm go brrrrr......"

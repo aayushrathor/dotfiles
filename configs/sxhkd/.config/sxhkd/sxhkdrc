@@ -70,6 +70,10 @@ super + b
 super + shift + D 
   draw-term
 
+# pause dunst notification
+super + Pause
+  dunstctl set-paused toggle
+
 #
 # bspwm hotkeys
 #

@@ -13,8 +13,8 @@
     follow = mouse
     width = 350
     height = 300
-    offset = 75x45
-    origin = top-right
+    offset = 130x40
+    origin = top-left
     scale = 0
     notification_limit = 0
     progress_bar = true
@@ -23,10 +23,10 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 20
+    transparency = 0
     separator_height = 2
-    padding = 10
-    horizontal_padding = 10
+    padding = 8
+    horizontal_padding = 12
     text_icon_padding = 0
     frame_width = 0
     frame_color = "#111111"
@@ -37,7 +37,7 @@
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
-    #vertical_alignment = left
+    vertical_alignment = left
     show_age_threshold = 60
     ellipsize = middle
     ignore_newline = yes
@@ -47,8 +47,8 @@
 
     ## Icons
     icon_position = left
-    max_icon_size = 32
-    icon_path = /usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/apps/
+    max_icon_size = 72
+    icon_path = /usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
     
     ## History
     sticky_history = yes
@@ -94,11 +94,11 @@
 
 [base16_critical]
     msg_urgency = critical
-    script = ~/.scripts/scripts/dunst-notif.sh
-    background = "#D20010"
-    foreground = "#FFFFFF"
+    script = ~/scripts/dunst-notif.sh
+    background = "#DC3535"
+    foreground = "#0f0f0f"
     highlight = "#ee6a70"
-    timeout = 0
+    timeout = 10
 
 #[play_sound]
 #    summary = "*"
