@@ -31,6 +31,8 @@ alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
 
 # utils
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 alias s='startx'
 alias npm='pnpm'
 alias cat='bat -Pp'

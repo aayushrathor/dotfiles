@@ -10,6 +10,7 @@ source ~/zsh/completions.zsh
 source ~/zsh/aliases.zsh
 source ~/zsh/options.zsh
 source ~/zsh/functions.zsh
+source ~/zsh/git.zsh
 
 # set vi mode
 set -o vi
