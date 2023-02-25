@@ -185,13 +185,17 @@ zs() {
   z $1 && open .
 }
 
-# server - Create server of current dir on port 8000 and open it in browser.
+# Serves the current directory over HTTP, on an optionally-specified port
+# If on Mac OS X, opens in the default browser
 server() {
-	local port="${1:-8000}"
-	sleep 1 && open "http://localhost:${port}/" &
-	# set the default content-type to `text/plain` instead of `application/octet-stream`
-	# and serve everything as utf-8 (although not technically correct, this doesn’t break anything for binary files)
-	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+  port=$1
+  if [ $# -ne  1 ]; then
+    port=8000
+  fi
+  if command_exists open; then
+    open http://localhost:$port/
+  fi
+  python3 -m http.server $port
 }
 
 # compress <file/dir> - Compress <file/dir>.
@@ -289,6 +293,47 @@ penv () {
   source venv/bin/activate
 }
 
+pyclean () {
+  # Cleans py[cod] and __pychache__ dirs in the current tree:
+  find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
+}
+
+# Determine size of a file or total size of a directory
+fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh
+	else
+		local arg=-sh
+	fi
+	# shellcheck disable=SC2199
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@"
+	else
+		du $arg -- .[^.]* *
+	fi
+}
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+tre() {
+	tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
+}
+
+# Get colors in manual pages
+man() {
+	env \
+		LESS_TERMCAP_mb="$(printf '\e[1;31m')" \
+		LESS_TERMCAP_md="$(printf '\e[1;31m')" \
+		LESS_TERMCAP_me="$(printf '\e[0m')" \
+		LESS_TERMCAP_se="$(printf '\e[0m')" \
+		LESS_TERMCAP_so="$(printf '\e[1;44;33m')" \
+		LESS_TERMCAP_ue="$(printf '\e[0m')" \
+		LESS_TERMCAP_us="$(printf '\e[1;32m')" \
+		man "$@"
+}
+
 # Colour/Color echo prompt outputs
 #USAGE: cecho @b@green[[Success]]
 cecho() (
@@ -305,3 +350,13 @@ cecho() (
     -e "s/@b/$(tput bold)/g" \
     -e "s/@u/$(tput sgr 0 1)/g"
 )
+
+# Found at <http://www.askapache.com/linux/zen-terminal-escape-codes.html#3rd_Dimension_Broken_Bash>
+colortest() {
+  x=`tput op` y=`printf %$((${COLUMNS}-6))s`
+  for i in {0..256}
+  do
+    o=00$i
+    echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x
+  done
+}

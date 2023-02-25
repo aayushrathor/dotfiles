@@ -13,3 +13,11 @@ setopt autocd                                                   # if only direct
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
+
+# Use Git’s colored diff when available
+if hash git &>/dev/null ; then
+	diff() {
+		git diff --no-index --color-words "$@"
+	}
+fi
+

@@ -85,7 +85,7 @@ conky -c $HOME/.config/conky/Mimosa-Dark/Mimosa.conf &> /dev/null
 xfce4-power-manager --daemon &
 
 # kde-connect
-pkill -9 kdeconnect-indi && sleep 1
+# pkill -9 kdeconnect-indi && sleep 2
 kdeconnect-indicator &
 
 # redshift bluelightfilter
