@@ -201,11 +201,16 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	brightness inc
 
-#screenshot
+# screenshot region
 super + shift + S
-	flameshot gui
+	ssmaim --region
 
+# screenshot fullscreen
 Print
+	ssmaim --fullscreen
+
+# rofi screenshot menu
+super + Print
 	scmenu
 
 # XF86AudioNext
