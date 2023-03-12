@@ -15,6 +15,7 @@ alias ld='(exa -l --color=always --group-directories-first) | bat'  # long forma
 # docker x k8s
 #alias docker='podman'
 alias docker-compose='docker compose'
+alias dsp='docker system prune -f'
 alias k='kubectl'
 alias dip='docker image prune'
 alias mstart='minikube start'
@@ -29,6 +30,24 @@ alias gps='git push origin --force'
 alias grb='git rebase'
 alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
+alias gwcd='git whatchanged -p --date=format:"%A %B %d %Y at %H:%M" --pretty=format:"%n%n%C(yellow)%H%Creset%x09%C(bold green)%D%Creset%n%<|(40)%C(white)%ad%x09%an%Creset%n%n    %C(bold)%s%Creset%n%w(0,4,4)%+b%n" | bat'
+
+## git tags
+alias gt='git tag'
+alias gtam='git tag -am' # <- takes message before annotated tag name: e.g. gtam 'Release v1.0.0' v1.0.0
+alias gtsm='git tag -sm' # GPG sign an annotated tag
+alias gtd='git tag --delete'
+alias gtl='git tag --list'
+alias gtls='git tag --list | cat'
+
+## git submodules
+alias gsub='git submodule'
+alias gsuba='git submodule add'
+alias gsubi='git submodule update --init' # Initialize submodules
+alias gsubpl='git submodule foreach git pull'
+alias gsubplom='git submodule foreach git pull origin $(git_main_branch)'
+alias gsubs='git submodule status'
+alias gsubu='git submodule update --remote --merge' # Update submodules
 
 # utils
 alias pbcopy='xsel --clipboard --input'

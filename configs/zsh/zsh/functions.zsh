@@ -120,8 +120,15 @@ cheat() {
     # curl cheat.sh/$@
 }
 
+# exec into docker
 ssh-docker() {
     docker exec -it "$@" bash
+}
+
+# remove old and unused images
+docker-cleanup() {
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
 
 fkill() {
@@ -142,8 +149,8 @@ mdrender() {
     open "$HTMLFILE"
 }
 
-convertAllMDFilesToTabs(){
- find . -name '*.md' ! -type d -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+convertAllMDFilesToTabs() {
+  find . -name '*.md' ! -type d -exec sh -c 'expand -t 4 "$1" > "${1%.md}.tmp" && mv "${1%.md}.tmp" "$1"' _ {} \;
 }
 
 # Search aliases/functions
@@ -174,9 +181,6 @@ server() {
   port=$1
   if [ $# -ne  1 ]; then
     port=8000
-  fi
-  if command_exists open; then
-    open http://localhost:$port/
   fi
   python3 -m http.server $port
 }
@@ -248,6 +252,22 @@ compress()
     echo "Done"
     echo "###########################################"
   }
+
+# find-in-file - usage: fif <SEARCH_TERM>
+fif() {
+  if [ ! "$#" -gt 0 ]; then
+    echo "Need a string to search for!";
+    return 1;
+  fi
+  SELECTED_FILES="$(rg --hidden --files-with-matches --no-messages "$1" | fzf $FZF_PREVIEW_WINDOW -m --preview "rg --ignore-case --pretty --context 10 '$1' {}")"
+  if [ -n "$SELECTED_FILES" ]; then
+    nvim $(echo $SELECTED_FILES)
+  fi
+}
+
+function monitor() {
+  watch -n1 -t "lsof -i -n|awk '{print \$1, \$2, \$9}'|column -t";
+}
 
 # ram <process-name> - Find how much RAM a process is taking.
 ram() {

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+date=$(date +%Y%m%d_%H%M%S)
+path=~/Desktop/screenshots/Screenshot_$date.png
+rootid=$(xwininfo -root -int | grep -iPo --color=never "(?<=id:\s)[0-9]*?\s")
+
+if [[ "$1" == "--fullscreen" ]]
+then
+    # fullscreen
+    maim -u $path && xclip -selection clipboard -t image/png $path
+    notify-send -a "Maim" -i $path "Screenshot Captured!!" -t 2000
+elif [[ "$1" == "--region" ]]
+then
+    # region
+    maim -s -u $path && xclip -selection clipboard -t image/png $path
+    if [[ $? == 0 ]]
+    then
+        notify-send -a "Maim" -i $path "Screenshot Captured!!" -t 2000
+    fi
+elif [[ "$1" == "--window" ]]
+then
+    # current window
+    maim -i $(xdotool getactivewindow) $path && xclip -selection clipboard -t image/png $path
+    notify-send -a "Maim" -i $path "Screenshot Captured!!" -t 2000
+fi

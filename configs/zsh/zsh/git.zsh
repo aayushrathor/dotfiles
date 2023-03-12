@@ -17,6 +17,65 @@ function gd() {
               FZF-EOF"
             }
 
+# Reset the head to a previous commit (defaults to direct parent):
+function git_reset_head() {
+  git reset HEAD~$2 $1
+  # Failure case:
+  if [[ $? != 0 ]]; then
+    echo -n 'HEAD remains at '
+    git log -1 --oneline | cat
+    return 1
+  # Success case:
+  elif [[ $1 != '--hard' ]]; then
+    echo -n 'HEAD is now at '
+    git log -1 --oneline | cat
+  fi
+}
+
+# Print short status and log of latest commits:
+function git_status_short() {
+  if [[ -z $(git status -s) ]]; then
+    echo 'Nothing to commit, working tree clean\n'
+  else
+    git status -s && echo ''
+  fi
+  git log -${1:-3} --oneline | cat
+}
+
+# View the full change history of a single file:
+function git_log_file() {
+  if [[ -z $1 ]]; then
+    echo "Usage:    git_log_file <file> [<from line>] [<to line>]"
+    return 1
+  elif [[ -z $2 ]]; then
+    glog -p -- $1
+    return 0
+  elif [[ $2 == *,* ]]; then
+    3=${2#*,}
+    2=${2%,*}
+  elif [[ -z $3 ]]; then
+    3=$2
+  fi
+  glog -L $2,$3:$1
+}
+
+# git blame that optionally takes line numbers:
+# Usage: git_blame_line <file> [<from line>] [<to line>]
+function git_blame_line() {
+  if [[ -z $1 ]]; then
+    echo "Usage:    git_blame_line <file> [<from line>] [<to line>]"
+    return 1
+  elif [[ -z $2 ]]; then
+    2=1   # Set 'from' line number to first line
+  elif [[ $2 == *,* ]]; then
+    3=${2#*,}
+    2=${2%,*}
+  elif [[ -z $3 ]]; then
+    3=$2
+  fi
+  git blame $1 -L $2,$3
+}
+
 # fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 fb() {
   local branches branch
@@ -135,5 +194,7 @@ gao() {
 
 # git clone and cd instantly to cloned repo. gcd <git-url>
 gcd() {
-   git clone "$(pbpaste)" && cd "${1##*/}"
+  git_url="$(pbpaste)"
+  reponame=$(echo "$git_url" | sed 's/\.git$//' | sed 's/.*\///')
+  git clone "$git_url" && cd "$reponame"
 }

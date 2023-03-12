@@ -11,6 +11,7 @@ source ~/zsh/aliases.zsh
 source ~/zsh/options.zsh
 source ~/zsh/functions.zsh
 source ~/zsh/git.zsh
+source ~/zsh/kube.zsh
 
 # set vi mode
 set -o vi
