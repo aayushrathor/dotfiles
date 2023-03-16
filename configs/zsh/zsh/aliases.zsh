@@ -53,6 +53,7 @@ alias gsubu='git submodule update --remote --merge' # Update submodules
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias s='startx'
+alias hy='Hyprland'
 alias npm='pnpm'
 alias cat='bat -Pp'
 alias cd='z'

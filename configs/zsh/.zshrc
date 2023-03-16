@@ -6,12 +6,9 @@ START=$(date +%s.%N)
 source ~/zsh/.zprofile
 
 # load/source zsh files
-source ~/zsh/completions.zsh
-source ~/zsh/aliases.zsh
-source ~/zsh/options.zsh
-source ~/zsh/functions.zsh
-source ~/zsh/git.zsh
-source ~/zsh/kube.zsh
+for file in ~/zsh/*.zsh; do
+  source "$file"
+done
 
 # set vi mode
 set -o vi

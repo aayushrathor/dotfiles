@@ -9,14 +9,12 @@
 #  \▓▓▓▓▓▓▓ \▓▓▓▓▓▓ \▓▓   \▓▓\▓▓▓▓▓▓▓    \▓▓▓▓ 
 #                                                                              
 [global]
-    monitor = 0
     follow = mouse
     width = 350
     height = 300
-    offset = 150x40
+    offset = 75x40
     origin = top-right
-    scale = 0
-    notification_limit = 0
+
     progress_bar = true
     progress_bar_height = 6
     progress_bar_frame_width = 0
@@ -37,32 +35,38 @@
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
-    vertical_alignment = left
+    vertical_alignment = center
     show_age_threshold = 60
+    idle_threshold = 120
     ellipsize = middle
     ignore_newline = yes
     stack_duplicates = true
     hide_duplicate_count = false
+
+    word_wrap = yes
     show_indicators = yes
 
     ## Icons
     icon_position = left
-    max_icon_size = 72
-    icon_path = /usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
+    max_icon_size = 64
+
+    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/animations/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/categories/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/devices/mimetypes:/usr/share/icons/Papirus-Dark/48x48/panel/:/usr/share/icons/Papirus-Dark/48x48/places/
     
     ## History
     sticky_history = yes
     history_length = 20
     startup_notification = true
-    dmenu = /usr/bin/dmenu -p dunst:
+
+    dmenu = /usr/bin/rofi -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 0
+    corner_radius = 8
     ignore_dbusclose = false
     force_xinerama = false
-    force_wayland = false
+    force_wayland = true
+    layer = overlay
 
     ## Legacy
     mouse_left_click = close_current

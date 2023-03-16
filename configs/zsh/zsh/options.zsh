@@ -14,6 +14,53 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
+zmodload zsh/zle
+zmodload zsh/zpty
+zmodload zsh/complist
+zle -N _vi_search_fix
+zle -N _sudo_command_line
+
+while read -r opt
+do 
+  setopt $opt
+done <<-EOF
+AUTOCD
+AUTO_MENU
+AUTO_PARAM_SLASH
+COMPLETE_IN_WORD
+NO_MENU_COMPLETE
+HASH_LIST_ALL
+ALWAYS_TO_END
+NOTIFY
+NOHUP
+MAILWARN
+INTERACTIVE_COMMENTS
+NOBEEP
+APPEND_HISTORY
+SHARE_HISTORY
+INC_APPEND_HISTORY
+EXTENDED_HISTORY
+HIST_IGNORE_ALL_DUPS
+HIST_IGNORE_SPACE
+HIST_NO_FUNCTIONS
+HIST_EXPIRE_DUPS_FIRST
+HIST_SAVE_NO_DUPS
+HIST_REDUCE_BLANKS
+EOF
+
+while read -r opt
+do 
+  unsetopt $opt
+done <<-EOF
+FLOWCONTROL
+NOMATCH
+CORRECT
+EQUALS
+EOF
+
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -e
+
 # Use Git’s colored diff when available
 if hash git &>/dev/null ; then
 	diff() {
@@ -21,3 +68,4 @@ if hash git &>/dev/null ; then
 	}
 fi
 
+# vim:filetype=zsh:nowrap

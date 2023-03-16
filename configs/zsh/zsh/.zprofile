@@ -1,10 +1,15 @@
-# .zprofile
+#.zprofile
 
 # paths
 export PATH="$HOME/.local/bin:$PATH"
 if [ -d "$HOME/.local/lib" ]; then
   export PATH=$HOME/.local/lib:$PATH
 fi
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export GPG_TTY="${TTY:-$(tty)}"
 
 # shell
 export SHELL=/usr/bin/zsh
@@ -17,21 +22,46 @@ export LANG=en_US.UTF-8
 
 # editor x terminal
 export EDITOR=nvim
+export VISUAL=nvim
 export TERM=xterm-256color
+export SUDO_PROMPT="Password  :"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME/flatpak/exports/share"
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # tesseract
 export TESSDATA_PREFIX="$HOME/.config/tesseract/tessdata/"
 
-# pager
-export LS_COLORS="di=0;36"
-export LESS_TERMCAP_mb=$'\E[01;32m'
-export LESS_TERMCAP_md=$'\E[01;32m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;47;34m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;36m'
-export LESS=-r
+## Comment this to use normal manpager
+export MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
+
+if [ $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
+  export LESS="--RAW-CONTROL-CHARS"
+  export MANPAGER="less -s -M +Gg"
+
+  export LESS_TERMCAP_mb=$'\e[1;32m'
+  export LESS_TERMCAP_md=$'\e[1;32m'
+  export LESS_TERMCAP_me=$'\e[0m'
+  export LESS_TERMCAP_se=$'\e[0m'
+  export LESS_TERMCAP_so=$'\e[01;33m'
+  export LESS_TERMCAP_ue=$'\e[0m'
+  export LESS_TERMCAP_us=$'\e[1;4;31m'
+fi
+
+# export LS_COLORS="di=0;36"
 
 # node version manager - nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

@@ -1,5 +1,15 @@
 # functons for git zsh 
 
+function git-svn(){
+  if [[ ! -z "$1" && ! -z "$2" ]]; then
+          echo "Starting clone/copy ..."
+          repo=$(echo $1 | sed 's/\/$\|.git$//')
+          svn export "$repo/trunk/$2"
+  else
+          echo "Use: git-svn <repository> <subdirectory>"
+  fi  
+}
+
 # git log
 function gd() {
   git log --graph --color=always \
