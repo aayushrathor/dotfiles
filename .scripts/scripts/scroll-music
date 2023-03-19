@@ -2,7 +2,7 @@
 
 cmd="${0%/*}/music $1"
 
-zscroll -l 80 \
+zscroll -l 40 \
     --scroll-padding "$(printf ' %.0s' {1..8})" \
     -d 0.3 \
     -M "$cmd icon" \

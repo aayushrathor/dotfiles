@@ -61,7 +61,7 @@ if [ $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
   export LESS_TERMCAP_us=$'\e[1;4;31m'
 fi
 
-# export LS_COLORS="di=0;36"
+export LS_COLORS="di=0;36"
 
 # node version manager - nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

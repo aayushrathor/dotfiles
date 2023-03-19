@@ -5,6 +5,7 @@
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey -s '^K' 'ls^M'
+bindkey -s '^O' '_smooth_fzf^M'
 
 # prepend sudo on the current commmand
 bindkey -M vicmd '' _sudo_command_line
