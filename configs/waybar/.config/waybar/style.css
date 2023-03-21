@@ -1,0 +1,157 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: CaskaydiaCove Nerd Font, JetBrains Mono, Operator Mono;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
+  margin: 5px;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: #d4d4d4;
+  margin-right: 5px;
+}
+
+#workspaces button.focused {
+  color: #a6adc8;
+  background: #eba0ac;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+#workspaces button.active {
+  border-radius: 4px;
+  background-color: #8283bf;
+  color: rgb(26, 24, 38);
+}
+
+#workspaces button.urgent {
+  color: rgb(26, 24, 38);
+}
+
+#workspaces button:hover {
+  background-color: rgb(248, 189, 150);
+  color: rgb(26, 24, 38);
+}
+
+#custom-language,
+#custom-updates,
+#custom-caffeine,
+#custom-pipewire,
+#custom-media,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#tray,
+#bluetooth,
+#temperature,
+#cpu,
+#memory,
+#backlight {
+  background: #1e1e2e;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  margin-top: 10px;
+  border: 1px solid #181825;
+}
+
+#tray {
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#workspaces {
+  background: #1e1e2e;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#custom-media {
+  border-radius: 10px;
+}
+
+#custom-caffeine,
+#bluetooth {
+  color: #89dceb;
+  border-radius: 10px 0px 0px 10px;
+  border-right: 0px;
+  margin-left: 10px;
+}
+
+#custom-language {
+  color: #f38ba8;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-updates {
+  color: #f5c2e7;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#window {
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#clock {
+  color: #f9e2af;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+#network,
+#temperature {
+  color: #fab387;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#custom-pipewire {
+  color: #89b4fa;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#battery {
+  color: #a6e3a1;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+}
+
+#backlight,
+#memory {
+  color: #cba6f7;
+  border-left: 0px;
+  border-right: 0px;
+}
