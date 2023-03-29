@@ -50,7 +50,7 @@
     icon_position = left
     max_icon_size = 64
 
-    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/animations/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/categories/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/devices/mimetypes:/usr/share/icons/Papirus-Dark/48x48/panel/:/usr/share/icons/Papirus-Dark/48x48/places/
+    icon_path = /usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/apps/
     
     ## History
     sticky_history = yes

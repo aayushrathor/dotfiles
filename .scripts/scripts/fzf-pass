@@ -11,7 +11,7 @@ create_password() {
     echo "$service:$password" >> $password_file
     echo "Password created!"
     dunstify -a "password_manager" -u low "$service" "Password Created" 
-    echo $password | xclip -in -sel clip
+    echo $password | xsel -b
 }
 
 copy_password() {
@@ -21,8 +21,7 @@ copy_password() {
     else
         service=$selected_password
         password=$(grep -w $service $password_file | cut -d ':' -f 2)
-        echo $password | xclip -in -sel clip
-        sleep 1
+        echo $password | xsel -b
         dunstify -a "password_manager" -u low "$service" "Password Copied"
     fi
 }

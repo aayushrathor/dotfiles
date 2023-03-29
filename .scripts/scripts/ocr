@@ -1,8 +1,10 @@
 #!/bin/bash
 
-maim -u -o -s > /tmp/ss.png
+# maim -u -o -s > /tmp/ss.png
+grim -g "$(slurp)" /tmp/ss.png
+
 if ! test -f /tmp/ss.png; then
-   notify-send -t 2000 "Maim" "Error taking screenshot !?"
+   notify-send -t 2000 "grim" "Error taking screenshot !?"
    exit 1
 fi
 tesseract /tmp/ss.png /tmp/outputess
@@ -11,4 +13,4 @@ if [ $0 -ne 0 ]; then
    exit 1
 fi
 xclip -in -selection clipboard /tmp/outputess.txt > /dev/null 2>&1
-notify-send -t 2000 "Screenshot OCR" "Text copied from screenshot"
+notify-send -t 2000 -i /tmp/ss.png "Screenshot OCR" "Text copied from screenshot"

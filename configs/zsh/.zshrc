@@ -10,6 +10,9 @@ for file in ~/zsh/*.zsh; do
   source "$file"
 done
 
+# pip_fzf
+source ~/scripts/pip_fzf
+
 # set vi mode
 set -o vi
 

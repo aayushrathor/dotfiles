@@ -41,7 +41,7 @@ bc
 betterdiscord-installer-bin
 binutils
 bison
-blueberry
+blueman
 bluez
 bluez-libs
 bluez-tools
@@ -73,9 +73,6 @@ chafa
 check
 chromaprint
 chrono-date
-clipmenu
-clipnotify
-cmake
 cmatrix
 conky-lua-nv
 conmon
@@ -195,6 +192,7 @@ gobject-introspection
 gobject-introspection-runtime
 goffice
 google-chrome
+gperftools
 gpgme
 gpm
 gptfdisk
@@ -452,6 +450,7 @@ hdparm
 helm
 hicolor-icon-theme
 hidapi
+highway
 hslua-cli
 htop
 http-parser
@@ -466,6 +465,7 @@ iana-etc
 icu
 ijs
 imagemagick
+imath
 imlib2
 indicator-kdeconnect-git
 iniparser
@@ -563,6 +563,7 @@ libbytesize
 libcaca
 libcacard
 libcamera
+libcamera-ipa
 libcanberra
 libcap
 libcap-ng
@@ -603,6 +604,7 @@ libfontenc
 libfreeaptx
 libgcrypt
 libgee
+libgirepository
 libgit2
 libglvnd
 libgme
@@ -628,6 +630,7 @@ libisl
 libisoburn
 libisofs
 libjpeg-turbo
+libjxl
 libksba
 liblc3
 libldac
@@ -719,6 +722,8 @@ libtheora
 libtiff
 libtirpc
 libtool
+libtraceevent
+libtracefs
 libunistring
 libunwind
 libupnp
@@ -810,7 +815,6 @@ lua
 lua-lpeg
 lua52
 luajit
-luit
 lv2
 lvm2
 lxappearance-gtk3
@@ -829,7 +833,6 @@ md4c
 mdadm
 media-player-info
 mesa
-meson
 minikube
 minizip
 mkinitcpio
@@ -859,7 +862,6 @@ nettle
 network-manager-applet
 networkmanager
 nftables
-ninja
 nm-connection-editor
 node-gyp
 nodejs
@@ -878,6 +880,7 @@ oniguruma
 openal
 openbsd-netcat
 opencore-amr
+openexr
 openjpeg2
 openmpi
 openpmix
@@ -1063,12 +1066,10 @@ redis
 redshift
 reflector
 rest
-rhash
 ripgrep-git
 rnnoise
 rofi-greenclip
 rofi-lbonn-wayland-git
-rofimoji
 rtkit
 rubberband
 ruby
@@ -1136,7 +1137,6 @@ run-parts
 runc
 rustup
 sbc
-scdoc
 scrcpy
 screenkey-git
 sdl12-compat
@@ -1184,6 +1184,7 @@ stremio-beta
 sudo
 svt-av1
 swayidle
+swaylock
 sxhkd
 sysfsutils
 systemd
@@ -1267,13 +1268,13 @@ wlogout
 wmctrl
 wmutils-git
 woff2
+wofi
 wolfssl
 wpa_supplicant
 wpebackend-fdo
 x264
 x265
 xapp
-xbitmaps
 xcb-proto
 xcb-util
 xcb-util-cursor
@@ -1355,7 +1356,6 @@ xorg-xwud
 xorgproto
 xprintidle
 xsel
-xterm
 xvidcore
 xz
 yad
