@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+CONFIG="$HOME/.config/waybar/config.json"
+
+if [[ -n $(pidof waybar) ]]; then
+	# Terminate already running bar instances
+	killall -q waybar
+
+	# Wait until the waybar processes have been shut down
+	while pgrep -x waybar >/dev/null; do sleep 1; done
+else
+	# Launch main
+	waybar -c ${CONFIG} &
+fi
+
+notify-send -a "waybar" "waybar" "Toggled waybar" -t 1500

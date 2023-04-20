@@ -1,212 +1,212 @@
 {
-    "layer": "top",
-    "position": "bottom",
-    "height": 30,
-    "width": "",
-    "spacing": 0,
-    "margin": 0,
-    "margin-top": 0,
-    "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "fixed-center": true,
-    "ipc": true,
-    "modules-left": [
-        "clock",
-        "tray",
-        "custom/media"
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "width": "",
+  "spacing": 0,
+  "margin": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "fixed-center": true,
+  "ipc": true,
+  "modules-left": [
+    "clock",
+    "keyboard-state",
+    "tray",
+    "custom/media"
+  ],
+  "modules-center": [
+    "wlr/workspaces"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "network",
+    "backlight",
+    "custom/pipewire",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery"
+  ],
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": []
+    },
+    "sort-by-number": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "custom/caffeine": {
+    "exec": "~/.config/waybar/scripts/caffeine.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format-icons": [
+      "﯈",
+      ""
     ],
-    "modules-center": [
-        "wlr/workspaces"
-    ],
-    "modules-right": [
-        "bluetooth",
-        "network",
-        "backlight",
-        "custom/pipewire",
-        "keyboard-state",
-        "cpu",
-        "memory",
-        "temperature",
-        "battery"
-    ],
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": []
-        },
-        "sort-by-number": true,
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
-    },
-    "custom/caffeine": {
-        "exec": "~/.config/waybar/scripts/caffeine.sh",
-        "return-type": "json",
-        "interval": 3,
-        "format-icons": [
-            "﯈",
-            ""
-        ],
-        "format": "{icon}"
-    },
-    "custom/updates": {
-        "exec": "(checkupdates ; paru -Qua) | wc -l",
-        "interval": 7200,
-        "format": " {}"
-    },
-    "custom/language": {
-        "exec": "cat /tmp/kb_layout",
-        "interval": 3,
-        "format": " {}"
-    },
-    "keyboard-state": {
-        "device-path": "/dev/input/by-path/platform-i8042-serio-0-event-kbd",
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon} ",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 8
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ],
-        "on-scroll-up": "brightness inc",
-        "on-scroll-down": "brightness dec",
-        "min-length": 6
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "clock": {
-        "timezone": "Asia/Kolkata",
-        "format": "{: %I:%M %p  %a, %d %b}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt>{calendar}</tt>"
-    },
-    "network": {
-        "interface": "wlp2s0",
-        "format": "{ifname}",
-        "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ({signalStrength}%)",
-        "format-ethernet": " {ipaddr}/{cidr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "睊 Disconnected",
-        "tooltip-format-wifi": "\n  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}\n",
-        "on-click": "ipinfo",
-        "max-length": 45,
-        "interval": 3
-    },
-    "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": "ﱝ Muted",
-        "on-click": "volume mute",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                "墳",
-                ""
-            ]
-        },
-        "scroll-step": 1
-    },
-    "bluetooth": {
-        "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
-        "format-device-preference": [
-            "device1",
-            "device2"
-        ],
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "max-length": 8,
-        "on-click": "toggleBT",
-        "on-click-right": "blueman-manager"
-    },
-    "custom/pipewire": {
-        "tooltip": false,
-        "max-length": 8,
-        "exec": "$HOME/scripts/pipewire.sh",
-        "on-click-right": "pavucontrol",
-        "on-click": "volume mute",
-        "on-scroll-up": "volume up",
-        "on-scroll-down": "volume down"
-    },
-    "temperature": {
-        "thermal-zone": 2,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
-        "critical-threshold": 60,
-        "format-critical": " {temperatureC}°C",
-        "format": " {temperatureC}°C"
-    },
-    "memory": {
-        "interval": 5,
-        "format": " {used}GiB",
-        "max-length": 10
-    },
-    "cpu": {
-        "interval": 5,
-        "format": " {usage}%",
-        "max-length": 10
-    },
-    "custom/media": {
-        "max-length": 40,
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl stop",
-        "smooth-scrolling-threshold": 10,
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "exec": "scroll-music icon",
-        "exec-if": "music"
+    "format": "{icon}"
+  },
+  "custom/updates": {
+    "exec": "(checkupdates ; paru -Qua) | wc -l",
+    "interval": 7200,
+    "format": " {}"
+  },
+  "custom/language": {
+    "exec": "cat /tmp/kb_layout",
+    "interval": 3,
+    "format": " {}"
+  },
+  "keyboard-state": {
+    "device-path": "/dev/input/by-path/platform-i8042-serio-0-event-kbd",
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon} ",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
     }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-scroll-up": "brightness inc",
+    "on-scroll-down": "brightness dec",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "clock": {
+    "timezone": "Asia/Kolkata",
+    "format": "{: %I:%M %p  %a, %d %b}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt>{calendar}</tt>"
+  },
+  "network": {
+    "interface": "wlp2s0",
+    "format": "{ifname}",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ({signalStrength}%)",
+    "format-ethernet": " {ipaddr}/{cidr}",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "睊 Disconnected",
+    "tooltip-format-wifi": "\n  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}\n",
+    "on-click": "ipinfo",
+    "max-length": 45,
+    "interval": 3
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ Muted",
+    "on-click": "volume mute",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "墳",
+        ""
+      ]
+    },
+    "scroll-step": 1
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    "format-device-preference": [
+      "device1",
+      "device2"
+    ],
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "max-length": 8,
+    "on-click": "toggleBT",
+    "on-click-right": "blueman-manager"
+  },
+  "custom/pipewire": {
+    "tooltip": false,
+    "max-length": 8,
+    "exec": "$HOME/scripts/pipewire.sh",
+    "on-click-right": "pavucontrol",
+    "on-click": "volume mute",
+    "on-scroll-up": "volume up",
+    "on-scroll-down": "volume down"
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 60,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
+  },
+  "memory": {
+    "interval": 2,
+    "format": " {used}GiB",
+    "max-length": 10
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "max-length": 10
+  },
+  "custom/media": {
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10,
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "scroll-music icon",
+    "exec-if": "music"
+  }
 }

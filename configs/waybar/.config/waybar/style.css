@@ -13,7 +13,7 @@ window#waybar {
 }
 
 tooltip {
-  background: #1e1e2e;
+  background: #0f0f0f;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -69,14 +69,20 @@ tooltip {
 #tray,
 #bluetooth,
 #temperature,
+#keyboard-state,
 #cpu,
 #memory,
 #backlight {
-  background: #1e1e2e;
+  background: #0f0f0f;
   padding: 0px 10px;
-  margin: 3px 0px;
-  margin-top: 10px;
-  border: 1px solid #181825;
+  margin: 5px 0px;
+  /* margin-top: 10px; */
+  /* border: 1px solid #181825; */
+}
+
+#keyboard-state {
+  border-radius: 10px;
+  margin-left: 10px;
 }
 
 #tray {
@@ -86,7 +92,6 @@ tooltip {
 }
 
 #workspaces {
-  background: #1e1e2e;
   border-radius: 10px;
   margin-left: 10px;
   padding-right: 0px;

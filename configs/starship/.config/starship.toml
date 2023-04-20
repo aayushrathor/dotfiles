@@ -13,7 +13,7 @@ threshold = 15
 style = "bold red"
 
 [character]
-success_symbol = "[SSH :](#c397d8)"
+success_symbol = "[](#81A2BE)"
 error_symbol = "[-_- :](#EA5455)"
 
 [cmd_duration]
@@ -22,7 +22,8 @@ format = " took [$duration]($style)"
 
 [directory]
 truncation_length = 5
-format = "[\\[ $path \\]](#F0C674)[$lock_symbol]($lock_style) "
+# format = "[\\[ $path \\]](#F0C674)[$lock_symbol]($lock_style) "
+format = "[$path](#F0C674)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = " [$symbol$branch]($style) "
