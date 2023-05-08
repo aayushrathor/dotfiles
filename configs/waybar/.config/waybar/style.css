@@ -13,7 +13,7 @@ window#waybar {
 }
 
 tooltip {
-  background: #0f0f0f;
+  background: #1e1e2e;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -60,6 +60,7 @@ tooltip {
 #custom-caffeine,
 #custom-pipewire,
 #custom-media,
+#custom-dunst,
 #window,
 #clock,
 #battery,
@@ -87,7 +88,6 @@ tooltip {
 
 #tray {
   border-radius: 10px;
-  margin-right: 10px;
   margin-left: 10px;
 }
 
@@ -132,6 +132,7 @@ tooltip {
   color: #f9e2af;
   border-radius: 10px;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 #network,

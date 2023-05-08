@@ -12,9 +12,8 @@
   "fixed-center": true,
   "ipc": true,
   "modules-left": [
-    "clock",
-    "keyboard-state",
     "tray",
+    "clock",
     "custom/media"
   ],
   "modules-center": [
@@ -25,6 +24,7 @@
     "network",
     "backlight",
     "custom/pipewire",
+    "custom/dunst",
     "cpu",
     "memory",
     "temperature",
@@ -158,9 +158,9 @@
     "scroll-step": 1
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
     "format-device-preference": [
       "device1",
       "device2"
@@ -169,7 +169,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "max-length": 8,
+    "max-length": 15,
     "on-click": "toggleBT",
     "on-click-right": "blueman-manager"
   },
@@ -200,7 +200,7 @@
     "max-length": 10
   },
   "custom/media": {
-    "max-length": 40,
+    "max-length": 45,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
     "smooth-scrolling-threshold": 10,
@@ -208,5 +208,10 @@
     "on-scroll-down": "playerctl previous",
     "exec": "scroll-music icon",
     "exec-if": "music"
+  },
+  "custom/dunst": {
+    "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
+    "interval": 1,
+    "on-click": "dunstctl set-paused toggle"
   }
 }

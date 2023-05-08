@@ -38,6 +38,9 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 # and finally, make sure zsh-autosuggestions does not interfere with it:
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
 
+# zsh auto pair
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
+
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source ~/github/fzf-tab/fzf-tab.plugin.zsh
