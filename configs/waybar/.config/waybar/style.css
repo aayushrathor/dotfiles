@@ -60,6 +60,7 @@ tooltip {
 #custom-caffeine,
 #custom-pipewire,
 #custom-media,
+#custom-cava,
 #custom-dunst,
 #window,
 #clock,
@@ -98,8 +99,11 @@ tooltip {
   padding-left: 5px;
 }
 
-#custom-media {
+#custom-media,
+#custom-cava {
+  color: #cba6f7;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 #custom-caffeine,

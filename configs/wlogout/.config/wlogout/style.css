@@ -1,7 +1,7 @@
 /** ********** Fonts ********** **/
 * {
-  font-family: "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
-  font-size: 14px;
+  font-family: "CaskaydiaCove Nerd Font Mono", "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -14,8 +14,8 @@ window {
 button {
   background-color: #2a3036;
   color: #f1fcf9;
-  border: 1px solid #343a40;
-  border-radius: 10px;
+  border: 2px solid #343a40;
+  border-radius: 16px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 30%;

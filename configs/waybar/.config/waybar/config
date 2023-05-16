@@ -10,10 +10,10 @@
   "margin-left": 0,
   "margin-right": 0,
   "fixed-center": true,
-  "ipc": true,
   "modules-left": [
     "tray",
     "clock",
+    "custom/cava",
     "custom/media"
   ],
   "modules-center": [
@@ -126,13 +126,13 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt>{calendar}</tt>"
   },
   "network": {
-    "interface": "wlp2s0",
     "format": "{ifname}",
     "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ({signalStrength}%)",
-    "format-ethernet": " {ipaddr}/{cidr}",
+    "format-ethernet": "(eth)  {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "睊 Disconnected",
-    "tooltip-format-wifi": "\n  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}\n",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
+    "tooltip-format-ethernet": "  IP: {ipaddr}/{cidr}\nDown Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
     "on-click": "ipinfo",
     "max-length": 45,
     "interval": 3
@@ -213,5 +213,8 @@
     "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
     "interval": 1,
     "on-click": "dunstctl set-paused toggle"
-  }
+  },
+  "custom/cava": {
+      "exec": "cava.sh"
+    }
 }
