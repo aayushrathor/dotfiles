@@ -93,9 +93,6 @@ export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 export FZF_COMPLETION_OPTS="-x"
 
-# zoxide
-eval "$(zoxide init zsh)"
-
 # utils
 export KEYTIMEOUT=1
 export PROMPT_EOL_MARK=''

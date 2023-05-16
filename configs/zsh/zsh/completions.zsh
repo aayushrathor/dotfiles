@@ -48,36 +48,36 @@ source ~/github/fzf-tab/fzf-tab.plugin.zsh
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':completion:complete:*:options' sort false
-zstyle ':fzf-tab:complete:_zlua:*' query-string input
-
-# fzf-git
-zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
-	'git diff $word | delta'
-zstyle ':fzf-tab:complete:git-log:*' fzf-preview \
-	'git log --color=always $word'
-zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
-	'git help $word | bat -plman --color=always'
-zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
-	'case "$group" in
-	"commit tag") git show --color=always $word ;;
-	*) git show --color=always $word | delta ;;
-	esac'
-zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
-	'case "$group" in
-	"modified file") git diff $word | delta ;;
-	"recent commit object name") git show --color=always $word | delta ;;
-	*) git log --color=always $word ;;
-	esac'
-
+# zstyle ':fzf-tab:complete:_zlua:*' query-string input
+#
+# # fzf-git
+# zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
+# 	'git diff $word | delta'
+# zstyle ':fzf-tab:complete:git-log:*' fzf-preview \
+# 	'git log --color=always $word'
+# zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
+# 	'git help $word | bat -plman --color=always'
+# zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
+# 	'case "$group" in
+# 	"commit tag") git show --color=always $word ;;
+# 	*) git show --color=always $word | delta ;;
+# 	esac'
+# zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
+# 	'case "$group" in
+# 	"modified file") git diff $word | delta ;;
+# 	"recent commit object name") git show --color=always $word | delta ;;
+# 	*) git log --color=always $word ;;
+# 	esac'
+#
 # show file content
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 export LESSOPEN='|~/.lessfilter %s'
-
-# show systemd services
-zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
-
-# give a preview of commandline arguments when completing `kill`
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
-  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+#
+# # show systemd services
+# zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+#
+# # give a preview of commandline arguments when completing `kill`
+# zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+# zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
+#   '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
+# zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap

@@ -14,9 +14,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-zmodload zsh/zle
-zmodload zsh/zpty
-zmodload zsh/complist
 zle -N _vi_search_fix
 zle -N _sudo_command_line
 
@@ -59,7 +56,7 @@ EQUALS
 EOF
 
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -e
+bindkey -v
 
 # Use Git’s colored diff when available
 if hash git &>/dev/null ; then
