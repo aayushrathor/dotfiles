@@ -3,7 +3,7 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Background Image
-IMAGE="$HOME/.config/hypr/wallpapers/lockscreen.png"
+IMAGE="$HOME/Pictures/Un_titled.png"
 
 # Colors
 bg='20262C'		bgl='343A40'		fg='F1FCF9'
@@ -19,11 +19,12 @@ swaylock -f \
 	--show-failed-attempts \
 	--hide-keyboard-layout \
 	--indicator-caps-lock \
+	--clock \
 	\
 	`# Appearance` \
 	--color ${bg}E6 \
 	`#--image ${IMAGE} --scaling fill` \
-	--font 'JetBrainsMono Nerd Font' --font-size 18 \
+	--font 'Operator Mono' --font-size 24 \
 	\
 	`# Backspace Key` \
 	--key-hl-color ${green} \
