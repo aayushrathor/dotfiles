@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "height": 30,
   "width": "",
   "spacing": 0,
@@ -12,12 +12,10 @@
   "fixed-center": true,
   "modules-left": [
     "tray",
-    "clock",
-    "custom/cava",
-    "custom/media"
+    "wlr/workspaces"
   ],
   "modules-center": [
-    "wlr/workspaces"
+    "clock"
   ],
   "modules-right": [
     "bluetooth",
@@ -134,6 +132,7 @@
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
     "tooltip-format-ethernet": "  IP: {ipaddr}/{cidr}\nDown Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
     "on-click": "ipinfo",
+    "on-click-right": "nmcli device wifi rescan",
     "max-length": 45,
     "interval": 3
   },
@@ -202,19 +201,22 @@
   "custom/media": {
     "max-length": 45,
     "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10,
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "scroll-music icon",
-    "exec-if": "music"
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "smooth-scrolling-threshold": 5,
+    "on-scroll-up": "volume up",
+    "on-scroll-down": "volume down",
+    "exec": "echo $(music)",
+    "interval": 1
   },
   "custom/dunst": {
     "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
     "interval": 1,
     "on-click": "dunstctl set-paused toggle"
   },
-  "custom/cava": {
-      "exec": "cava.sh"
-    }
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/katargaon?format=%c%t'",
+    "interval": 1800,
+    "format": "{}"
+  }
 }

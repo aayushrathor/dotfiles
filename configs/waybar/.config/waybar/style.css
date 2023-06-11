@@ -19,6 +19,7 @@ tooltip {
   border-style: solid;
   border-color: #11111b;
   margin: 5px;
+  color: #ffffff;
 }
 
 #workspaces button {
@@ -62,6 +63,7 @@ tooltip {
 #custom-media,
 #custom-cava,
 #custom-dunst,
+#custom-weather,
 #window,
 #clock,
 #battery,
@@ -164,4 +166,9 @@ tooltip {
   color: #cba6f7;
   border-left: 0px;
   border-right: 0px;
+}
+
+#custom-weather {
+  border-radius: 10px;
+  margin-left: 10px;
 }
