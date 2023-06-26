@@ -54,6 +54,7 @@ tooltip {
 #workspaces button:hover {
   background-color: rgb(248, 189, 150);
   color: rgb(26, 24, 38);
+  border-radius: 4px;
 }
 
 #custom-language,
@@ -64,6 +65,7 @@ tooltip {
 #custom-cava,
 #custom-dunst,
 #custom-weather,
+#custom-waybar-systemd,
 #window,
 #clock,
 #battery,
@@ -81,7 +83,7 @@ tooltip {
   padding: 0px 10px;
   margin: 5px 0px;
   /* margin-top: 10px; */
-  /* border: 1px solid #181825; */
+  border: 1px solid #161616;
 }
 
 #keyboard-state {
@@ -92,6 +94,15 @@ tooltip {
 #tray {
   border-radius: 10px;
   margin-left: 10px;
+}
+
+#custom-wlogout {
+  margin: 5px 0px;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background: #0f0f0f;
 }
 
 #workspaces {
@@ -148,7 +159,8 @@ tooltip {
   border-right: 0px;
 }
 
-#custom-pipewire {
+#custom-pipewire,
+#pulseaudio {
   color: #89b4fa;
   border-left: 0px;
   border-right: 0px;

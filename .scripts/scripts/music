@@ -37,17 +37,16 @@ get_info() {
 
     # if not "icon", display information and return
     if [ "$2" != "icon" ]; then
+        echo " $title  "
         artist=$(extract_meta artist)
         [ -z "$artist" ] && artist=$(extract_meta albumArtist)
 
         if [ -n "$artist" ]; then
+            echo -n " 󰠃 $artist  "
             album=$(extract_meta album)
-            [ -n "$album" ] && echo -n "  $album "
-
-            echo -n " ﴁ $artist  "
+            [ -n "$album" ] && echo -n "  $album"
         fi
 
-        echo "$title"
         return 0
     fi
 

@@ -31,7 +31,7 @@ function helpfn() {
 
 # Set inital options and choices
 
-save_folder="$HOME/Desktop/screenshots/"
+save_folder="$XDG_DESKTOP_DIR/screenshots/"
 options=("Fullscreen\nSelection\nCurrent Window\nTimer")
 choice=""
 

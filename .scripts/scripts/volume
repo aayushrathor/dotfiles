@@ -25,11 +25,11 @@ mute() {
   muted="$(pamixer --get-mute)"
   if $muted; then
     pamixer -u
-    icon_name=~/Desktop/icons/volume-high.png
+    icon_name=$XDG_DESKTOP_DIR/icons/volume-high.png
     dunstify -a "VOLUME" "UNMUTED" -i $icon_name -r 2593 -u normal
   else 
     pamixer -m
-    icon_name=~/Desktop/icons/volume-mute.png
+    icon_name=$XDG_DESKTOP_DIR/icons/volume-mute.png
     dunstify -a "VOLUME" "MUTED" -i $icon_name -r 2593 -u normal
   fi
 }
@@ -38,12 +38,12 @@ toggle_mic() {
   muted_mic=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d ' ' -f 2)
   if [[ "$muted_mic" == "no" ]]; then
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    icon_name=~/Desktop/icons/microphone.png
-    dunstify -a "MICROPHONE" "microphone on" -i $icon_name -r 2593 -u normal
+    icon_name=$XDG_DESKTOP_DIR/icons/microphone-mute.png
+    dunstify -a "MICROPHONE" "microphone mute" -i $icon_name -r 2593 -u normal
   else
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    icon_name=~/Desktop/icons/microphone-mute.png
-    dunstify -a "MICROPHONE" "microphone mute" -i $icon_name -r 2593 -u normal
+    icon_name=$XDG_DESKTOP_DIR/icons/microphone.png
+    dunstify -a "MICROPHONE" "microphone on" -i $icon_name -r 2593 -u normal
   fi
 }
 

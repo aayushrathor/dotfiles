@@ -1,7 +1,7 @@
 #!/bin/sh
 
 date=$(date +%Y%m%d_%H%M%S)
-path=~/Desktop/screenshots/Screenshot_$date.png
+path=$XDG_DESKTOP_DIR/screenshots/Screenshot_$date.png
 rootid=$(xwininfo -root -int | grep -iPo --color=never "(?<=id:\s)[0-9]*?\s")
 
 if [[ "$1" == "--fullscreen" ]]

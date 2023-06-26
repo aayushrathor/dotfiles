@@ -7,7 +7,7 @@ if pidof ffmpeg; then
 	killall ffmpeg
 	notify-send 'Stopped Recording!' --icon=dialog-information
 else
-	dir=$HOME/Desktop/screenRecord
+	dir=$XDG_DESKTOP_DIR/screenRecord
 	current=$(date +%F_%H-%M-%S)
 	mkdir -p "$dir"
 
@@ -33,7 +33,7 @@ else
 			-crf 20 \
 			"$dir/$current.mp4"
 
-		dunstify 'File saved in $HOME/Desktop/screenRecord' --icon=dialog-information -r 5555 -u normal
+		dunstify 'File saved in $XDG_DESKTOP_DIR/screenRecord' --icon=dialog-information -r 5555 -u normal
 		dragon-drop -x $dir/$current.mp4
 	else
 		dunstify 'Selection cancled' --icon=dialog-information -r 5555 -u normal

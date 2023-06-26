@@ -12,21 +12,23 @@
   "fixed-center": true,
   "modules-left": [
     "tray",
-    "wlr/workspaces"
+    "clock",
+    "custom/media"
   ],
   "modules-center": [
-    "clock"
+    "wlr/workspaces"
   ],
   "modules-right": [
     "bluetooth",
     "network",
     "backlight",
-    "custom/pipewire",
+    "pulseaudio",
     "custom/dunst",
     "cpu",
     "memory",
     "temperature",
-    "battery"
+    "battery",
+    "custom/wlogout"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -34,16 +36,6 @@
   "wlr/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": []
-    },
     "sort-by-number": true,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
@@ -91,8 +83,7 @@
       ""
     ],
     "on-scroll-up": "brightness inc",
-    "on-scroll-down": "brightness dec",
-    "min-length": 6
+    "on-scroll-down": "brightness dec"
   },
   "battery": {
     "states": {
@@ -120,7 +111,8 @@
   },
   "clock": {
     "timezone": "Asia/Kolkata",
-    "format": "{: %I:%M %p  %a, %d %b}",
+    "format": "{: %I:%M %p}",
+    "format-alt": "{: %a, %d %b}",
     "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt>{calendar}</tt>"
   },
   "network": {
@@ -133,28 +125,31 @@
     "tooltip-format-ethernet": "  IP: {ipaddr}/{cidr}\nDown Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
     "on-click": "ipinfo",
     "on-click-right": "nmcli device wifi rescan",
-    "max-length": 45,
     "interval": 3
   },
-  "wireplumber": {
-    "format": "{icon} {volume}%",
-    "format-muted": "ﱝ Muted",
-    "on-click": "volume mute",
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "{icon} shh! {format_source}",
+    "format-muted": " shh! {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " shh!",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
       "default": [
         "",
         "",
-        "墳",
         ""
       ]
     },
-    "scroll-step": 1
+    "on-click": "volume mute",
+    "on-click-right": "pavucontrol"
   },
   "bluetooth": {
     "format": " {status}",
@@ -174,7 +169,6 @@
   },
   "custom/pipewire": {
     "tooltip": false,
-    "max-length": 8,
     "exec": "$HOME/scripts/pipewire.sh",
     "on-click-right": "pavucontrol",
     "on-click": "volume mute",
@@ -184,26 +178,23 @@
   "temperature": {
     "thermal-zone": 2,
     "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
-    "critical-threshold": 60,
+    "critical-threshold": 75,
     "format-critical": " {temperatureC}°C",
     "format": " {temperatureC}°C"
   },
   "memory": {
     "interval": 2,
-    "format": " {used}GiB",
-    "max-length": 10
+    "format": " {used}GiB"
   },
   "cpu": {
     "interval": 2,
-    "format": " {usage}%",
-    "max-length": 10
+    "format": " {usage}%"
   },
   "custom/media": {
     "max-length": 45,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "smooth-scrolling-threshold": 5,
     "on-scroll-up": "volume up",
     "on-scroll-down": "volume down",
     "exec": "echo $(music)",
@@ -218,5 +209,16 @@
     "exec": "curl 'https://wttr.in/katargaon?format=%c%t'",
     "interval": 1800,
     "format": "{}"
+  },
+  "custom/waybar-systemd": {
+    "exec": "~/.config/waybar/scripts/waybar-systemd",
+    "interval": 60,
+    "format": "{}"
+  },
+  "custom/wlogout": {
+    "on-click": "~/.config/hypr/scripts/wlogout",
+    "on-click-right": "~/.config/hypr/scripts/lockscreen",
+    "on-click-middle": "systemctl poweroff",
+    "format": "💀"
   }
 }
