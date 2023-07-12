@@ -19,7 +19,6 @@
     "wlr/workspaces"
   ],
   "modules-right": [
-    "bluetooth",
     "network",
     "backlight",
     "pulseaudio",
@@ -39,36 +38,6 @@
     "sort-by-number": true,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
-  },
-  "custom/caffeine": {
-    "exec": "~/.config/waybar/scripts/caffeine.sh",
-    "return-type": "json",
-    "interval": 3,
-    "format-icons": [
-      "﯈",
-      ""
-    ],
-    "format": "{icon}"
-  },
-  "custom/updates": {
-    "exec": "(checkupdates ; paru -Qua) | wc -l",
-    "interval": 7200,
-    "format": " {}"
-  },
-  "custom/language": {
-    "exec": "cat /tmp/kb_layout",
-    "interval": 3,
-    "format": " {}"
-  },
-  "keyboard-state": {
-    "device-path": "/dev/input/by-path/platform-i8042-serio-0-event-kbd",
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon} ",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
   },
   "tray": {
     "icon-size": 16,
@@ -118,13 +87,13 @@
   "network": {
     "format": "{ifname}",
     "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ({signalStrength}%)",
+    "format-alt": "󰀂 {ifname} 󰀑 {essid}",
     "format-ethernet": "(eth)  {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "睊 Disconnected",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
     "tooltip-format-ethernet": "  IP: {ipaddr}/{cidr}\nDown Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
-    "on-click": "ipinfo",
-    "on-click-right": "nmcli device wifi rescan",
+    "on-click-right": "ipinfo",
     "interval": 3
   },
   "pulseaudio": {
@@ -149,7 +118,8 @@
       ]
     },
     "on-click": "volume mute",
-    "on-click-right": "pavucontrol"
+    "on-click-middle": "pavucontrol",
+    "on-click-right": "volume toggle_mic"
   },
   "bluetooth": {
     "format": " {status}",
@@ -163,17 +133,9 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "max-length": 15,
+    "max-length": 10,
     "on-click": "toggleBT",
     "on-click-right": "blueman-manager"
-  },
-  "custom/pipewire": {
-    "tooltip": false,
-    "exec": "$HOME/scripts/pipewire.sh",
-    "on-click-right": "pavucontrol",
-    "on-click": "volume mute",
-    "on-scroll-up": "volume up",
-    "on-scroll-down": "volume down"
   },
   "temperature": {
     "thermal-zone": 2,
@@ -197,6 +159,7 @@
     "on-click-middle": "playerctl previous",
     "on-scroll-up": "volume up",
     "on-scroll-down": "volume down",
+    "format": "{}",
     "exec": "echo $(music)",
     "interval": 1
   },
@@ -204,21 +167,5 @@
     "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
     "interval": 1,
     "on-click": "dunstctl set-paused toggle"
-  },
-  "custom/weather": {
-    "exec": "curl 'https://wttr.in/katargaon?format=%c%t'",
-    "interval": 1800,
-    "format": "{}"
-  },
-  "custom/waybar-systemd": {
-    "exec": "~/.config/waybar/scripts/waybar-systemd",
-    "interval": 60,
-    "format": "{}"
-  },
-  "custom/wlogout": {
-    "on-click": "~/.config/hypr/scripts/wlogout",
-    "on-click-right": "~/.config/hypr/scripts/lockscreen",
-    "on-click-middle": "systemctl poweroff",
-    "format": "💀"
   }
 }

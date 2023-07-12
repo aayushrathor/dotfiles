@@ -3,7 +3,7 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Background Image
-IMAGE="$HOME/Pictures/Un_titled.png"
+IMAGE="~/downloads/pink.png"
 
 # Colors
 bg='20262C'		bgl='343A40'		fg='F1FCF9'

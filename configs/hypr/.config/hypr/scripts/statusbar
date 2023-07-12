@@ -2,7 +2,7 @@
 
 ## launch waybar with alt config
 
-CONFIG="$HOME/.config/waybar/config"
+CONFIG="$HOME/.config/waybar/config.json"
 STYLE="$HOME/.config/waybar/style.css"
 
 if [[ ! `pidof waybar` ]]; then
