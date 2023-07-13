@@ -50,6 +50,7 @@ alias gsubs='git submodule status'
 alias gsubu='git submodule update --remote --merge' # Update submodules
 
 # utils
+alias zshrc='nvim ~/.zshrc'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias s='startx'
@@ -60,7 +61,7 @@ alias cd='z'
 alias dc='z'
 alias pdf='zathura'
 alias dot='cd ~/.config && nvim'
-alias minecraft='java -jar ~/Desktop/minecraft/TLauncher-2.876.jar'
+alias minecraft='java -jar ~/desktop/minecraft/TLauncher-2.876.jar'
 alias mpv="devour mpv"
 alias aayush="cd ~/"
 alias sleep="systemctl suspend"
