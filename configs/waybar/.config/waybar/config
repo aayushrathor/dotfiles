@@ -1,15 +1,10 @@
 {
   "layer": "top",
   "position": "top",
+  "mod": "dock",
+  "passthrough": false,
+  "gtk-layer-shell": true,
   "height": 30,
-  "width": "",
-  "spacing": 0,
-  "margin": 0,
-  "margin-top": 0,
-  "margin-bottom": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "fixed-center": true,
   "modules-left": [
     "tray",
     "clock",
@@ -22,6 +17,7 @@
     "network",
     "backlight",
     "pulseaudio",
+    "pulseaudio#microphone",
     "custom/dunst",
     "cpu",
     "memory",
@@ -80,9 +76,8 @@
   },
   "clock": {
     "timezone": "Asia/Kolkata",
-    "format": "{: %I:%M %p}",
-    "format-alt": "{: %a, %d %b}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt>{calendar}</tt>"
+    "format": " {:%I:%M %p}",
+    "format-alt": " {:%A, %d %B, %Y}"
   },
   "network": {
     "format": "{ifname}",
@@ -98,12 +93,10 @@
   },
   "pulseaudio": {
     "scroll-step": 5,
-    "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{icon} {volume}% {format_source}",
-    "format-bluetooth-muted": "{icon} shh! {format_source}",
-    "format-muted": " shh! {format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " shh!",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "{icon} shh!",
+    "format-muted": " shh!",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -118,8 +111,16 @@
       ]
     },
     "on-click": "volume mute",
-    "on-click-middle": "pavucontrol",
-    "on-click-right": "volume toggle_mic"
+    "on-click-middle": "pavucontrol"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
   },
   "bluetooth": {
     "format": " {status}",

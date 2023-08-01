@@ -26,15 +26,15 @@ spr (){
     notify-send -t 900 -u low "Sprunge copied to clipboard!"
   }
 
-  em (){
-    devour emacsclient -cq $1
-  }
+em (){
+  devour emacsclient -cq $1
+}
 
-  iso (){
-    sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
-  }
+iso (){
+  sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
+}
 
-function _smooth_fzf() {
+_smooth_fzf() {
   local fname
   local current_dir="$PWD"
   cd "${XDG_CONFIG_HOME:-~/.config}"
@@ -43,7 +43,7 @@ function _smooth_fzf() {
   cd "$current_dir"
 }
 
-function toppy() {
+toppy() {
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 21
 }
 
@@ -79,7 +79,7 @@ packs() {
 }
 
 # interactive man search by https://github.com/rothgar/mastering-zsh
-function  mans(){
+mans(){
   man -k . \
     | fzf -n1,2 --preview "echo {} \
     | cut -d' ' -f1 \
@@ -199,8 +199,7 @@ server() {
 }
 
 # compress <file/dir> - Compress <file/dir>.
-compress()
-  {
+compress (){
     dirPriorToExe=`pwd`
     dirName=`dirname $1`
     baseName=`basename $1`
@@ -278,7 +277,7 @@ fif() {
   fi
 }
 
-function monitor() {
+monitor() {
   watch -n1 -t "lsof -i -n|awk '{print \$1, \$2, \$9}'|column -t";
 }
 

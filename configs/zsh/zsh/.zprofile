@@ -27,7 +27,7 @@ export LANG=en_US.UTF-8
 # editor x terminal
 export EDITOR=nvim
 export VISUAL=nvim
-export TERM=xterm-256color
+export TERM=xterm-kitty
 export SUDO_PROMPT="Password  :"
 
 export XDG_CONFIG_HOME="$HOME/.config"
