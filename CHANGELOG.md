@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/aayushrathor/dotfiles/compare/v1.6.0...v1.7.0) (2023-08-01)
+
+
+### Features
+
+* update mic module,keybinds && (zsh): update alias,keybinds ([a23e3cb](https://github.com/aayushrathor/dotfiles/commit/a23e3cb68e47efb148091c2981b7036c8cf2442d))
+
+
+
 # [1.6.0](https://github.com/aayushrathor/dotfiles/compare/v1.4.0...v1.6.0) (2023-07-20)
 
 
@@ -47,15 +56,6 @@
 
 
 # [1.2.0](https://github.com/aayushrathor/dotfiles/compare/v1.1.0...v1.2.0) (2023-04-20)
-
-
-
-# [1.1.0](https://github.com/aayushrathor/dotfiles/compare/v1.0.0...v1.1.0) (2023-03-29)
-
-
-### Features
-
-* **hypr:** add {hyprland,waybar,wlogout} configs ([51ad6db](https://github.com/aayushrathor/dotfiles/commit/51ad6dbbc4231d2aad1399e4195114d3b0bb2708))
 
 
 
