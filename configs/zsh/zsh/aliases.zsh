@@ -33,21 +33,21 @@ alias gdiff='git diff --name-only --diff-filter=d | xargs bat --diff'
 alias gwcd='git whatchanged -p --date=format:"%A %B %d %Y at %H:%M" --pretty=format:"%n%n%C(yellow)%H%Creset%x09%C(bold green)%D%Creset%n%<|(40)%C(white)%ad%x09%an%Creset%n%n    %C(bold)%s%Creset%n%w(0,4,4)%+b%n" | bat'
 
 ## git tags
-alias gt='git tag'
-alias gtam='git tag -am' # <- takes message before annotated tag name: e.g. gtam 'Release v1.0.0' v1.0.0
-alias gtsm='git tag -sm' # GPG sign an annotated tag
-alias gtd='git tag --delete'
-alias gtl='git tag --list'
-alias gtls='git tag --list | cat'
+# alias gt='git tag'
+# alias gtam='git tag -am' # <- takes message before annotated tag name: e.g. gtam 'Release v1.0.0' v1.0.0
+# alias gtsm='git tag -sm' # GPG sign an annotated tag
+# alias gtd='git tag --delete'
+# alias gtl='git tag --list'
+# alias gtls='git tag --list | cat'
 
 ## git submodules
-alias gsub='git submodule'
-alias gsuba='git submodule add'
-alias gsubi='git submodule update --init' # Initialize submodules
-alias gsubpl='git submodule foreach git pull'
-alias gsubplom='git submodule foreach git pull origin $(git_main_branch)'
-alias gsubs='git submodule status'
-alias gsubu='git submodule update --remote --merge' # Update submodules
+# alias gsub='git submodule'
+# alias gsuba='git submodule add'
+# alias gsubi='git submodule update --init' # Initialize submodules
+# alias gsubpl='git submodule foreach git pull'
+# alias gsubplom='git submodule foreach git pull origin $(git_main_branch)'
+# alias gsubs='git submodule status'
+# alias gsubu='git submodule update --remote --merge' # Update submodules
 
 # utils
 alias zshrc='nvim ~/.zshrc'
@@ -85,7 +85,7 @@ alias e='exit'
 alias h='htop'
 alias p='pfetch'
 alias n='neofetch'
-alias b='btop'
+alias b='bpytop'
 alias t='tmux new-session \; send-keys 'cod' C-m \; splitw -hp 40 \; send-keys 'cod' C-m'
 alias rr='ranger'
 alias cal='cal -3 -s'
