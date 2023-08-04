@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/aayushrathor/dotfiles/compare/v1.8.0...v1.8.1) (2023-08-04)
+
+
+### Bug Fixes
+
+* rm zsh perf ([4d3be62](https://github.com/aayushrathor/dotfiles/commit/4d3be625a7650bd5b874f9de709e8921f08fb017))
+
+
+
 # [1.8.0](https://github.com/aayushrathor/dotfiles/compare/v1.7.0...v1.8.0) (2023-08-04)
 
 
@@ -52,15 +61,6 @@
 * idk ([dde39ec](https://github.com/aayushrathor/dotfiles/commit/dde39ec72588c80c4cced2910fdedfc73b0a088e))
 * update package list ([0f3a43a](https://github.com/aayushrathor/dotfiles/commit/0f3a43a9e62f6acf4e9da1a73e2e3ce60a056d23))
 * user dir update ([c812fec](https://github.com/aayushrathor/dotfiles/commit/c812fec4d23406a0ba16609a6ed5c2c1131ea6ad))
-
-
-
-# [1.3.0](https://github.com/aayushrathor/dotfiles/compare/v1.2.0...v1.3.0) (2023-05-08)
-
-
-### Features
-
-* **misc:** conventional changelog ([c0f668f](https://github.com/aayushrathor/dotfiles/commit/c0f668fa6cd4e365008a9299a7db9369ad598666))
 
 
 
