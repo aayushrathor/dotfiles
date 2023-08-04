@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/aayushrathor/dotfiles/compare/v1.7.0...v1.8.0) (2023-08-04)
+
+
+### Features
+
+* update zshrc and rm unwanted functions ([a8a1f84](https://github.com/aayushrathor/dotfiles/commit/a8a1f84cb70134c6bd656c433ef296c59bff39a6))
+
+
+
 # [1.7.0](https://github.com/aayushrathor/dotfiles/compare/v1.6.0...v1.7.0) (2023-08-01)
 
 
@@ -52,10 +61,6 @@
 ### Features
 
 * **misc:** conventional changelog ([c0f668f](https://github.com/aayushrathor/dotfiles/commit/c0f668fa6cd4e365008a9299a7db9369ad598666))
-
-
-
-# [1.2.0](https://github.com/aayushrathor/dotfiles/compare/v1.1.0...v1.2.0) (2023-04-20)
 
 
 
