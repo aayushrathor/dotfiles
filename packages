@@ -20,6 +20,7 @@ anaconda
 android-tools
 android-udev
 aom
+appstream-glib
 arandr
 archlinux-keyring
 argon2
@@ -69,8 +70,10 @@ cairomm
 cantarell-fonts
 capstone
 catatonit
+catch2
 cava
 cdparanoia
+chafa
 check
 chrono-date
 cmake
@@ -82,6 +85,9 @@ coreutils
 cowsay
 cpio
 cppdap
+cpufreqd
+cpufrequtils
+cpupower-gui
 criu
 cronie
 crun
@@ -129,7 +135,6 @@ efivar
 electron
 electron25
 enchant
-eww-wayland
 exa
 exiv2
 exo
@@ -147,6 +152,7 @@ fftw
 file
 filesystem
 findutils
+firefox
 fish
 flac
 flameshot
@@ -262,6 +268,7 @@ hwloc
 hyphen
 hyprland
 hyprpaper-git
+hyprpicker
 iana-etc
 icu
 ijs
@@ -417,6 +424,7 @@ libgpg-error
 libgsf
 libgtop
 libgudev
+libhandy
 libheif
 libical
 libice
@@ -609,6 +617,7 @@ linux-zen-headers
 llvm-libs
 lm_sensors
 lolcat
+lshw
 lsof
 lsp-plugins
 lsp-plugins-clap
@@ -636,6 +645,7 @@ md4c
 mdadm
 media-player-info
 mesa
+meson
 minikube
 minizip
 mkinitcpio
@@ -995,6 +1005,7 @@ run-parts
 runc
 rustup
 sbc
+scdoc
 scrcpy
 screenkey-git
 sdl12-compat

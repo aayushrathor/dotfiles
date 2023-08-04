@@ -2,7 +2,11 @@
 
 START=$(date +%s.%N)
 
-zmodload zsh/zprof
+
+## zsh Performance
+# zmodload zsh/zprof
+# zprof
+
 # Use profiles
 source ~/zsh/.zprofile
 
@@ -10,7 +14,6 @@ source ~/zsh/.zprofile
 for file in ~/zsh/*.zsh; do
   source "$file"
 done
-zprof
 
 # pip_fzf
 source ~/scripts/pip_fzf
