@@ -178,6 +178,27 @@ falias() {
     eval $CMD
 }
 
+# Search Environment Variables
+function fenv-vars() {
+  local out
+  out=$(env | fzf)
+  echo $(echo $out | cut -d= -f2)
+}
+
+# Enhanced Git Status (Open multiple files with tab + diff preview)
+fgst() {
+    git rev-parse --git-dir > /dev/null 2>&1 || { echo "You are not in a git repository" && return }
+    local selected
+    selected=$(git -c color.status=always status --short |
+        fzf --height 50% "$@" --border -m --ansi --nth 2..,.. \
+        --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' |
+        cut -c4- | sed 's/.* -> //')
+            if [[ $selected ]]; then
+                for prog in $(echo $selected);
+                do; $EDITOR $prog; done;
+            fi
+}
+
 # Lowercase every file in current dir
 lowercaseCurrentDir(){
   for i in *; do mv $i ${(L)i}; done
