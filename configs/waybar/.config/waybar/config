@@ -37,7 +37,7 @@
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 8
+    "spacing": 4
   },
   "backlight": {
     "device": "intel_backlight",
@@ -111,7 +111,8 @@
       ]
     },
     "on-click": "volume mute",
-    "on-click-middle": "pavucontrol"
+    "on-click-middle": "pavucontrol",
+    "interval": 1
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
@@ -120,7 +121,8 @@
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
+    "scroll-step": 5,
+    "interval": 1
   },
   "bluetooth": {
     "format": " {status}",
