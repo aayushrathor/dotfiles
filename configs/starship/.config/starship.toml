@@ -13,8 +13,10 @@ threshold = 15
 style = "bold red"
 
 [character]
-success_symbol = "[](#81A2BE)"
-error_symbol = "[-_- :](#EA5455)"
+# success_symbol = "[](#81A2BE)"
+success_symbol = "[>>-](#81A2BE)"
+error_symbol = "[-<<](#EA5455)"
+# error_symbol = "[-_- :](#EA5455)"
 
 [cmd_duration]
 min_time = 10_000  

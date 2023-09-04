@@ -72,16 +72,18 @@
       "",
       "",
       ""
-    ]
+    ],
+    "interval": 2
   },
   "clock": {
     "timezone": "Asia/Kolkata",
     "format": " {:%I:%M %p}",
-    "format-alt": " {:%A, %d %B, %Y}"
+    "format-alt": " {:%A, %d %B, %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>"
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ({signalStrength}%)",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-alt": "󰀂 {ifname} 󰀑 {essid}",
     "format-ethernet": "(eth)  {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-linked": " {ifname} (No IP)",
@@ -125,20 +127,12 @@
     "interval": 1
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
-    "format-device-preference": [
-      "device1",
-      "device2"
-    ],
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "max-length": 10,
-    "on-click": "toggleBT",
-    "on-click-right": "blueman-manager"
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias}"
   },
   "temperature": {
     "thermal-zone": 2,
@@ -149,7 +143,7 @@
   },
   "memory": {
     "interval": 2,
-    "format": " {used}GiB"
+    "format": " {used}GiB {swapUsed}GiB"
   },
   "cpu": {
     "interval": 2,

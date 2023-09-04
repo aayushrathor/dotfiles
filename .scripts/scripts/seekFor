@@ -3,8 +3,8 @@
 POS=$(playerctl position)
 TEN=10
 
-POS=$( printf "%.0f" $POS )
-
-SEEK=$(( $POS + $TEN ))
-
-playerctl position ${SEEK}
+if (( $(bc <<< "$POS > $TEN") )); then
+    POS=$( printf "%.0f" "$POS" )
+    SEEK=$((POS + TEN))
+    playerctl position "$SEEK"
+fi

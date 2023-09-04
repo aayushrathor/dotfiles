@@ -1,50 +1,49 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: CaskaydiaCove Nerd Font, JetBrains Mono, Operator Mono;
+  font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 14px;
-  min-height: 0;
+  min-height: 10px;
 }
 
 window#waybar {
-  background: rgba(30, 30, 30, 0.5);
-  color: #cdd6f4;
+    background: rgba(0, 0, 0, 0);
 }
 
 #workspaces button {
-  padding: 5px;
-  color: #d4d4d4;
-  margin-right: 5px;
-}
-
-#workspaces button.focused {
-  color: #a6adc8;
-  background: #eba0ac;
+  box-shadow: none;
+  text-shadow: none;
   border-radius: 16px;
-}
-
-#workspaces button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 6px;
-  padding-right: 6px;
+  /* margin-top: 5px; */
+  /* margin-bottom: 5px; */
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #cdd6f4;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-  border-radius: 16px;
-  background-color: #8283bf;
-  color: rgb(26, 24, 38);
-}
-
-#workspaces button.urgent {
-  color: rgb(26, 24, 38);
+  background: #a6adc8;
+  color: #313244;
+  margin-left: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 5px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button:hover {
-  background-color: rgb(248, 189, 150);
-  color: rgb(26, 24, 38);
-  border-radius: 16px;
+  background: #f5c2e7;
+  color: #313244;
+  padding-left: 12px;
+  padding-right: 12px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #custom-media,
@@ -90,7 +89,7 @@ window#waybar {
   color: #89dceb;
   border-radius: 16px 0px 0px 16px;
   border-right: 0px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 #window {
