@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/aayushrathor/dotfiles/compare/v1.9.0...v1.10.0) (2023-09-04)
+
+
+### Features
+
+* long time no update ([ef34bc7](https://github.com/aayushrathor/dotfiles/commit/ef34bc724a604fd5f5b043fffdb794cadbf196b0))
+
+
+
 # [1.9.0](https://github.com/aayushrathor/dotfiles/compare/v1.8.1...v1.9.0) (2023-08-10)
 
 
@@ -32,26 +41,6 @@
 ### Features
 
 * update mic module,keybinds && (zsh): update alias,keybinds ([a23e3cb](https://github.com/aayushrathor/dotfiles/commit/a23e3cb68e47efb148091c2981b7036c8cf2442d))
-
-
-
-# [1.6.0](https://github.com/aayushrathor/dotfiles/compare/v1.4.0...v1.6.0) (2023-07-20)
-
-
-### Bug Fixes
-
-* misc ([0fd43ca](https://github.com/aayushrathor/dotfiles/commit/0fd43cac9dfe2edce625df4a44226b7c93a9290e))
-* update changelog actions ([31126e1](https://github.com/aayushrathor/dotfiles/commit/31126e170d6dfac11982bbd9dcb8898fc0880126))
-
-
-### Features
-
-* deploy dots with jekyll ([8e8482f](https://github.com/aayushrathor/dotfiles/commit/8e8482f3a96c023558e3107b535af43b5d92de2a))
-* update zshrc ([de7f0c1](https://github.com/aayushrathor/dotfiles/commit/de7f0c15bb011c876d5f653cbe2308c97c44f101))
-
-
-
-# [1.3.0](https://github.com/aayushrathor/dotfiles/compare/v1.2.0...v1.3.0) (2023-05-08)
 
 
 
