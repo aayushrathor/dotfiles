@@ -50,6 +50,10 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # eval "$(ssh-agent -s)"
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec Hyprland
+fi
+
 # Performance Warning
 END=$(date +%s.%N)
 ZSHRC_PERF=$(printf %.2f $(echo "$END - $START" | bc))

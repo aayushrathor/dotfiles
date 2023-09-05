@@ -101,3 +101,7 @@ export KEYTIMEOUT=1
 export PROMPT_EOL_MARK=''
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 export DISABLE_MAGIC_FUNCTIONS=true     # make pasting into terminal faster
+
+# hyprland
+export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER_ALLOW_SOFTWARE=1
