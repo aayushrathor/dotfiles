@@ -1,3 +1,12 @@
+## [1.10.2](https://github.com/aayushrathor/dotfiles/compare/v1.10.1...v1.10.2) (2023-09-05)
+
+
+### Bug Fixes
+
+* **waybar:** hyprland workspaces wlr to hyprland ([d1ef635](https://github.com/aayushrathor/dotfiles/commit/d1ef6350c966663cb486b40309f9a150a78f17ab))
+
+
+
 ## [1.10.1](https://github.com/aayushrathor/dotfiles/compare/v1.10.0...v1.10.1) (2023-09-05)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * rm zsh perf ([4d3be62](https://github.com/aayushrathor/dotfiles/commit/4d3be625a7650bd5b874f9de709e8921f08fb017))
-
-
-
-# [1.8.0](https://github.com/aayushrathor/dotfiles/compare/v1.7.0...v1.8.0) (2023-08-04)
-
-
-### Features
-
-* update zshrc and rm unwanted functions ([a8a1f84](https://github.com/aayushrathor/dotfiles/commit/a8a1f84cb70134c6bd656c433ef296c59bff39a6))
 
 
 
