@@ -11,7 +11,7 @@
     "custom/media"
   ],
   "modules-center": [
-    "wlr/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "network",
@@ -27,13 +27,6 @@
   ],
   "hyprland/window": {
     "format": "{}"
-  },
-  "wlr/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "sort-by-number": true,
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "tray": {
     "icon-size": 16,
@@ -143,7 +136,7 @@
   },
   "memory": {
     "interval": 2,
-    "format": " {used}GiB {swapUsed}GiB"
+    "format": " {used}GiB"
   },
   "cpu": {
     "interval": 2,
