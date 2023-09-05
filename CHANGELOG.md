@@ -1,3 +1,12 @@
+## [1.10.1](https://github.com/aayushrathor/dotfiles/compare/v1.10.0...v1.10.1) (2023-09-05)
+
+
+### Bug Fixes
+
+* zsh autologin and hypr startup graphics issue ([a7c4dcd](https://github.com/aayushrathor/dotfiles/commit/a7c4dcd6537ede0263cb8e19720cf20fb89b2ff1))
+
+
+
 # [1.10.0](https://github.com/aayushrathor/dotfiles/compare/v1.9.0...v1.10.0) (2023-09-04)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * update zshrc and rm unwanted functions ([a8a1f84](https://github.com/aayushrathor/dotfiles/commit/a8a1f84cb70134c6bd656c433ef296c59bff39a6))
-
-
-
-# [1.7.0](https://github.com/aayushrathor/dotfiles/compare/v1.6.0...v1.7.0) (2023-08-01)
-
-
-### Features
-
-* update mic module,keybinds && (zsh): update alias,keybinds ([a23e3cb](https://github.com/aayushrathor/dotfiles/commit/a23e3cb68e47efb148091c2981b7036c8cf2442d))
 
 
 
