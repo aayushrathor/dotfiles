@@ -1,3 +1,12 @@
+## [1.10.4](https://github.com/aayushrathor/dotfiles/compare/v1.10.3...v1.10.4) (2023-09-14)
+
+
+### Bug Fixes
+
+* update alias(exa->eza) && rm battery(waybar) ([260dfd8](https://github.com/aayushrathor/dotfiles/commit/260dfd8a3b6ab983c2030b6abce3067ef2b37db8))
+
+
+
 ## [1.10.3](https://github.com/aayushrathor/dotfiles/compare/v1.10.2...v1.10.3) (2023-09-10)
 
 
@@ -31,16 +40,6 @@
 ### Features
 
 * long time no update ([ef34bc7](https://github.com/aayushrathor/dotfiles/commit/ef34bc724a604fd5f5b043fffdb794cadbf196b0))
-
-
-
-# [1.9.0](https://github.com/aayushrathor/dotfiles/compare/v1.8.1...v1.9.0) (2023-08-10)
-
-
-### Features
-
-* **hypr,waybar,zsh:** minor updates && add new func(zsh) ([c780b43](https://github.com/aayushrathor/dotfiles/commit/c780b43d000be67939b78158d319aa769b52bda8))
-* **zsh:** add new fzf func ([2786cc2](https://github.com/aayushrathor/dotfiles/commit/2786cc2641d8b5c941eaf041d16d4c48d6288b73))
 
 
 
