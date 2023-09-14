@@ -22,8 +22,6 @@
     "cpu",
     "memory",
     "temperature",
-    "battery",
-    "custom/wlogout"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -129,7 +127,7 @@
   },
   "temperature": {
     "thermal-zone": 2,
-    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
     "critical-threshold": 75,
     "format-critical": " {temperatureC}°C",
     "format": " {temperatureC}°C"

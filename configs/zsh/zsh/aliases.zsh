@@ -1,16 +1,16 @@
 # alias zsh
 
-# ls - exa
-alias ls='exa -a --icons --color=always --group-directories-first' # preferred listing
-alias sl='exa -a --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.="exa -a | egrep '^\.'"
-alias la='(exa -ahl --color=always --group-directories-first) | bat ' # my preferred listing
-alias lr='(exa -aR --color=always --group-directories-first) |bat '  # all files and dirs
-alias l='(exa -a --color=always --group-directories-first) |bat '  # all files and dirs
-alias ld='(exa -l --color=always --group-directories-first) | bat'  # long format
+# ls - eza
+alias ls='eza -a --icons --color=always --group-directories-first' # preferred listing
+alias sl='eza -a --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.="eza -a | egrep '^\.'"
+alias la='(eza -ahl --color=always --group-directories-first) | bat ' # my preferred listing
+alias lr='(eza -aR --color=always --group-directories-first) |bat '  # all files and dirs
+alias l='(eza -a --color=always --group-directories-first) |bat '  # all files and dirs
+alias ld='(eza -l --color=always --group-directories-first) | bat'  # long format
 
 # docker x k8s
 #alias docker='podman'
