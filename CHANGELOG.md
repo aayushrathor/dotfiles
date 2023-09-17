@@ -1,3 +1,12 @@
+# [1.11.0](https://github.com/aayushrathor/dotfiles/compare/v1.10.4...v1.11.0) (2023-09-17)
+
+
+### Features
+
+* update rofi(aditya) && rm nvim ([d2d5117](https://github.com/aayushrathor/dotfiles/commit/d2d511794549e039e1b2cabe31342294ade9bd3c))
+
+
+
 ## [1.10.4](https://github.com/aayushrathor/dotfiles/compare/v1.10.3...v1.10.4) (2023-09-14)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * zsh autologin and hypr startup graphics issue ([a7c4dcd](https://github.com/aayushrathor/dotfiles/commit/a7c4dcd6537ede0263cb8e19720cf20fb89b2ff1))
-
-
-
-# [1.10.0](https://github.com/aayushrathor/dotfiles/compare/v1.9.0...v1.10.0) (2023-09-04)
-
-
-### Features
-
-* long time no update ([ef34bc7](https://github.com/aayushrathor/dotfiles/commit/ef34bc724a604fd5f5b043fffdb794cadbf196b0))
 
 
 
