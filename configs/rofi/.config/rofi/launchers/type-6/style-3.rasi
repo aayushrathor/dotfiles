@@ -9,25 +9,25 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
-    show-icons:                 false;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+	modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Lig Operator Mono 12";
-    background:                  #101010;
-    background-alt:              #252525;
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #09164C;
+    background-alt:              #102886;
     foreground:                  #FFFFFF;
-    selected:                    #505050;
-    active:                      #909090;
-    urgent:                      #707070;
+    selected:                    #FA00E9;
+    active:                      #3860FF;
+    urgent:                      #BB00AF;
 }
 
 /*****----- Main Window -----*****/
@@ -37,16 +37,15 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       1000px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               20px;
+    border-radius:               15px;
     cursor:                      "default";
     background-color:            @background;
-    border:                      0px;
 }
 
 /*****----- Main Box -----*****/
@@ -54,8 +53,16 @@ mainbox {
     enabled:                     true;
     spacing:                     0px;
     background-color:            transparent;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listbox" ];
+}
+
+imagebox {
+    padding:                     20px;
+    background-color:            transparent;
+    background-image:            url("~/.config/rofi/images/c.png", height);
     orientation:                 vertical;
-    children:                    [ "inputbar", "listbox" ];
+    children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
 
 listbox {
@@ -63,37 +70,33 @@ listbox {
     padding:                     20px;
     background-color:            transparent;
     orientation:                 vertical;
-    /* children:                    [ "message", "listview", "mode-switcher" ]; */
-    children:                    [ "listview" ];
+    children:                    [ "message", "listview" ];
+}
+
+dummy {
+    background-color:            transparent;
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     100px 40px;
-    background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/g.png", width);
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            @background-alt;
     text-color:                  @foreground;
-    orientation:                 horizontal;
-    /* children:                    [ "textbox-prompt-colon", "entry" ]; */
-    children:                    [ "entry" ];
+    children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     12px 15px;
-    border-radius:               100%;
-    background-color:            @background-alt;
+    background-color:            inherit;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
-    expand:                      true;
-    padding:                     12px 16px;
-    border-radius:               100%;
-    background-color:            @background-alt;
+    background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search";
@@ -103,13 +106,13 @@ entry {
 /*****----- Mode Switcher -----*****/
 mode-switcher{
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     20px;
     background-color:            transparent;
     text-color:                  @foreground;
 }
 button {
-    padding:                     12px;
-    border-radius:               100%;
+    padding:                     15px;
+    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      pointer;
@@ -141,9 +144,9 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
-    padding:                     12px;
-    border-radius:               100%;
+    spacing:                     15px;
+    padding:                     8px;
+    border-radius:               10px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -151,10 +154,6 @@ element {
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
-}
-element alternate.normal {
-  background-color:              inherit;
-  text-color:                    inherit;
 }
 element normal.urgent {
     background-color:            @urgent;
@@ -195,8 +194,8 @@ message {
     background-color:            transparent;
 }
 textbox {
-    padding:                     12px;
-    border-radius:               100%;
+    padding:                     15px;
+    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     vertical-align:              0.5;
@@ -204,7 +203,7 @@ textbox {
 }
 error-message {
     padding:                     15px;
-    border-radius:               0px;
+    border-radius:               20px;
     background-color:            @background;
     text-color:                  @foreground;
 }

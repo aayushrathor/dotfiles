@@ -9,25 +9,25 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
-    show-icons:                 false;
+	modi:                       "drun,filebrowser,window";
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
 	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+	window-format:              "{w}: {c}";
 }
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Lig Operator Mono 12";
-    background:                  #101010;
-    background-alt:              #252525;
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #131D1F;
+    background-alt:              #183A43;
     foreground:                  #FFFFFF;
-    selected:                    #505050;
-    active:                      #909090;
-    urgent:                      #707070;
+    selected:                    #649094;
+    active:                      #E9CC9D;
+    urgent:                      #FEA861;
 }
 
 /*****----- Main Window -----*****/
@@ -37,7 +37,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       700px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -46,7 +46,6 @@ window {
     border-radius:               20px;
     cursor:                      "default";
     background-color:            @background;
-    border:                      0px;
 }
 
 /*****----- Main Box -----*****/
@@ -63,21 +62,19 @@ listbox {
     padding:                     20px;
     background-color:            transparent;
     orientation:                 vertical;
-    /* children:                    [ "message", "listview", "mode-switcher" ]; */
-    children:                    [ "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     100px 40px;
+    padding:                     80px 60px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/g.png", width);
+    background-image:            url("~/.config/rofi/images/i.jpg", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    /* children:                    [ "textbox-prompt-colon", "entry" ]; */
-    children:                    [ "entry" ];
+    children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -90,7 +87,8 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    expand:                      true;
+    expand:                      false;
+    width:                       250px;
     padding:                     12px 16px;
     border-radius:               100%;
     background-color:            @background-alt;
@@ -98,6 +96,10 @@ entry {
     cursor:                      text;
     placeholder:                 "Search";
     placeholder-color:           inherit;
+}
+dummy {
+    expand:                      true;
+    background-color:            transparent;
 }
 
 /*****----- Mode Switcher -----*****/
@@ -108,6 +110,7 @@ mode-switcher{
     text-color:                  @foreground;
 }
 button {
+    width:                       45px;
     padding:                     12px;
     border-radius:               100%;
     background-color:            @background-alt;
@@ -122,8 +125,8 @@ button selected {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       8;
+    columns:                     3;
+    lines:                       1;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -141,20 +144,17 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
-    padding:                     12px;
-    border-radius:               100%;
+    spacing:                     15px;
+    padding:                     35px 10px;
+    border-radius:               20px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
+    orientation:                 vertical;
 }
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
-}
-element alternate.normal {
-  background-color:              inherit;
-  text-color:                    inherit;
 }
 element normal.urgent {
     background-color:            @urgent;
@@ -179,7 +179,7 @@ element selected.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        96px;
     cursor:                      inherit;
 }
 element-text {
@@ -187,7 +187,7 @@ element-text {
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Message -----*****/
@@ -203,7 +203,7 @@ textbox {
     horizontal-align:            0.0;
 }
 error-message {
-    padding:                     15px;
+    padding:                     12px;
     border-radius:               0px;
     background-color:            @background;
     text-color:                  @foreground;

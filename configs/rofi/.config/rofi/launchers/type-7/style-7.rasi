@@ -9,8 +9,8 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
-    show-icons:                 false;
+	modi:                       "drun,filebrowser";
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
@@ -37,7 +37,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       480px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -46,7 +46,6 @@ window {
     border-radius:               20px;
     cursor:                      "default";
     background-color:            @background;
-    border:                      0px;
 }
 
 /*****----- Main Box -----*****/
@@ -64,7 +63,7 @@ listbox {
     background-color:            transparent;
     orientation:                 vertical;
     /* children:                    [ "message", "listview", "mode-switcher" ]; */
-    children:                    [ "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -76,8 +75,7 @@ inputbar {
     background-image:            url("~/.config/rofi/images/g.png", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    /* children:                    [ "textbox-prompt-colon", "entry" ]; */
-    children:                    [ "entry" ];
+    children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -123,7 +121,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -151,10 +149,6 @@ element {
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
-}
-element alternate.normal {
-  background-color:              inherit;
-  text-color:                    inherit;
 }
 element normal.urgent {
     background-color:            @urgent;

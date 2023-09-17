@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+	modi:                       "drun,run,filebrowser,window";
     show-icons:                 false;
     display-drun:               "";
     display-run:                "";
@@ -21,32 +21,31 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Lig Operator Mono 12";
-    background:                  #101010;
-    background-alt:              #252525;
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #11092D;
+    background-alt:              #281657;
     foreground:                  #FFFFFF;
-    selected:                    #505050;
-    active:                      #909090;
-    urgent:                      #707070;
+    selected:                    #DF5296;
+    active:                      #6E77FF;
+    urgent:                      #8E3596;
 }
 
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
+    location:                    west;
+    anchor:                      west;
     fullscreen:                  false;
-    width:                       500px;
-    x-offset:                    0px;
+    width:                       400px;
+    x-offset:                    20px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               20px;
+    border-radius:               0px;
     cursor:                      "default";
     background-color:            @background;
-    border:                      0px;
 }
 
 /*****----- Main Box -----*****/
@@ -59,40 +58,42 @@ mainbox {
 }
 
 listbox {
-    spacing:                     20px;
-    padding:                     20px;
+    spacing:                     10px;
+    padding:                     10px;
     background-color:            transparent;
     orientation:                 vertical;
-    /* children:                    [ "message", "listview", "mode-switcher" ]; */
-    children:                    [ "listview" ];
+    children:                    [ "message", "listview", "mode-switcher" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     padding:                     100px 40px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/g.png", width);
+    background-image:            url("~/.config/rofi/images/j.jpg", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    /* children:                    [ "textbox-prompt-colon", "entry" ]; */
-    children:                    [ "entry" ];
+    children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     12px 15px;
-    border-radius:               100%;
+    padding:                     8px 12px;
+    border:                      0px 2px 2px 2px;
+    border-radius:               0px;
+    border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
     expand:                      true;
-    padding:                     12px 16px;
-    border-radius:               100%;
+    padding:                     8px 12px;
+    border:                      2px 2px 0px 0px;
+    border-radius:               0px;
+    border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
@@ -108,8 +109,8 @@ mode-switcher{
     text-color:                  @foreground;
 }
 button {
-    padding:                     12px;
-    border-radius:               100%;
+    padding:                     8px;
+    border-radius:               0px;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      pointer;
@@ -123,7 +124,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -142,8 +143,8 @@ listview {
 element {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     12px;
-    border-radius:               100%;
+    padding:                     8px;
+    border-radius:               0px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -151,10 +152,6 @@ element {
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
-}
-element alternate.normal {
-  background-color:              inherit;
-  text-color:                    inherit;
 }
 element normal.urgent {
     background-color:            @urgent;
@@ -195,15 +192,15 @@ message {
     background-color:            transparent;
 }
 textbox {
-    padding:                     12px;
-    border-radius:               100%;
+    padding:                     8px;
+    border-radius:               0px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
 error-message {
-    padding:                     15px;
+    padding:                     8px;
     border-radius:               0px;
     background-color:            @background;
     text-color:                  @foreground;
