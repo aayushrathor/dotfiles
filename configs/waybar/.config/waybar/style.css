@@ -1,14 +1,14 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "CaskaydiaCove Nerd Font", "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 14px;
   min-height: 10px;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
 }
 
 #workspaces button {
