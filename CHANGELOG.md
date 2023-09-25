@@ -1,3 +1,12 @@
+# [1.12.0](https://github.com/aayushrathor/dotfiles/compare/v1.11.0...v1.12.0) (2023-09-25)
+
+
+### Features
+
+* update mirrorlist ([02b6786](https://github.com/aayushrathor/dotfiles/commit/02b6786545f30e199081db9212bf58ee3711f413))
+
+
+
 # [1.11.0](https://github.com/aayushrathor/dotfiles/compare/v1.10.4...v1.11.0) (2023-09-17)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * **waybar:** hyprland workspaces wlr to hyprland ([d1ef635](https://github.com/aayushrathor/dotfiles/commit/d1ef6350c966663cb486b40309f9a150a78f17ab))
-
-
-
-## [1.10.1](https://github.com/aayushrathor/dotfiles/compare/v1.10.0...v1.10.1) (2023-09-05)
-
-
-### Bug Fixes
-
-* zsh autologin and hypr startup graphics issue ([a7c4dcd](https://github.com/aayushrathor/dotfiles/commit/a7c4dcd6537ede0263cb8e19720cf20fb89b2ff1))
 
 
 
