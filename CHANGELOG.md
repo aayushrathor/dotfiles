@@ -1,3 +1,12 @@
+# [1.13.0](https://github.com/aayushrathor/dotfiles/compare/v1.12.0...v1.13.0) (2023-09-28)
+
+
+### Features
+
+* add vimium ext config ([4b8bb4f](https://github.com/aayushrathor/dotfiles/commit/4b8bb4fb73b3d22c102a41edf2f305321063e893))
+
+
+
 # [1.12.0](https://github.com/aayushrathor/dotfiles/compare/v1.11.0...v1.12.0) (2023-09-25)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * battery poor condition ([d42fcf6](https://github.com/aayushrathor/dotfiles/commit/d42fcf6d59e692161ba460af0a6dfd546b7c7fed))
-
-
-
-## [1.10.2](https://github.com/aayushrathor/dotfiles/compare/v1.10.1...v1.10.2) (2023-09-05)
-
-
-### Bug Fixes
-
-* **waybar:** hyprland workspaces wlr to hyprland ([d1ef635](https://github.com/aayushrathor/dotfiles/commit/d1ef6350c966663cb486b40309f9a150a78f17ab))
 
 
 
