@@ -1,3 +1,12 @@
+## [1.13.1](https://github.com/aayushrathor/dotfiles/compare/v1.13.0...v1.13.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* **vimium:** add symlink and update shortcut preference ([f34a4a4](https://github.com/aayushrathor/dotfiles/commit/f34a4a4797e5499fdaace55544d99298c75a0a61))
+
+
+
 # [1.13.0](https://github.com/aayushrathor/dotfiles/compare/v1.12.0...v1.13.0) (2023-09-28)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * update alias(exa->eza) && rm battery(waybar) ([260dfd8](https://github.com/aayushrathor/dotfiles/commit/260dfd8a3b6ab983c2030b6abce3067ef2b37db8))
-
-
-
-## [1.10.3](https://github.com/aayushrathor/dotfiles/compare/v1.10.2...v1.10.3) (2023-09-10)
-
-
-### Bug Fixes
-
-* battery poor condition ([d42fcf6](https://github.com/aayushrathor/dotfiles/commit/d42fcf6d59e692161ba460af0a6dfd546b7c7fed))
 
 
 
