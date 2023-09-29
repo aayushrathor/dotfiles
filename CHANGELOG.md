@@ -1,3 +1,12 @@
+## [1.13.2](https://github.com/aayushrathor/dotfiles/compare/v1.13.1...v1.13.2) (2023-09-29)
+
+
+### Bug Fixes
+
+* **vimium:** symlink ([d0756aa](https://github.com/aayushrathor/dotfiles/commit/d0756aa7fa93311855ae9716b789bd579dba989e))
+
+
+
 ## [1.13.1](https://github.com/aayushrathor/dotfiles/compare/v1.13.0...v1.13.1) (2023-09-29)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * update rofi(aditya) && rm nvim ([d2d5117](https://github.com/aayushrathor/dotfiles/commit/d2d511794549e039e1b2cabe31342294ade9bd3c))
-
-
-
-## [1.10.4](https://github.com/aayushrathor/dotfiles/compare/v1.10.3...v1.10.4) (2023-09-14)
-
-
-### Bug Fixes
-
-* update alias(exa->eza) && rm battery(waybar) ([260dfd8](https://github.com/aayushrathor/dotfiles/commit/260dfd8a3b6ab983c2030b6abce3067ef2b37db8))
 
 
 
