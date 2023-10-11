@@ -1,3 +1,12 @@
+## [1.13.3](https://github.com/aayushrathor/dotfiles/compare/v1.13.2...v1.13.3) (2023-10-11)
+
+
+### Bug Fixes
+
+* U packages file and aliases ([1ff67b9](https://github.com/aayushrathor/dotfiles/commit/1ff67b901815d548626127900ed5f79f96e8f38c))
+
+
+
 ## [1.13.2](https://github.com/aayushrathor/dotfiles/compare/v1.13.1...v1.13.2) (2023-09-29)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * update mirrorlist ([02b6786](https://github.com/aayushrathor/dotfiles/commit/02b6786545f30e199081db9212bf58ee3711f413))
-
-
-
-# [1.11.0](https://github.com/aayushrathor/dotfiles/compare/v1.10.4...v1.11.0) (2023-09-17)
-
-
-### Features
-
-* update rofi(aditya) && rm nvim ([d2d5117](https://github.com/aayushrathor/dotfiles/commit/d2d511794549e039e1b2cabe31342294ade9bd3c))
 
 
 
