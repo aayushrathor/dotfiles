@@ -1,3 +1,12 @@
+# [1.14.0](https://github.com/aayushrathor/dotfiles/compare/v1.13.3...v1.14.0) (2023-11-09)
+
+
+### Features
+
+* add conda, update waybar styles ([d3baf46](https://github.com/aayushrathor/dotfiles/commit/d3baf46ca5c4bf01f4a28da20af56fd80c56d882))
+
+
+
 ## [1.13.3](https://github.com/aayushrathor/dotfiles/compare/v1.13.2...v1.13.3) (2023-10-11)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add vimium ext config ([4b8bb4f](https://github.com/aayushrathor/dotfiles/commit/4b8bb4fb73b3d22c102a41edf2f305321063e893))
-
-
-
-# [1.12.0](https://github.com/aayushrathor/dotfiles/compare/v1.11.0...v1.12.0) (2023-09-25)
-
-
-### Features
-
-* update mirrorlist ([02b6786](https://github.com/aayushrathor/dotfiles/commit/02b6786545f30e199081db9212bf58ee3711f413))
 
 
 
