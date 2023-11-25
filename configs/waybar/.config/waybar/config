@@ -22,6 +22,7 @@
     "cpu",
     "memory",
     "temperature",
+    "battery"
   ],
   "hyprland/window": {
     "format": "{}"
