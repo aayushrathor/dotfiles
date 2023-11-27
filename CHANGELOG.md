@@ -1,3 +1,13 @@
+# [1.16.0](https://github.com/aayushrathor/dotfiles/compare/v1.15.0...v1.16.0) (2023-11-27)
+
+
+### Features
+
+* **hypr:** new windowrule and init sound ([f69604d](https://github.com/aayushrathor/dotfiles/commit/f69604db2e0e8dd6e86c2e909b3673f7ce5cb0ce))
+* **hypr:** new windowrule and init sound ([09a1bfd](https://github.com/aayushrathor/dotfiles/commit/09a1bfdc989348000e89145933b44c85525cc67a))
+
+
+
 # [1.15.0](https://github.com/aayushrathor/dotfiles/compare/v1.14.0...v1.15.0) (2023-11-25)
 
 
@@ -31,15 +41,6 @@
 ### Bug Fixes
 
 * **vimium:** symlink ([d0756aa](https://github.com/aayushrathor/dotfiles/commit/d0756aa7fa93311855ae9716b789bd579dba989e))
-
-
-
-## [1.13.1](https://github.com/aayushrathor/dotfiles/compare/v1.13.0...v1.13.1) (2023-09-29)
-
-
-### Bug Fixes
-
-* **vimium:** add symlink and update shortcut preference ([f34a4a4](https://github.com/aayushrathor/dotfiles/commit/f34a4a4797e5499fdaace55544d99298c75a0a61))
 
 
 
