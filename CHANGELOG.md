@@ -1,3 +1,12 @@
+## [1.16.1](https://github.com/aayushrathor/dotfiles/compare/v1.16.0...v1.16.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* rofi corner blur && add xwaylandvideobridge on startup ([4f2f6f7](https://github.com/aayushrathor/dotfiles/commit/4f2f6f7947f6efc28698836c2927e41e9ca1c7dd))
+
+
+
 # [1.16.0](https://github.com/aayushrathor/dotfiles/compare/v1.15.0...v1.16.0) (2023-11-27)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * U packages file and aliases ([1ff67b9](https://github.com/aayushrathor/dotfiles/commit/1ff67b901815d548626127900ed5f79f96e8f38c))
-
-
-
-## [1.13.2](https://github.com/aayushrathor/dotfiles/compare/v1.13.1...v1.13.2) (2023-09-29)
-
-
-### Bug Fixes
-
-* **vimium:** symlink ([d0756aa](https://github.com/aayushrathor/dotfiles/commit/d0756aa7fa93311855ae9716b789bd579dba989e))
 
 
 
