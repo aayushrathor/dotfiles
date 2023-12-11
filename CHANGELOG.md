@@ -1,3 +1,12 @@
+# [1.17.0](https://github.com/aayushrathor/dotfiles/compare/v1.16.1...v1.17.0) (2023-12-11)
+
+
+### Features
+
+* add tmux session script and zsh updates ([be54e8f](https://github.com/aayushrathor/dotfiles/commit/be54e8f40ee46ee9e38317738ad83792c692314b))
+
+
+
 ## [1.16.1](https://github.com/aayushrathor/dotfiles/compare/v1.16.0...v1.16.1) (2023-11-29)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * add conda, update waybar styles ([d3baf46](https://github.com/aayushrathor/dotfiles/commit/d3baf46ca5c4bf01f4a28da20af56fd80c56d882))
-
-
-
-## [1.13.3](https://github.com/aayushrathor/dotfiles/compare/v1.13.2...v1.13.3) (2023-10-11)
-
-
-### Bug Fixes
-
-* U packages file and aliases ([1ff67b9](https://github.com/aayushrathor/dotfiles/commit/1ff67b901815d548626127900ed5f79f96e8f38c))
 
 
 
