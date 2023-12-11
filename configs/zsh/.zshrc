@@ -21,9 +21,6 @@ source ~/scripts/pip_fzf
 # set vi mode
 set -o vi
 
-# zxoide
-eval "$(zoxide init zsh)"
-
 # shell prompts - starship
 eval "$(starship init zsh)"
 
@@ -54,13 +51,8 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec Hyprland
 fi
 
-# Performance Warning
-END=$(date +%s.%N)
-ZSHRC_PERF=$(printf %.2f $(echo "$END - $START" | bc))
-if (( $ZSHRC_PERF > 0.14)); then
-  echo "\033[0;31mperformance warning!"
-  echo ".zshrc startup time" $ZSHRC_PERF "seconds\e[0m"
-fi
+# zxoide
+eval "$(zoxide init zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -77,3 +69,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Performance Warning
+END=$(date +%s.%N)
+ZSHRC_PERF=$(printf %.2f $(echo "$END - $START" | bc))
+if (( $ZSHRC_PERF > 0.14)); then
+  echo "\033[0;31mperformance warning!"
+  echo ".zshrc startup time" $ZSHRC_PERF "seconds\e[0m"
+fi

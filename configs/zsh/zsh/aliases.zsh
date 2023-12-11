@@ -1,5 +1,8 @@
 # alias zsh
 
+# fzf-tmux
+alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'
+
 # ls - eza
 alias ls='eza -a --icons --color=always --group-directories-first' # preferred listing
 alias sl='eza -a --icons --color=always --group-directories-first'
@@ -53,21 +56,18 @@ alias gwcd='git whatchanged -p --date=format:"%A %B %d %Y at %H:%M" --pretty=for
 alias zshrc='nvim ~/.zshrc'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
-alias s='startx'
-# alias hy='Hyprland'
+alias hy='export WLR_NO_HARDWARE_CURSORS=1; export WLR_RENDERER_ALLOW_SOFTWARE=1; Hyprland'
 alias npm='pnpm'
-alias cat='bat -Pp'
+alias cat='bat --color=always'
 alias cd='z'
 alias dc='z'
 alias pdf='zathura'
 alias dot='cd ~/.config && nvim'
-alias minecraft='java -jar ~/desktop/minecraft/TLauncher-*.jar'
 alias mpv="devour mpv"
 alias aayush="cd ~/"
 alias sleep="systemctl suspend"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo reboot now"
-alias aup="paru -Syyu"
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
