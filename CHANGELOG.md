@@ -1,3 +1,12 @@
+## [1.17.1](https://github.com/aayushrathor/dotfiles/compare/v1.17.0...v1.17.1) (2023-12-31)
+
+
+### Bug Fixes
+
+* cleanup ([deed12a](https://github.com/aayushrathor/dotfiles/commit/deed12a0adcca0487b991983781aed28f47d7130))
+
+
+
 # [1.17.0](https://github.com/aayushrathor/dotfiles/compare/v1.16.1...v1.17.0) (2023-12-11)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * add pyprland plugin module for hyprland ([2363f7e](https://github.com/aayushrathor/dotfiles/commit/2363f7e8a9cf728028efa5de876ceedcefc0741f))
-
-
-
-# [1.14.0](https://github.com/aayushrathor/dotfiles/compare/v1.13.3...v1.14.0) (2023-11-09)
-
-
-### Features
-
-* add conda, update waybar styles ([d3baf46](https://github.com/aayushrathor/dotfiles/commit/d3baf46ca5c4bf01f4a28da20af56fd80c56d882))
 
 
 
