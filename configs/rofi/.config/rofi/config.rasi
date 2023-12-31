@@ -10,13 +10,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
-    show-icons:                 false;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
 	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
@@ -37,13 +31,13 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               20px;
+    border-radius:               0px;
     cursor:                      "default";
     background-color:            @background;
     border:                      0px;
@@ -60,10 +54,9 @@ mainbox {
 
 listbox {
     spacing:                     20px;
-    padding:                     20px;
+    padding:                     10px;
     background-color:            transparent;
     orientation:                 vertical;
-    /* children:                    [ "message", "listview", "mode-switcher" ]; */
     children:                    [ "listview" ];
 }
 
@@ -73,10 +66,9 @@ inputbar {
     spacing:                     10px;
     padding:                     100px 40px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/g.png", width);
+    background-image:            url("~/.config/rofi/images/d.png", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    /* children:                    [ "textbox-prompt-colon", "entry" ]; */
     children:                    [ "entry" ];
 }
 textbox-prompt-colon {
@@ -98,25 +90,6 @@ entry {
     cursor:                      text;
     placeholder:                 "Search";
     placeholder-color:           inherit;
-}
-
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-button {
-    padding:                     12px;
-    border-radius:               100%;
-    background-color:            @background-alt;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @selected;
-    text-color:                  @foreground;
 }
 
 /*****----- Listview -----*****/

@@ -1,24 +1,24 @@
 # functions zsh
 
 # Show $PATH
-path(){
+function path(){
   echo -e ${PATH//:/\\n}
 }
 
 # Functions
-ushort(){
+function ushort(){
   curl -F 'shorten='$1'' https://0x0.st
 }
 
-ufile(){
+function ufile(){
   curl -F 'file=@'$1'' https://0x0.st
 }
 
-ushareg(){
+function ushareg(){
   curl -F 'url='$1'' https://0x0.st
 }
 
-spr (){
+function spr (){
   cat "$@" \
     | command curl -fsLF 'sprunge=<-' http://sprunge.us/ \
     | tr -d "\n" \
@@ -26,15 +26,15 @@ spr (){
     notify-send -t 900 -u low "Sprunge copied to clipboard!"
   }
 
-em (){
+function em (){
   devour emacsclient -cq $1
 }
 
-iso (){
+function iso (){
   sudo dd bs=4M if=$1 of=/dev/$2 status=progress && sync
 }
 
-_smooth_fzf() {
+function _smooth_fzf() {
   local fname
   local current_dir="$PWD"
   cd "${XDG_CONFIG_HOME:-~/.config}"
@@ -43,7 +43,7 @@ _smooth_fzf() {
   cd "$current_dir"
 }
 
-toppy() {
+function toppy() {
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 21
 }
 
@@ -74,12 +74,12 @@ toppy() {
 # }
 
 # check between all installed packages
-packs() {
+function packs() {
   pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
 
 # interactive man search by https://github.com/rothgar/mastering-zsh
-mans(){
+function mans(){
   man -k . \
     | fzf -n1,2 --preview "echo {} \
     | cut -d' ' -f1 \
@@ -95,7 +95,7 @@ mans(){
   }
 
 # Search and install packages with yay and fzf
-yi() {
+function yi() {
   SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
   if [ -n "$SELECTED_PKGS" ]; then
     yay -S $(echo $SELECTED_PKGS)
@@ -103,48 +103,48 @@ yi() {
 }
 
 # Search and remove packages with yay and fzf
-yr() {
+function yr() {
   SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
   if [ -n "$SELECTED_PKGS" ]; then
     yay -Rns $(echo $SELECTED_PKGS)
   fi
 }
 
-md () {
+function md () {
   command mkdir -p "$1" && cd "$1"
 }
 
-feval(){
+function feval(){
   echo | fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
 }
 
-timezsh() {
+function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-findEmptyDirsAndFiles(){
+function findEmptyDirsAndFiles(){
   find . -type f -exec bash -c 'if [ `cat "{}" |wc -w` -eq 0 ]; then echo "file - {}";fi' \; -or -empty -exec bash -c "echo dir - {}" \;
 }
 
 # Get cheat sheet of command from cheat.sh. h <cmd>
-cheat() {
+function cheat() {
     curl cheat.sh/${@:-cheat}
     # curl cheat.sh/$@
 }
 
 # exec into docker
-ssh-docker() {
+function ssh-docker() {
     docker exec -it "$@" bash
 }
 
 # remove old and unused images
-docker-cleanup() {
+function docker-cleanup() {
     docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
     docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
 
-fkill() {
+function fkill() {
     local pid
     pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
@@ -154,7 +154,7 @@ fkill() {
 }
 
 #USAGE: mdrender README.md
-mdrender() {
+function mdrender() {
     HTMLFILE="$(mktemp -u).html"
         jq --slurp --raw-input '{"text": "\(.)", "mode": "markdown"}' "$1" |
         curl -s --data @- https://api.github.com/markdown >"$HTMLFILE"
@@ -162,12 +162,12 @@ mdrender() {
     open "$HTMLFILE"
 }
 
-convertAllMDFilesToTabs() {
+function convertAllMDFilesToTabs() {
   find . -name '*.md' ! -type d -exec sh -c 'expand -t 4 "$1" > "${1%.md}.tmp" && mv "${1%.md}.tmp" "$1"' _ {} \;
 }
 
 # Search aliases/functions
-falias() {
+function falias() {
     CMD=$(
         (
             (alias)
@@ -186,7 +186,7 @@ function fenv-vars() {
 }
 
 # Enhanced Git Status (Open multiple files with tab + diff preview)
-fgst() {
+function fgst() {
     git rev-parse --git-dir > /dev/null 2>&1 || { echo "You are not in a git repository" && return }
     local selected
     selected=$(git -c color.status=always status --short |
@@ -200,18 +200,18 @@ fgst() {
 }
 
 # Lowercase every file in current dir
-lowercaseCurrentDir(){
+function lowercaseCurrentDir(){
   for i in *; do mv $i ${(L)i}; done
 }
 
 # zs - Search for most visited directories from z index and open them in finder.
-zs() {
+function zs() {
   z $1 && open .
 }
 
 # Serves the current directory over HTTP, on an optionally-specified port
 # If on Mac OS X, opens in the default browser
-server() {
+function server() {
   port=$1
   if [ $# -ne  1 ]; then
     port=8000
@@ -220,7 +220,7 @@ server() {
 }
 
 # compress <file/dir> - Compress <file/dir>.
-compress (){
+function compress (){
     dirPriorToExe=`pwd`
     dirName=`dirname $1`
     baseName=`basename $1`
@@ -287,7 +287,7 @@ compress (){
   }
 
 # find-in-file - usage: fif <SEARCH_TERM>
-fif() {
+function fif() {
   if [ ! "$#" -gt 0 ]; then
     echo "Need a string to search for!";
     return 1;
@@ -298,13 +298,13 @@ fif() {
   fi
 }
 
-monitor() {
+function monitor() {
   watch -n1 -t "lsof -i -n|awk '{print \$1, \$2, \$9}'|column -t";
 }
 
 # Colour/Color echo prompt outputs
 #USAGE: cecho @b@green[[Success]]
-cecho() (
+function cecho() (
   echo "$@" | sed \
     -e "s/\(\(@\(red\|green\|yellow\|blue\|magenta\|cyan\|white\|reset\|b\|u\)\)\+\)[[]\{2\}\(.*\)[]]\{2\}/\1\4@reset/g" \
     -e "s/@red/$(tput setaf 1)/g" \
@@ -320,7 +320,7 @@ cecho() (
 )
 
 # ram <process-name> - Find how much RAM a process is taking.
-ram() {
+function ram() {
   local sum
   local items
   local app="$1"
@@ -341,18 +341,18 @@ ram() {
 }
 
 # activate python virtual env
-penv () {
+function penv () {
   [ ! -d "venv/" ] && python3 -m venv venv
   source venv/bin/activate
 }
 
-pyclean () {
+function pyclean () {
   # Cleans py[cod] and __pychache__ dirs in the current tree:
   find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
 }
 
 # Determine size of a file or total size of a directory
-fs() {
+function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh
 	else
@@ -370,12 +370,12 @@ fs() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-tre() {
+function tre() {
 	tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
 # Get colors in manual pages
-man() {
+function man() {
 	env \
 		LESS_TERMCAP_mb="$(printf '\e[1;31m')" \
 		LESS_TERMCAP_md="$(printf '\e[1;31m')" \
@@ -388,7 +388,7 @@ man() {
 }
 
 # Found at <http://www.askapache.com/linux/zen-terminal-escape-codes.html#3rd_Dimension_Broken_Bash>
-colortest() {
+function colortest() {
   x=`tput op` y=`printf %$((${COLUMNS}-6))s`
   for i in {0..256}
   do

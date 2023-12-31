@@ -19,14 +19,14 @@ include_special = false
 
 [scratchpads.stb]
 animation = "fromBottom"
-command = "kitty --class kitty-stb sstb"
+command = "kitty --class kitty-stb"
 class = "kitty-stb"
 lazy = true
 size = "75% 45%"
 
 [scratchpads.stb-logs]
 animation = "fromTop"
-command = "kitty --class kitty-stb-logs stbLog"
+command = "kitty --class kitty-stb-logs"
 class = "kitty-stb-logs"
 lazy = true
 size = "75% 40%"
