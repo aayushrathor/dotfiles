@@ -1,3 +1,12 @@
+## [1.17.2](https://github.com/aayushrathor/dotfiles/compare/v1.17.1...v1.17.2) (2024-01-25)
+
+
+### Bug Fixes
+
+* misc ([267db20](https://github.com/aayushrathor/dotfiles/commit/267db207e2f5d8be8cd45db29d8706784ed509d0))
+
+
+
 ## [1.17.1](https://github.com/aayushrathor/dotfiles/compare/v1.17.0...v1.17.1) (2023-12-31)
 
 
@@ -32,15 +41,6 @@
 
 * **hypr:** new windowrule and init sound ([f69604d](https://github.com/aayushrathor/dotfiles/commit/f69604db2e0e8dd6e86c2e909b3673f7ce5cb0ce))
 * **hypr:** new windowrule and init sound ([09a1bfd](https://github.com/aayushrathor/dotfiles/commit/09a1bfdc989348000e89145933b44c85525cc67a))
-
-
-
-# [1.15.0](https://github.com/aayushrathor/dotfiles/compare/v1.14.0...v1.15.0) (2023-11-25)
-
-
-### Features
-
-* add pyprland plugin module for hyprland ([2363f7e](https://github.com/aayushrathor/dotfiles/commit/2363f7e8a9cf728028efa5de876ceedcefc0741f))
 
 
 
