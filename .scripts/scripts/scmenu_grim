@@ -56,7 +56,8 @@ function runner() {
 	fi
 	if [ "$choice" = "Deletion Link" ]
 	then
-		xclip -selection clipboard < /tmp/deletion_link
+		# xclip -selection clipboard < /tmp/deletion_link
+		wl-copy < /tmp/deletion_link
 		rm /tmp/deletion_link
 		notify-send -i /tmp/screenshot.png "Deletion Link copied"
 	elif [ "$choice" = "Fullscreen" ]
@@ -108,7 +109,8 @@ function upload_to_imgur(){
 	delete_hash="${delete_hash%%</deletehash>*}"
 
 	# Copy the image link to clipboard and save the deletion_link for further use.
-	echo $url | sed 's/^http:/https:/' | xclip -selection clipboard
+	# echo $url | sed 's/^http:/https:/' | xclip -selection clipboard
+	echo $url | sed 's/^http:/https:/' | wl-cop
 	echo "https://imgur.com/delete/$delete_hash" > /tmp/deletion_link
 }
 
@@ -119,7 +121,8 @@ function save_clip(){
 
 	if [ "$choice" = "Copy to Clipboard" ]
 	then
-		xclip -selection clipboard -t image/png /tmp/screenshot.png
+		# xclip -selection clipboard -t image/png /tmp/screenshot.png
+		wl-copy < /tmp/screenshot.png
 		notify-send -i /tmp/screenshot.png "Screenshot Captured!!" "Copied to clipboard"
 	elif [ "$choice" = "Save Image" ]
 	then

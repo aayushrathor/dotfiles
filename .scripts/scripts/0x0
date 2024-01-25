@@ -75,12 +75,14 @@ if [[ -f "$1" || "$1" = '-' ]]; then
   # Upload from file or stdin
   curl -F "file=@$1" https://0x0.st \
 	  | xclip -in -sel clip \
+	  | wl-copy \
 	  && notify-send -t 900 -u low "0x0 copied to clipboard!"
 
 elif [[ "$1" =~ ^https?://.* ]]; then
   # Upload from URL
   curl -F "url=$1" https://0x0.st \
 	  | xclip -in -sel clip \
+	  | wl-copy \
 	  && notify-send -t 900 -u low "0x0 copied to clipboard!"
 
 elif [[ -d "$1" ]]; then

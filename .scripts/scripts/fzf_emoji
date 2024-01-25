@@ -3773,6 +3773,8 @@ cat <<EOF
 EOF
 }
 
-selected="$(emoji_list | grep -v -e '^[[:space:]]*$' | fzf -e -i -m --reverse | awk '{print $1}')"
+selected="$(emoji_list | grep -v -e '^[[:space:]]*$' | rofi -dmenu | awk '{print $1}')"
+# selected="$(emoji_list | grep -v -e '^[[:space:]]*$' | fzf -e -i -m --reverse | awk '{print $1}')"
 [ -z "$selected" ] && exit
-printf "%s" "$selected" | xsel -b
+# printf "%s" "$selected" | xsel -b
+wl-copy "$selected"

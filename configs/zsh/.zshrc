@@ -15,9 +15,6 @@ for file in ~/zsh/*.zsh; do
   source "$file"
 done
 
-# pip_fzf
-source ~/scripts/pip_fzf
-
 # set vi mode
 # set -o vi
 
@@ -50,9 +47,9 @@ eval "$(zoxide init zsh)"
 # shell prompts - starship
 eval "$(starship init zsh)"
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec Hyprland
-fi
+# if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+#   exec Hyprland
+# fi
 
 
 # Performance Warning

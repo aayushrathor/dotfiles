@@ -204,7 +204,7 @@ ge() {
 
 # git clone and cd instantly to cloned repo. gcd <git-url>
 gcd() {
-  git_url="$(pbpaste)"
+  git_url="$(wl-paste)"
   reponame=$(echo "$git_url" | sed 's/\.git$//' | sed 's/.*\///')
   git clone "$git_url" && cd "$reponame"
 }

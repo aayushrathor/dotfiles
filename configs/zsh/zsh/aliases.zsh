@@ -107,7 +107,8 @@ alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packa
 alias nv='nvim' 
 alias sq='sudo mysql -u root'
 alias wall='feh --bg-scale --no-fehbg --random'
-alias code='devour code .'
+# alias code='devour code .'
+alias code='vscodium .'
 alias sz='du -sh ./* | sort -h'
 alias makecfile='echo "#include <stdio.h>\n#include <stdlib.h>\n\n\nint main(){\n}" >> '
 alias makecppfile='echo "#include <stdio.h>\n#include <stdlib.h>\n#include <iostream>\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){\nreturn 0;}" >> '
@@ -125,6 +126,6 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age"
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && sudo updatedb'
 
 # package manager
-alias yay="paru"
+# alias yay="paru"
 alias yayup='sudo pacman -Sy && paru -Su'
 alias cleanup='yay -Rns $(yay -Qtdq)'
