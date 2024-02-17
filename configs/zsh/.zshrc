@@ -7,13 +7,11 @@ START=$(date +%s.%N)
 # zmodload zsh/zprof
 # zprof
 
-# Use profiles
 source ~/zsh/.zprofile
-
-# load/source zsh files
-for file in ~/zsh/*.zsh; do
-  source "$file"
-done
+source ~/zsh/completions.zsh
+source ~/zsh/functions.zsh
+source ~/zsh/options.zsh
+source ~/zsh/aliases.zsh
 
 # set vi mode
 # set -o vi

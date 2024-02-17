@@ -16,8 +16,9 @@
     origin = top-right
 
     progress_bar = true
-    progress_bar_height = 6
-    progress_bar_frame_width = 0
+    progress_bar_height = 10
+    progress_bar_frame_width = 2
+    progress_bar_corner_radius = 2
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
@@ -26,11 +27,11 @@
     padding = 8
     horizontal_padding = 12
     text_icon_padding = 0
-    frame_width = 0
-    frame_color = "#111111"
+    frame_width = 2
+    frame_color = "#505050"
     separator_color = "#121212"
     sort = yes
-    font = "Operator Mono Bold 12"
+    font = "Operator Mono 12"
     line_height = 4
     markup = full
     format = "<b>%s</b>\n%b"
@@ -82,27 +83,20 @@
 [experimental]
     per_monitor_dpi = false
 
-[base16_low]
-    msg_urgency = low
-    background = "#000000"
-    foreground = "#D9D7D6"
-    highlight = "#7ba5dd"
+[urgency_low]
+    background = "#15151580"
+    foreground = "#ffffff"
     timeout = 5
 
-[base16_normal]
-    msg_urgency = normal
-    background = "#000000"
-    foreground = "#D9D7D6"
-    highlight = "#7ba5dd"
+[urgency_normal]
+    background = "#15151580"
+    foreground = "#ffffff"
     timeout = 5
 
-[base16_critical]
-    msg_urgency = critical
-    script = ~/scripts/dunst-notif.sh
-    background = "#DC3535"
-    foreground = "#0f0f0f"
-    highlight = "#ee6a70"
-    timeout = 10
+[urgency_critical]
+    background = "#15151580"
+    foreground = "#ffffff"
+    timeout = 0
 
 #[play_sound]
 #    summary = "*"

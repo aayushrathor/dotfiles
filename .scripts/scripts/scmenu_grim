@@ -110,7 +110,7 @@ function upload_to_imgur(){
 
 	# Copy the image link to clipboard and save the deletion_link for further use.
 	# echo $url | sed 's/^http:/https:/' | xclip -selection clipboard
-	echo $url | sed 's/^http:/https:/' | wl-cop
+	echo $url | sed 's/^http:/https:/' | wl-copy
 	echo "https://imgur.com/delete/$delete_hash" > /tmp/deletion_link
 }
 

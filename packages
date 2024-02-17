@@ -15,7 +15,6 @@ alsa-plugins
 alsa-topology-conf
 alsa-ucm-conf
 alsa-utils
-anaconda
 android-tools
 android-udev
 aom
@@ -44,7 +43,6 @@ bash
 bat
 bc
 bcprov
-betterdiscord-installer-bin
 binutils
 bison
 blas
@@ -62,7 +60,6 @@ breeze-icons
 bridge-utils
 brightnessctl
 brotli
-bruno-bin
 bspwm
 btrfs-progs
 bubblewrap
@@ -76,12 +73,12 @@ cairomm
 cantarell-fonts
 capstone
 catatonit
-cava
 cdparanoia
 chafa
 chrono-date
 clang
 cliphist
+cloudflared
 clucene
 cmake
 cmatrix
@@ -114,7 +111,6 @@ debugedit
 default-cursors
 desktop-file-utils
 device-mapper
-devour
 dialog
 diffutils
 discord
@@ -131,9 +127,6 @@ docker-buildx
 docker-compose
 dosfstools
 double-conversion
-downgrade
-dragon-drop
-dropbox
 dtc
 duf
 duktape
@@ -143,9 +136,6 @@ edk2-aarch64
 edk2-ovmf
 efibootmgr
 efivar
-electron
-electron25
-electron26-bin
 enchant
 exiv2
 exo
@@ -163,12 +153,9 @@ fftw
 file
 filesystem
 findutils
-firefox
 fish
 flac
 flameshot
-flat-remix
-flat-remix-gtk
 flex
 fluidsynth
 fmt
@@ -221,8 +208,6 @@ gnutls
 go
 gobject-introspection
 gobject-introspection-runtime
-google-chrome
-google-cloud-cli
 gperf
 gperftools
 gpgme
@@ -281,7 +266,7 @@ hwdata
 hwloc
 hyphen
 hyprland
-hyprpaper-git
+hyprpaper
 hyprpicker
 i3-wm
 i3blocks
@@ -304,11 +289,9 @@ iptables
 iputils
 iso-codes
 iw
+jan-bin
 jansson
 jasper
-java-commons-lang
-java-runtime-common
-java17-openjfx
 jbig2dec
 jbigkit
 jemalloc
@@ -319,7 +302,6 @@ jre17-openjdk-headless
 json-c
 json-glib
 jsoncpp
-k3s-bin
 k9s
 karchive5
 kauth5
@@ -351,7 +333,6 @@ kitty-shell-integration
 kitty-terminfo
 kjobwidgets5
 kmod
-kmonad-bin
 knotifications5
 kpackage5
 kpeople5
@@ -383,8 +364,6 @@ lib32-expat
 lib32-gcc-libs
 lib32-glibc
 lib32-icu
-lib32-intel-gmmlib
-lib32-intel-media-driver
 lib32-keyutils
 lib32-krb5
 lib32-libcap
@@ -669,13 +648,11 @@ libvirt-python
 libvisio
 libvisual
 libvorbis
+libvpl
 libvpx
-libvterm
-libvterm01
 libwacom
 libwebp
 libwireplumber
-libwm-git
 libwmf
 libwpd
 libwpe
@@ -770,7 +747,6 @@ mesa-utils
 meson
 minikube
 minizip
-mission-center
 mkinitcpio
 mkinitcpio-busybox
 mlocate
@@ -801,7 +777,6 @@ network-manager-applet
 networkmanager
 networkmanager-openvpn
 nftables
-ngrok
 ninja
 nm-connection-editor
 nmap
@@ -821,7 +796,6 @@ obsidian
 ocl-icd
 ollama
 onetbb
-onevpl
 oniguruma
 openal
 openbsd-netcat
@@ -834,11 +808,8 @@ openssh
 openssl
 openssl-1.1
 openvpn
-openvpn3
 opus
 orc
-oreo-cursors-git
-oreo-nord-cursors-git
 os-prober
 osinfo-db
 p11-kit
@@ -853,7 +824,6 @@ pango
 pangomm
 papirus-icon-theme
 parted
-paru
 patch
 pavucontrol
 pciutils
@@ -867,7 +837,6 @@ perl
 perl-error
 perl-mailtools
 perl-timedate
-pfetch
 phodav
 pinentry
 pipewire
@@ -894,20 +863,14 @@ portaudio
 postgresql
 postgresql-libs
 postman-bin
-powertop
-powertop-auto-tune
 ppp
 prettyping
 procps-ng
 protobuf
 protobuf-c
-protonvpn
-protonvpn-cli
-protonvpn-gui
 psmisc
 pugixml
 pulseaudio-qt
-pyprland
 python
 python-aiohttp
 python-aiosignal
@@ -931,8 +894,6 @@ python-cleo
 python-click
 python-colorama
 python-commonmark
-python-conda
-python-conda-package-handling
 python-configargparse
 python-crashtest
 python-cryptography
@@ -982,7 +943,6 @@ python-multidict
 python-nspektr
 python-ordered-set
 python-packaging
-python-pep517
 python-pexpect
 python-pillow
 python-pip
@@ -996,8 +956,6 @@ python-poetry
 python-poetry-core
 python-poetry-plugin-export
 python-protobuf
-python-proton-client
-python-protonvpn-nm-lib
 python-psutil
 python-ptyprocess
 python-pyalsa
@@ -1079,7 +1037,6 @@ qt6-svg
 qt6-translations
 qt6-wayland
 qtractor
-rancher-k3d-bin
 ranger
 raptor
 rasqal
@@ -1091,10 +1048,8 @@ redland
 reflector
 rest
 rhash
-ripgrep-git
 rmlint
 rnnoise
-rofi-greenclip
 rofi-lbonn-wayland
 rtkit
 rubberband
@@ -1174,7 +1129,6 @@ seahorse
 seatd
 sed
 semver
-sendmail
 serd
 shaderc
 shadow
@@ -1211,6 +1165,7 @@ stress
 sudo
 suitesparse
 svt-av1
+swappy
 swayidle
 swaylock-effects
 sxhkd
@@ -1223,7 +1178,6 @@ taglib
 tar
 tcl
 tdb
-tdrop
 telegram-desktop
 terraform
 tesseract
@@ -1234,9 +1188,7 @@ thermald
 thin-provisioning-tools
 thunar
 thunar-archive-plugin
-thunar-dropbox
 thunar-volman
-thunderbird-bin
 time
 tinyxml2
 tk
@@ -1248,14 +1200,12 @@ tpm2-tss
 tracker3
 tree
 tree-sitter
-try
 tslib
 ttf-dejavu
 ttf-iosevka-nerd
 ttf-liberation
 ttf-mononoki-nerd
 ttf-opensans
-tty-clock-git
 tumbler
 twolame
 tzdata
@@ -1276,7 +1226,6 @@ util-linux
 util-linux-libs
 v4l-utils
 vde2
-ventoy-bin
 vi
 vid.stab
 viewnior
@@ -1309,11 +1258,8 @@ which
 wireless_tools
 wireplumber
 wl-clipboard
-wlogout
-wlr-randr
 wlroots
 wmctrl
-wmutils-git
 woff2
 wofi
 wolfssl
@@ -1406,12 +1352,10 @@ xorgproto
 xprintidle
 xsel
 xvidcore
-xwaylandvideobridge-bin
 xxhash
 xz
 yad
 yajl
-yay
 yt-dlp
 z
 zathura
@@ -1428,11 +1372,9 @@ zlib
 zoxide
 zscroll-git
 zsh
-zsh-autopair-git
 zsh-autosuggestions
 zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
-zsh-system-clipboard-git
 zstd
 zxing-cpp
