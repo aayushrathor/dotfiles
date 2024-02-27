@@ -8,17 +8,23 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: rgba(0, 0, 0, 1);
+}
+
+#workspaces {
+  border-radius: 16px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 5px;
 }
 
 #workspaces button {
   box-shadow: none;
   text-shadow: none;
-  border-radius: 16px;
+  border-radius: 4px;
   margin-right: 5px;
   margin-left: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
   color: #cdd6f4;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
@@ -28,8 +34,6 @@ window#waybar {
   background: #a6adc8;
   color: #313244;
   margin-left: 5px;
-  padding-left: 12px;
-  padding-right: 12px;
   margin-right: 5px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
@@ -38,12 +42,11 @@ window#waybar {
 #workspaces button:hover {
   background: #f5c2e7;
   color: #313244;
-  padding-left: 12px;
-  padding-right: 12px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
+#custom-powermenu,
 #custom-media,
 #custom-dunst,
 #window,
@@ -58,21 +61,15 @@ window#waybar {
 #cpu,
 #memory,
 #backlight {
-  background: #0f0f0f;
-  padding: 0px 10px;
-  margin: 5px 0px;
+  /* background: #0f0f0f; */
+  padding: 2px 10px;
+  /* 5px 0px */
+  margin: 2px 0px;
   border: 0px solid #161616;
 }
 
 #tray {
   border-radius: 0px 16px 16px 0px;
-}
-
-#workspaces {
-  border-radius: 16px;
-  margin-left: 10px;
-  padding-right: 0px;
-  padding-left: 5px;
 }
 
 #custom-media {
@@ -131,6 +128,11 @@ window#waybar {
 #battery.critical {
   background-color: #f7768e;
   color: #24283b;
+}
+
+#custom-powermenu {
+  color: #f7768e;
+  padding-right: 15px;
 }
 
 #backlight,

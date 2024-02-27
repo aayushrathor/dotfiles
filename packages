@@ -279,9 +279,12 @@ imath
 imlib2
 inetutils
 iniparser
+intel-compute-runtime
 intel-gmmlib
 intel-gpu-tools
 intel-media-driver
+intel-opencl
+intel-opencl-runtime
 intel-ucode
 inxi
 iproute2
@@ -289,7 +292,6 @@ iptables
 iputils
 iso-codes
 iw
-jan-bin
 jansson
 jasper
 jbig2dec
@@ -713,6 +715,7 @@ llvm
 llvm-libs
 llvm15-libs
 lm_sensors
+lmstudio-appimage
 localsend-bin
 lolcat
 lpsolve
@@ -1193,6 +1196,7 @@ time
 tinyxml2
 tk
 tlp
+tlpui
 tmate
 tmux
 touchegg
@@ -1224,6 +1228,7 @@ usbredir
 usbutils
 util-linux
 util-linux-libs
+uv-bin
 v4l-utils
 vde2
 vi
@@ -1356,6 +1361,7 @@ xxhash
 xz
 yad
 yajl
+youtube-music-bin
 yt-dlp
 z
 zathura

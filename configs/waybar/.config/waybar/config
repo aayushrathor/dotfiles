@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "mod": "dock",
   "passthrough": false,
   "gtk-layer-shell": true,
@@ -22,7 +22,8 @@
     "cpu",
     "memory",
     "temperature",
-    "battery"
+    "battery",
+    "custom/powermenu"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -128,7 +129,7 @@
   },
   "temperature": {
     "thermal-zone": 2,
-    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
     "critical-threshold": 75,
     "format-critical": " {temperatureC}°C",
     "format": " {temperatureC}°C"
@@ -156,5 +157,9 @@
     "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
     "interval": 1,
     "on-click": "dunstctl set-paused toggle"
+  },
+  "custom/powermenu": {
+    "on-click": "~/.config/rofi/scripts/powermenu_t6",
+    "format": ""
   }
 }

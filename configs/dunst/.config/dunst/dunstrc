@@ -84,19 +84,19 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#15151580"
+    background = "#0B121580"
     foreground = "#ffffff"
     timeout = 5
 
 [urgency_normal]
-    background = "#15151580"
+    background = "#0B121580"
     foreground = "#ffffff"
     timeout = 5
 
 [urgency_critical]
-    background = "#15151580"
+    background = "#0B121580"
     foreground = "#ffffff"
-    timeout = 0
+    timeout = 10
 
 #[play_sound]
 #    summary = "*"
