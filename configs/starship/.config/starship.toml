@@ -19,7 +19,7 @@ error_symbol = "[-<<](#EA5455)"
 # error_symbol = "[-_- :](#EA5455)"
 
 [cmd_duration]
-min_time = 10_000  
+min_time = 10_000
 format = " took [$duration]($style)"
 
 [directory]

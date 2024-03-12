@@ -1,25 +1,22 @@
 #!/bin/sh
 
 date=$(date +%Y%m%d_%H%M%S)
-path=$XDG_DESKTOP_DIR/screenshots/Screenshot_$date.png
+# path=$XDG_DESKTOP_DIR/screenshots/Screenshot_$date.png # script not working with sddm
+path=/home/aayush/desktop/screenshots/Screenshot_$date.png
 rootid=$(xwininfo -root -int | grep -iPo --color=never "(?<=id:\s)[0-9]*?\s")
 
-if [[ "$1" == "--fullscreen" ]]
-then
-    # fullscreen
-    grim $path && wl-copy < $path
-    notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
-elif [[ "$1" == "--region" ]]
-then
-    # region
-    grim -g "$(slurp)" $path && wl-copy < $path
-    if [[ $? == 0 ]]
-    then
-        notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
-    fi
-elif [[ "$1" == "--window" ]]
-then
-    # current window
-    grim -g $(xdotool getactivewindow) $path && wl-copy < $path
-    notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
+if [[ "$1" == "--fullscreen" ]]; then
+	# fullscreen
+	grim $path && wl-copy <$path
+	notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
+elif [[ "$1" == "--region" ]]; then
+	# region
+	grim -g "$(slurp)" $path && wl-copy <$path
+	if [[ $? == 0 ]]; then
+		notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
+	fi
+elif [[ "$1" == "--window" ]]; then
+	# current window
+	grim -g $(xdotool getactivewindow) $path && wl-copy <$path
+	notify-send -a "grim" -i $path "Screenshot Captured!!" -t 2000
 fi

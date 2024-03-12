@@ -86,11 +86,13 @@
 [urgency_low]
     background = "#0B121580"
     foreground = "#ffffff"
+    highlight = "#6D84ED"
     timeout = 5
 
 [urgency_normal]
     background = "#0B121580"
     foreground = "#ffffff"
+    highlight = "#6D84ED"
     timeout = 5
 
 [urgency_critical]
