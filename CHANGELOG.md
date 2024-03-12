@@ -1,3 +1,12 @@
+# [1.20.0](https://github.com/aayushrathor/dotfiles/compare/v1.19.0...v1.20.0) (2024-03-12)
+
+
+### Features
+
+* misc ([40579e2](https://github.com/aayushrathor/dotfiles/commit/40579e2a1924db650a1c86d5415b8f1dc965a960))
+
+
+
 # [1.19.0](https://github.com/aayushrathor/dotfiles/compare/v1.18.0...v1.19.0) (2024-02-27)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * cleanup ([deed12a](https://github.com/aayushrathor/dotfiles/commit/deed12a0adcca0487b991983781aed28f47d7130))
-
-
-
-# [1.17.0](https://github.com/aayushrathor/dotfiles/compare/v1.16.1...v1.17.0) (2023-12-11)
-
-
-### Features
-
-* add tmux session script and zsh updates ([be54e8f](https://github.com/aayushrathor/dotfiles/commit/be54e8f40ee46ee9e38317738ad83792c692314b))
 
 
 
