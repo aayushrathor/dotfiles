@@ -26,23 +26,8 @@ export LANG=en_US.UTF-8
 # editor x terminal
 export EDITOR=nvim
 export VISUAL=nvim
-export TERM=xterm-kitty # xterm-256color
+export TERM=xterm-256color
 export SUDO_PROMPT="Password  :"
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CONFIG_DIRS="/etc/xdg"
-export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-export XDG_DESKTOP_DIR="$HOME/desktop"
-export XDG_DOWNLOAD_DIR="$HOME/downloads"
-export XDG_TEMPLATES_DIR="$HOME/templates"
-export XDG_PUBLICSHARE_DIR="$HOME/public"
-export XDG_DOCUMENTS_DIR="$HOME/documents"
-export XDG_MUSIC_DIR="$HOME/music"
-export XDG_PICTURES_DIR="$HOME/pictures"
-export XDG_VIDEOS_DIR="$HOME/videos"
 
 # tesseract
 export TESSDATA_PREFIX="$HOME/.config/tesseract/tessdata/"
@@ -100,6 +85,14 @@ export KEYTIMEOUT=1
 export PROMPT_EOL_MARK=''
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 export DISABLE_MAGIC_FUNCTIONS=true     # make pasting into terminal faster
+
+# Android studio
+export ANDROID_HOME='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # hyprland
 export WLR_NO_HARDWARE_CURSORS=1

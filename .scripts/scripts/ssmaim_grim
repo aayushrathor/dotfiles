@@ -2,7 +2,7 @@
 
 date=$(date +%Y%m%d_%H%M%S)
 # path=$XDG_DESKTOP_DIR/screenshots/Screenshot_$date.png # script not working with sddm
-path=/home/aayush/desktop/screenshots/Screenshot_$date.png
+path=/home/aayush/Desktop/screenshots/Screenshot_$date.png
 rootid=$(xwininfo -root -int | grep -iPo --color=never "(?<=id:\s)[0-9]*?\s")
 
 if [[ "$1" == "--fullscreen" ]]; then

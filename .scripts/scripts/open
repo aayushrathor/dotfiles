@@ -7,18 +7,17 @@
 # Inspired by https://github.com/mitchweaver/bin/blob/master/application/opn
 #
 
-
 # Fork process without any terminal output
 launch() {
-    nohup "$@" >/dev/null 2>&1 &
-    exit
+	nohup "$@" >/dev/null 2>&1 &
+	exit
 }
 
 file_path="$@"
 
 if [ -z "$file_path" ]; then
-    file_path=$(fzf --prompt " " --pointer "❯")
-    [ -z "$file_path" ] && exit
+	file_path=$(fzf --prompt " " --pointer "❯")
+	[ -z "$file_path" ] && exit
 fi
 
 file_ext=$(printf "%s" "${file_path##*.}" | tr "[:upper:]" "[:lower:]")
@@ -26,51 +25,63 @@ file_ext=$(printf "%s" "${file_path##*.}" | tr "[:upper:]" "[:lower:]")
 [ -d "$file_path" ] && launch thunar "$file_path"
 
 case "$file_ext" in
-        mp4|mov|webm|gif|mkv|avi)
-            launch mpv "$file_path" ;;
+mp4 | mov | webm | gif | mkv | avi)
+	launch mpv "$file_path"
+	;;
 
-        jpg|jpeg|png)
-            launch feh "$file_path" ;;
+jpg | jpeg | png)
+	launch viewnior "$file_path"
+	;;
 
-        otf|ttf|woff)
-            launch fontpreview "$file_path" ;;
+otf | ttf | woff)
+	launch fontpreview "$file_path"
+	;;
 
-        mp3|flac|ogg|opus|wav)
-            launch mpv "$file_path" ;;
+mp3 | flac | ogg | opus | wav)
+	launch mpv "$file_path"
+	;;
 
-        pdf|epub)
-            launch zathura "$file_path" ;;
+pdf | epub)
+	launch zathura "$file_path"
+	;;
 
-        docx|rtf|odt|ods|pptx|xlsx|csv)
-            launch libreoffice "$file_path" ;;
+docx | rtf | odt | ods | pptx | xlsx | csv)
+	launch libreoffice "$file_path"
+	;;
 
-        xcf)
-            launch gimp "$file_path" ;;
+xcf)
+	launch gimp "$file_path"
+	;;
 
-        pcap)
-            launch wireshark "$file_path" ;;
+pcap)
+	launch wireshark "$file_path"
+	;;
 
-        svg)
-            launch google-chrome-stable "$file_path" ;;
+svg)
+	launch google-chrome-stable "$file_path"
+	;;
 
-        html|htm|xhtml)
-            launch google-chrome-stable "$file_path" ;;
+html | htm | xhtml)
+	launch google-chrome-stable "$file_path"
+	;;
 
-        openshot|osp)
-            launch openshot-qt "$file_path" ;;
+openshot | osp)
+	launch openshot-qt "$file_path"
+	;;
 
-        *)
-            # If the unknown file is a symlink then we need the actual path so that
-            # we can check if it a text file that can be opened using $EDITOR
-            if [[ $(file --mime-type $file_path 2>/dev/null) == *"/symlink"* ]]; then
-                file_path="$(readlink -f $file_path)"
-            fi
+*)
+	# If the unknown file is a symlink then we need the actual path so that
+	# we can check if it a text file that can be opened using $EDITOR
+	if [[ $(file --mime-type $file_path 2>/dev/null) == *"/symlink"* ]]; then
+		file_path="$(readlink -f $file_path)"
+	fi
 
-            # This is kinda like a last resort. If the file is just a text file, then
-            # use the $EDITOR to open it
-            if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/"* ]]; then
-                $EDITOR "$file_path"
-            else
-                echo "Not sure how to open $file_path"
-            fi
+	# This is kinda like a last resort. If the file is just a text file, then
+	# use the $EDITOR to open it
+	if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/"* ]]; then
+		$EDITOR "$file_path"
+	else
+		echo "Not sure how to open $file_path"
+	fi
+	;;
 esac

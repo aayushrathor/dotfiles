@@ -4,6 +4,7 @@ abseil-cpp
 accountsservice
 acl
 acpi
+acpi_call-dkms
 adobe-source-code-pro-fonts
 adwaita-cursors
 adwaita-icon-theme
@@ -15,6 +16,10 @@ alsa-plugins
 alsa-topology-conf
 alsa-ucm-conf
 alsa-utils
+android-sdk
+android-sdk-cmdline-tools-latest
+android-sdk-platform-tools
+android-studio
 android-tools
 android-udev
 aom
@@ -41,8 +46,10 @@ base
 base-devel
 bash
 bat
+batsignal
 bc
 bcprov
+bind
 binutils
 bison
 blas
@@ -73,6 +80,7 @@ cairomm
 cantarell-fonts
 capstone
 catatonit
+cava
 cdparanoia
 chafa
 chrono-date
@@ -156,6 +164,7 @@ findutils
 fish
 flac
 flameshot
+flat-remix-gtk
 flex
 fluidsynth
 fmt
@@ -226,6 +235,7 @@ gsfonts
 gsm
 gspell
 gssdp
+gst-libav
 gst-plugin-pipewire
 gst-plugins-bad-libs
 gst-plugins-base
@@ -266,6 +276,7 @@ hwdata
 hwloc
 hyphen
 hyprland
+hyprlock
 hyprpaper
 hyprpicker
 i3-wm
@@ -283,12 +294,10 @@ intel-compute-runtime
 intel-gmmlib
 intel-gpu-tools
 intel-media-driver
-intel-opencl
-intel-opencl-runtime
 intel-ucode
 inxi
 iproute2
-iptables
+iptables-nft
 iputils
 iso-codes
 iw
@@ -296,7 +305,9 @@ jansson
 jasper
 jbig2dec
 jbigkit
+jdk11-openjdk
 jemalloc
+jlink
 jp2a
 jq
 jre17-openjdk
@@ -498,6 +509,7 @@ libgpg-error
 libgsf
 libgtop
 libgudev
+libguestfs
 libhandy
 libheif
 libical
@@ -509,6 +521,7 @@ libimagequant
 libimobiledevice
 libinih
 libinput
+libinput-gestures
 libinstpatch
 libisl
 libisoburn
@@ -644,6 +657,7 @@ libva-mesa-driver
 libva-utils
 libvdpau
 libverto
+libvips
 libvirt
 libvirt-glib
 libvirt-python
@@ -827,6 +841,7 @@ pango
 pangomm
 papirus-icon-theme
 parted
+paru
 patch
 pavucontrol
 pciutils
@@ -841,6 +856,7 @@ perl-error
 perl-mailtools
 perl-timedate
 phodav
+phonon-qt5-gstreamer
 pinentry
 pipewire
 pipewire-alsa
@@ -855,7 +871,7 @@ pkgconf
 playerctl
 podman
 polkit
-polkit-gnome
+polkit-kde-agent
 polkit-qt5
 polybar
 poppler
@@ -1015,6 +1031,7 @@ python-yaml
 python-yarl
 python-zipp
 qca-qt5
+qemu-full
 qpdf
 qqc2-desktop-style5
 qrencode
@@ -1054,6 +1071,7 @@ rhash
 rmlint
 rnnoise
 rofi-lbonn-wayland
+rsync
 rtkit
 rubberband
 ruby
@@ -1125,6 +1143,7 @@ sbc
 scdoc
 scrcpy
 sdbus-cpp
+sddm
 sdl12-compat
 sdl2
 seabios
@@ -1228,7 +1247,7 @@ usbredir
 usbutils
 util-linux
 util-linux-libs
-uv-bin
+uv
 v4l-utils
 vde2
 vi
@@ -1237,6 +1256,8 @@ viewnior
 vim
 vim-runtime
 virglrenderer
+virt-manager
+virt-viewer
 visual-studio-code-bin
 vmaf
 volume_key
@@ -1248,6 +1269,7 @@ vulkan-icd-loader
 vulkan-intel
 vulkan-tools
 vulkan-validation-layers
+watchman-bin
 wavpack
 waybar
 wayland
@@ -1295,7 +1317,6 @@ xf86-input-libinput
 xf86-video-fbdev
 xf86-video-vesa
 xfce4-notifyd
-xfce4-power-manager
 xfconf
 xfsprogs
 xkeyboard-config
@@ -1361,6 +1382,7 @@ xxhash
 xz
 yad
 yajl
+yay
 youtube-music-bin
 yt-dlp
 z

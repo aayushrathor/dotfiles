@@ -1,0 +1,42 @@
+#!/bin/sh
+
+LOG_FILE="/home/aayush/battery.log"
+BATTERY="BAT1"
+
+get_battery_info() {
+	UEVENT=$(cat /sys/class/power_supply/$BATTERY/uevent)
+
+	for line in $UEVENT; do
+		case $line in
+		POWER_SUPPLY_STATUS=*)
+			STATUS=${line#*=}
+			;;
+		POWER_SUPPLY_CAPACITY=*)
+			CAPACITY=${line#*=}
+			;;
+		POWER_SUPPLY_VOLTAGE_NOW=*)
+			VOLTAGE=${line#*=}
+			;;
+		POWER_SUPPLY_CURRENT_NOW=*)
+			CURRENT=${line#*=}
+			;;
+		POWER_SUPPLY_CAPACITY_LEVEL=*)
+			CAPACITY_LEVEL=${line#*=}
+			;;
+		esac
+	done
+
+	if [ ! -e "/sys/class/power_supply/$BATTERY" ]; then
+		echo "Battery not found" >>$LOG_FILE
+		exit 1
+	fi
+
+	TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+	echo "[${TIMESTAMP}] Status:${STATUS}, Capacity:${CAPACITY}%, Voltage:${VOLTAGE}mV, Current:${CURRENT}mA, CapacityLevel:${CAPACITY_LEVEL}" >>$LOG_FILE
+}
+
+if [ ! -e $LOG_FILE ]; then
+	touch $LOG_FILE
+fi
+
+get_battery_info

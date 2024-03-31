@@ -23,7 +23,7 @@
     "memory",
     "temperature",
     "battery",
-    "custom/powermenu"
+    "group/power"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -76,9 +76,9 @@
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-alt": "󰀂 {ifname} 󰀑 {essid}",
-    "format-ethernet": "(eth)  {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-ethernet": "(eth)  {bandwidthDownBytes}  {bandwidthUpBytes}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "睊 Disconnected",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}% | Down Speed: {bandwidthDownBytes}, Up Speed: {bandwidthUpBytes}",
@@ -154,9 +154,38 @@
     "interval": 1
   },
   "custom/dunst": {
-    "exec": "~/.config/polybar/scripts/dunst-snooze.sh",
-    "interval": 1,
-    "on-click": "dunstctl set-paused toggle"
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/dunst.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "swaylock"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
   },
   "custom/powermenu": {
     "on-click": "~/.config/rofi/scripts/powermenu_t6",

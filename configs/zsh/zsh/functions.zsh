@@ -366,6 +366,23 @@ function fs() {
 	fi
 }
 
+# git log
+function gd() {
+  git log --graph --color=always \
+    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" \
+    | fzf --ansi --preview "echo {} \
+    | grep -o '[a-f0-9]\{7\}' \
+    | head -1 \
+    | xargs -I % sh -c 'git show --color=always %'" \
+    --bind "enter:execute:
+      (grep -o '[a-f0-9]\{7\}' \
+        | head -1 \
+        | xargs -I % sh -c 'git show --color=always % \
+        | less -R') << 'FZF-EOF'
+              {}
+              FZF-EOF"
+            }
+
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
