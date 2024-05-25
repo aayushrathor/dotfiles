@@ -11,7 +11,7 @@
 [global]
     follow = mouse
     width = 350
-    height = 300
+    height = 600
     offset = 75x40
     origin = top-right
 
@@ -84,19 +84,19 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#0B121580"
+    background = "#0B1215d0"
     foreground = "#ffffff"
     highlight = "#6D84ED"
     timeout = 5
 
 [urgency_normal]
-    background = "#0B121580"
+    background = "#0B1215d0"
     foreground = "#ffffff"
     highlight = "#6D84ED"
     timeout = 5
 
 [urgency_critical]
-    background = "#0B121580"
+    background = "#0B1215d0"
     foreground = "#ffffff"
     timeout = 10
 

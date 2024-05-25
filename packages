@@ -41,6 +41,7 @@ automake
 avahi
 aws-cli
 ayatana-ido
+azure-cli
 babl
 base
 base-devel
@@ -77,6 +78,7 @@ ca-certificates-mozilla
 ca-certificates-utils
 cairo
 cairomm
+calligra
 cantarell-fonts
 capstone
 catatonit
@@ -113,7 +115,6 @@ db
 db5.3
 dbus
 dbus-glib
-dbus-python
 dconf
 debugedit
 default-cursors
@@ -217,6 +218,7 @@ gnutls
 go
 gobject-introspection
 gobject-introspection-runtime
+google-chrome
 gperf
 gperftools
 gpgme
@@ -306,12 +308,11 @@ jasper
 jbig2dec
 jbigkit
 jdk11-openjdk
+jdk17-openjdk
 jemalloc
 jlink
 jp2a
 jq
-jre17-openjdk
-jre17-openjdk-headless
 json-c
 json-glib
 jsoncpp
@@ -349,7 +350,6 @@ kmod
 knotifications5
 kpackage5
 kpeople5
-kpeoplevcard
 krb5
 kservice5
 ktextwidgets5
@@ -764,12 +764,14 @@ mesa-utils
 meson
 minikube
 minizip
+mission-center
 mkinitcpio
 mkinitcpio-busybox
 mlocate
 mobile-broadband-provider-info
 modemmanager
 modemmanager-qt5
+mongodb-compass
 mpc
 mpdecimal
 mpfr
@@ -782,6 +784,7 @@ mtools
 mujs
 multipath-tools
 mypaint-brushes1
+ncdu
 ncurses
 ndctl
 neofetch
@@ -887,9 +890,11 @@ prettyping
 procps-ng
 protobuf
 protobuf-c
+protonvpn
 psmisc
 pugixml
 pulseaudio-qt
+pyprland
 python
 python-aiohttp
 python-aiosignal
@@ -917,6 +922,7 @@ python-configargparse
 python-crashtest
 python-cryptography
 python-dateutil
+python-dbus
 python-defusedxml
 python-distlib
 python-distro
@@ -960,6 +966,7 @@ python-more-itertools
 python-msgpack
 python-multidict
 python-nspektr
+python-onnx
 python-ordered-set
 python-packaging
 python-pexpect
@@ -1030,6 +1037,7 @@ python-xlib
 python-yaml
 python-yarl
 python-zipp
+python38
 qca-qt5
 qemu-full
 qpdf
@@ -1068,6 +1076,7 @@ redland
 reflector
 rest
 rhash
+ripgrep
 rmlint
 rnnoise
 rofi-lbonn-wayland
@@ -1179,6 +1188,7 @@ spotify
 sqlite
 sratom
 srt
+sshfs
 starship
 startup-notification
 stow
@@ -1250,6 +1260,7 @@ util-linux-libs
 uv
 v4l-utils
 vde2
+ventoy-bin
 vi
 vid.stab
 viewnior
@@ -1286,6 +1297,7 @@ wireless_tools
 wireplumber
 wl-clipboard
 wlroots
+wlsunset
 wmctrl
 woff2
 wofi
@@ -1295,6 +1307,7 @@ wpebackend-fdo
 x264
 x265
 xapp
+xarchiver
 xcb-proto
 xcb-util
 xcb-util-cursor
@@ -1378,6 +1391,7 @@ xorgproto
 xprintidle
 xsel
 xvidcore
+xwaylandvideobridge
 xxhash
 xz
 yad

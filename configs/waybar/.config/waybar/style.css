@@ -1,10 +1,10 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "CaskaydiaCove Nerd Font", "JetBrainsMono Nerd Font";
+  font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font";
   font-weight: bold;
   font-size: 14px;
-  min-height: 10px;
+  min-height: 15px;
 }
 
 window#waybar {
@@ -55,6 +55,7 @@ window#waybar {
   margin-right: 0;
 }
 
+#custom-githubtoken,
 #custom-power,
 #custom-powermenu,
 #custom-media,

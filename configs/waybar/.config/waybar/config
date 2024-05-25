@@ -19,6 +19,7 @@
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/dunst",
+    "custom/githubtoken",
     "cpu",
     "memory",
     "temperature",
@@ -190,5 +191,10 @@
   "custom/powermenu": {
     "on-click": "~/.config/rofi/scripts/powermenu_t6",
     "format": ""
+  },
+  "custom/githubtoken": {
+    "format": "GH",
+    "on-click": "wl-copy $(cat ~/Desktop/shit/pat.txt)",
+    "tooltip": false
   }
 }
