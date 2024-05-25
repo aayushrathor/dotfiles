@@ -1,3 +1,12 @@
+# [1.22.0](https://github.com/aayushrathor/dotfiles/compare/v1.21.0...v1.22.0) (2024-05-25)
+
+
+### Features
+
+* zsh monolithic updates ([b261b71](https://github.com/aayushrathor/dotfiles/commit/b261b7113ea69e81ee561665c02d327f26ce7f5b))
+
+
+
 # [1.21.0](https://github.com/aayushrathor/dotfiles/compare/v1.20.0...v1.21.0) (2024-03-31)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * misc changes ([ea4f800](https://github.com/aayushrathor/dotfiles/commit/ea4f80007856343e68b029c538b4d28d2de6d24b))
-
-
-
-## [1.17.2](https://github.com/aayushrathor/dotfiles/compare/v1.17.1...v1.17.2) (2024-01-25)
-
-
-### Bug Fixes
-
-* misc ([267db20](https://github.com/aayushrathor/dotfiles/commit/267db207e2f5d8be8cd45db29d8706784ed509d0))
 
 
 
