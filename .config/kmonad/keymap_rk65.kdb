@@ -1,0 +1,80 @@
+#| -------------------------------------------------------------------------
+(deflayer name
+  _     _    _    _    _    _    _    _    _    _    _    _    _     _   
+  _     _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _     _    _    _    _    _    _    _    _    _    _    _          _    _   
+  _     _    _    _    _    _    _    _    _    _    _         _     _    _   
+  _     _    _              _                   _              _     _    _   
+)
+--------------------------------------------------------------------------|#
+
+(defcfg 
+  input (device-file "/dev/input/by-id/usb-BY_Tech_USB_Keyboard-event-kbd") ;; usb-BY_Tech_USB-event-kbd
+  output (uinput-sink "KMonad: rk65 keyboard"
+    ;; To understand the importance of the following line, see the section on
+    ;; Compose-key sequences at the near-bottom of this file.
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+  fallthrough true
+  allow-cmd true
+)
+
+(defsrc
+  esc   1    2    3    4    5    6    7    8    9    0    -    =     bspc
+  tab   q    w    e    r    t    y    u    i    o    p    [    ]     \    del
+  caps  a    s    d    f    g    h    j    k    l    ;    '          ret  pgup
+  lsft  z    x    c    v    b    n    m    ,    .    /         rsft  up   pgdn
+  lctl  lmet lalt           spc                ralt            left down  rght
+)
+
+;; (defalias
+;;   cesc (tap-next-release esc lctl) ;; escape when tapped, ctrl when held.
+;; )
+
+(defalias
+  ca C-a
+  cz C-z
+  cx C-x
+  cc C-c
+  cv C-v
+
+  mc1 #(P1000 a P1000 a P1000 y P1000 u P1000 s P1000 h ret)
+  chr (cmd-button "google-chrome-stable --profile-directory=Default")
+)
+
+(defalias ;; layers
+  mod_prog (layer-toggle program)
+  mod_util (layer-toggle util)
+)
+
+(defalias
+  stog  (tap-next-release spc @mod_prog)
+  tut   (tap-next-release tab @mod_util)
+  cutil (tap-hold-next-release 500 ret lctl)
+  dalt  (tap-next-release del lalt)
+)
+
+(deflayer qwerty
+  grv   1    2    3    4    5    6    7    8    9    0    -    =     bspc
+  @tut  q    w    e    r    t    y    u    i    o    p    [    ]     \    del
+  esc   a    s    d    f    g    h    j    k    l    ;    '          ret  pgup
+  lsft  z    x    c    v    b    n    m    ,    .    /         rsft  up   pgdn
+  lctl  lmet lalt           @stog              ralt            left down  rght
+)
+
+(deflayer program
+  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12   _
+  _    _    _    _    _    ~    _    _    _    _    _    _    _     _    _   
+  _    @ca  _    _    @chr _    _    _    _    _    _    _          _    _   
+  _    @cz  @cx  @cc  @cv  _    _    @mc1 _    _    _         _     _    _   
+  _    _    _              _                   _              _     _    _   
+)                                                                             
+
+(deflayer util 
+  _    _    _    _    _    _    _    _    _    _    _    _    _     _   
+  _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _    _    _    _    _    _    left down up   rght _    _          _    _   
+  _    _    _    _    _    _    _    _    _    _    _         _     _    _   
+  _    _    _              _                   _              _     _    _   
+)
