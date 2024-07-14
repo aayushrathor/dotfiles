@@ -1,18 +1,17 @@
 [pyprland]
 plugins = [
   "scratchpads",
-  # "lost_windows",
-  # "monitors",
-  # "shift_monitors",
-  # "toggle_dpms",
+  "monitors",
+  "shift_monitors",
+  "toggle_dpms",
   "magnify",
   "expose",
-  # "shift_monitors",
-  # "workspaces_follow_focus",
+  "workspaces_follow_focus",
+  "system_notifier",
 ]
 
-# [workspaces_follow_focus]
-# max_workspaces = 10
+[workspaces_follow_focus]
+max_workspaces = 10
 
 [expose]
 include_special = false
@@ -54,7 +53,11 @@ unfocus = "hide"
 
 # [monitors]
 # unknown = "wlrlui"
-#
+
 # [monitors.placement]
 # "Acer".leftOf = "HDMI-0"
 # "Sony".topOf = "eDP-1"
+
+[[system_notifier.sources]]
+command = "sudo journalctl -fx"
+parser = "journal"

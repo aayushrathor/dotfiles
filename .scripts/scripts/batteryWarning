@@ -12,17 +12,16 @@ if [ "$battery_greped_status" == "remaining" ]; then
 
 	if [ "$battery_percentage_v" -lt 5 ]; then
 		dunstify -a system -i "/usr/share/icons/Papirus/48x48/status/notification-power.svg" -t 0 -r 9990 -u critical "Battery Low" "Your system will sleep soon unless plugged into a power outlet."
-		aplay /home/aayush/downloads/charge_your_battery.wav
 	fi
 
-	if [ "$battery_percentage_v" -lt 30 ]; then
+	if [ "$battery_percentage_v" -lt 20 ]; then
 		dunstify -a system -i "/usr/share/icons/Papirus/48x48/status/notification-power.svg" -t 0 -r 9990 -u critical "Battery Low" "Your system will sleep soon unless plugged into a power outlet."
 	fi
 
 # Remind to disconnect charger if battery >=98%
 elif [ "$battery_greped_status" == "charged" ]; then
 
-	if [ "$battery_percentage_v" -ge 90 ]; then
+	if [ "$battery_percentage_v" -ge 98 ]; then
 		dunstify -a system -i "/usr/share/icons/Papirus/48x48/status/battery-full-charged.svg" -t 9000 -r 9990 -u normal "Battery ${battery_percentage_v}%" "Disconnect Charger please."
 		aplay /home/aayush/Downloads/battery_95.wav
 	fi

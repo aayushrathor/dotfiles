@@ -5,14 +5,8 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 30,
-  "modules-left": [
-    "tray",
-    "clock",
-    "custom/media"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["tray", "clock", "custom/media"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "network",
     "backlight",
@@ -36,11 +30,7 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
     "on-scroll-up": "brightness inc",
     "on-scroll-down": "brightness dec"
   },
@@ -54,19 +44,7 @@
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
     "interval": 1
   },
   "clock": {
@@ -100,11 +78,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "on-click": "volume mute",
     "on-click-middle": "pavucontrol",
@@ -167,11 +141,7 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/power",
-      "custom/lock",
-      "custom/reboot"
-    ]
+    "modules": ["custom/power", "custom/lock", "custom/reboot"]
   },
   "custom/lock": {
     "format": "󰍁",
