@@ -1,3 +1,12 @@
+## [1.22.1](https://github.com/aayushrathor/dotfiles/compare/v1.22.0...v1.22.1) (2024-07-14)
+
+
+### Bug Fixes
+
+* misc ([23e57ac](https://github.com/aayushrathor/dotfiles/commit/23e57ac8040691dd13aebf3709453f11636b43af))
+
+
+
 # [1.22.0](https://github.com/aayushrathor/dotfiles/compare/v1.21.0...v1.22.0) (2024-05-25)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * misc ([c8623dc](https://github.com/aayushrathor/dotfiles/commit/c8623dcdd881f6c75433ebf016aa689f69c11821))
-
-
-
-# [1.18.0](https://github.com/aayushrathor/dotfiles/compare/v1.17.2...v1.18.0) (2024-02-17)
-
-
-### Features
-
-* misc changes ([ea4f800](https://github.com/aayushrathor/dotfiles/commit/ea4f80007856343e68b029c538b4d28d2de6d24b))
 
 
 
