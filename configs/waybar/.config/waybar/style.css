@@ -3,45 +3,46 @@
   border-radius: 0;
   font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font";
   font-weight: bold;
-  font-size: 14px;
-  min-height: 15px;
+  font-size: 12px;
+  min-height: 10px;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+tooltip {
+  background: #262626;
+  color: #d9d9d9;
+  border-radius: 8px;
+  border-width: 0px;
 }
 
 #workspaces {
   border-radius: 16px;
-  margin-left: 10px;
-  padding-right: 0px;
-  padding-left: 5px;
+  margin-left: 3px;
 }
 
 #workspaces button {
   box-shadow: none;
   text-shadow: none;
   border-radius: 4px;
-  margin-right: 5px;
-  margin-left: 5px;
   color: #cdd6f4;
-  animation: gradient_f 20s ease-in infinite;
+  animation: gradient_f 10s ease-in infinite;
   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button.active {
   background: #a6adc8;
   color: #313244;
-  margin-left: 5px;
-  margin-right: 5px;
-  animation: gradient_f 20s ease-in infinite;
+  animation: gradient_f 10s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button:hover {
   background: #f5c2e7;
   color: #313244;
-  animation: gradient_f 20s ease-in infinite;
+  animation: gradient_f 10s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
@@ -73,14 +74,10 @@ window#waybar {
 #memory,
 #backlight {
   /* background: #0f0f0f; */
-  padding: 2px 10px;
+  padding: 2px 8px;
   /* 5px 0px */
-  margin: 6px 0px 0px 0px;
+  margin: 3px 0px 0px 0px;
   border: 0px solid #161616;
-}
-
-#tray {
-  border-radius: 0px 16px 16px 0px;
 }
 
 #custom-media {
@@ -97,15 +94,15 @@ window#waybar {
 
 #window {
   border-radius: 16px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 0px;
+  margin-right: 3px;
 }
 
 #clock {
   color: #f9e2af;
   border-radius: 16px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 #temperature {

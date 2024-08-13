@@ -9,11 +9,12 @@
 --------------------------------------------------------------------------|#
 
 (defcfg 
-  input (device-file "/dev/input/by-id/usb-BY_Tech_USB_Keyboard-event-kbd") ;; usb-BY_Tech_USB-event-kbd
+  ;; input (device-file "/dev/input/by-id/usb-BY_Tech_USB-event-kbd") ;; rk65
+  input (device-file "/dev/input/by-id/usb-BY_Tech_USB_Keyboard-event-kbd") ;; rk65
+  ;; input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd") ;; laptop keyboard
   output (uinput-sink "KMonad: rk65 keyboard"
-    ;; To understand the importance of the following line, see the section on
-    ;; Compose-key sequences at the near-bottom of this file.
-    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+    ;; "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt"
+  )
   cmp-seq ralt    ;; Set the compose key to `RightAlt'
   cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
   fallthrough true
@@ -39,8 +40,7 @@
   cc C-c
   cv C-v
 
-  mc1 #(P1000 a P1000 a P1000 y P1000 u P1000 s P1000 h ret)
-  chr (cmd-button "google-chrome-stable --profile-directory=Default")
+  mc1 #(a  a  y  u  s  h ret)
 )
 
 (defalias ;; layers
@@ -55,6 +55,19 @@
   dalt  (tap-next-release del lalt)
 )
 
+(defalias ;; commands
+  ;; NetworkManager
+  ntm (cmd-button "notify-send -t 5000 -a KMonad \" NetworkManager \" \" Restarting NetworkManager :( \"; systemctl restart NetworkManager.service")
+
+  ;; media player
+  pln (cmd-button "playerctl next")
+  plb (cmd-button "playerctl previous")
+  ppp (cmd-button "playerctl play-pause")
+  pls (cmd-button "playerctl stop")
+
+  ;; misc
+)
+
 (deflayer qwerty
   grv   1    2    3    4    5    6    7    8    9    0    -    =     bspc
   @tut  q    w    e    r    t    y    u    i    o    p    [    ]     \    del
@@ -64,17 +77,20 @@
 )
 
 (deflayer program
-  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12   _
-  _    _    _    _    _    ~    _    _    _    _    _    _    _     _    _   
-  _    @ca  _    _    @chr _    _    _    _    _    _    _          _    _   
-  _    @cz  @cx  @cc  @cv  _    _    @mc1 _    _    _         _     _    _   
-  _    _    _              _                   _              _     _    _   
-)                                                                             
-
-(deflayer util 
-  _    _    _    _    _    _    _    _    _    _    _    _    _     _   
-  _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
-  _    _    _    _    _    _    left down up   rght _    _          _    _   
-  _    _    _    _    _    _    _    _    _    _    _         _     _    _   
-  _    _    _              _                   _              _     _    _   
+  caps  F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12   _
+  _     _    _    _    _    ~    _    _    _    _    _    _    _     _    end
+  _     @ca  _    _    _    _    _    _    _    _    _    _          _    _
+  _     @cz  @cx  @cc  @cv  _    @ntm @mc1 _    _    _         _     @ppp _
+  _     _    _              _                   cmp            @plb @pls  @pln
 )
+
+(deflayer util
+  _     _    _    _    _    _    _    _    _    _    _    _    _     _
+  _     _    _    _    _    _    _    _    _    _    _    _    _     _    _
+  _     _    _    _    _    _    left down up   rght _    _          _    _
+  _     _    _    _    _    _    _    _    _    _    _         _     _    _
+  _     _    _              _                   _              _     _    _
+)
+
+
+;; vim: set filetype=lisp:
