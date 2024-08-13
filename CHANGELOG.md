@@ -1,3 +1,12 @@
+# [1.23.0](https://github.com/aayushrathor/dotfiles/compare/v1.22.1...v1.23.0) (2024-08-13)
+
+
+### Features
+
+* update keymap, hypr, rofi & waybar ([2beeb5c](https://github.com/aayushrathor/dotfiles/commit/2beeb5cf98ec1eea7a2e8f5477d26b6b9298bdd3))
+
+
+
 ## [1.22.1](https://github.com/aayushrathor/dotfiles/compare/v1.22.0...v1.22.1) (2024-07-14)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * misc ([40579e2](https://github.com/aayushrathor/dotfiles/commit/40579e2a1924db650a1c86d5415b8f1dc965a960))
-
-
-
-# [1.19.0](https://github.com/aayushrathor/dotfiles/compare/v1.18.0...v1.19.0) (2024-02-27)
-
-
-### Features
-
-* misc ([c8623dc](https://github.com/aayushrathor/dotfiles/commit/c8623dcdd881f6c75433ebf016aa689f69c11821))
 
 
 
