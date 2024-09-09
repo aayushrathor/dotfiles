@@ -1,0 +1,70 @@
+[
+  {
+    "command": "hyprctl dispatch dpms off",
+    "name": "DPMS off"
+  },
+  {
+    "command": "hyprctl dispatch dpms on",
+    "name": "DPMS on"
+  },
+  {
+    "command": "brightness inc",
+    "name": "brig + "
+  },
+  {
+    "command": "brightness dec",
+    "name": "brig -"
+  },
+  {
+    "command": "hyprlock",
+    "name": "lock"
+  },
+  {
+    "command": "hyprctl dispatch exit",
+    "name": "logout"
+  },
+  {
+    "command": "systemctl reboot",
+    "name": "reboot"
+  },
+  {
+    "command": "systemctl poweroff",
+    "name": "shutdown"
+  },
+  {
+    "command": "systemctl suspend",
+    "name": "suspend"
+  },
+  {
+    "command": "playerctl play-pause",
+    "name": "toggle play"
+  },
+  {
+    "command": "volume up",
+    "name": "vol +"
+  },
+  {
+    "command": "volume down",
+    "name": "vol -"
+  },
+  {
+    "command": "volume mute",
+    "name": "vol mute"
+  },
+  {
+    "command": "hyprctl dispatch workspace e+1",
+    "name": "w+1"
+  },
+  {
+    "command": "hyprctl dispatch workspace e-1",
+    "name": "w-1"
+  },
+  {
+    "command": "volume toggle_mic",
+    "name": "toggle mic"
+  },
+  {
+    "command": "grim -c -t png -l 0 /tmp/kdess.png; wl-copy < /tmp/kdess.png",
+    "name": "FullScreen Screenshot"
+  }
+]

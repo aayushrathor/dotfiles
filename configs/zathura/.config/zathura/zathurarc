@@ -20,12 +20,12 @@ set pages-per-row 1
 set scroll-page-aware "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
-set font			"mononoki Nerd Font 10"
+set font			"mononoki Nerd Font 12"
 set selection-notification	"true"
 set selection-clipboard		"clipboard"
 set guioptions			"sv"
 set statusbar-home-tilde	"true"
-set recolor			"true"
+set recolor			"false"
 
 set default-fg 			"#f0f0f0" #Background
 set default-bg 			"#0f0f0f" #Foreground
