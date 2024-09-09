@@ -6,15 +6,20 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "modules-left": ["tray", "clock", "custom/media"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": [
+    "tray",
+    "clock",
+    "custom/media"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "network",
     "backlight",
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/dunst",
-    "custom/githubtoken",
     "cpu",
     "memory",
     "temperature",
@@ -42,7 +47,17 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "on-scroll-up": "brightness inc",
     "on-scroll-down": "brightness dec"
   },
@@ -56,7 +71,19 @@
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "interval": 1
   },
   "clock": {
@@ -85,14 +112,14 @@
   },
   "network": {
     "tooltip": true,
-    "format-wifi": " ",
+    "format-alt": "  {essid}",
     "rotate": 0,
     "format-ethernet": "󰈀 ",
     "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
     "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰖪 ",
+    "format-disconnected": "<b><span foreground='#8CC229'><big>🍃</big>GoTouchSomeGrass</span></b>",
     "tooltip-format-disconnected": "Disconnected",
-    "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+    "format-wifi": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
     "interval": 2
   },
   "pulseaudio": {
@@ -108,9 +135,13 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-    "on-click": "volume mute",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-middle": "pavucontrol",
     "interval": 1
   },
@@ -118,9 +149,9 @@
     "format": "{format_source}",
     "format-source": " {volume}%",
     "format-source-muted": " Muted",
-    "on-click": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
     "scroll-step": 5,
     "interval": 1
   },
@@ -159,7 +190,16 @@
     "interval": 5,
     "format": " {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -170,7 +210,9 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["Alacritty"],
+    "ignore-list": [
+      "Alacritty"
+    ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     }
@@ -180,8 +222,8 @@
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "on-scroll-up": "volume up",
-    "on-scroll-down": "volume down",
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
     "format": "{}",
     "exec": "echo $(music)",
     "interval": 10
@@ -199,7 +241,11 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["custom/power", "custom/lock", "custom/reboot"]
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/reboot"
+    ]
   },
   "custom/lock": {
     "format": "󰍁",
@@ -219,10 +265,5 @@
   "custom/powermenu": {
     "on-click": "~/.config/rofi/scripts/powermenu_t6",
     "format": ""
-  },
-  "custom/githubtoken": {
-    "format": "GH",
-    "on-click": "wl-copy $(cat ~/Desktop/shit/pat.txt)",
-    "tooltip": false
   }
 }
