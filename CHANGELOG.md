@@ -1,3 +1,12 @@
+## [1.23.1](https://github.com/aayushrathor/dotfiles/compare/v1.23.0...v1.23.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* kitty search, zathura light view, hypr config ([4e23c9d](https://github.com/aayushrathor/dotfiles/commit/4e23c9da83a747d0acd08064bc477d931fac17fc))
+
+
+
 # [1.23.0](https://github.com/aayushrathor/dotfiles/compare/v1.22.1...v1.23.0) (2024-08-13)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * misc update ([ed954a9](https://github.com/aayushrathor/dotfiles/commit/ed954a94591089bf55f5ed92c5fcf71013ff52fd))
-
-
-
-# [1.20.0](https://github.com/aayushrathor/dotfiles/compare/v1.19.0...v1.20.0) (2024-03-12)
-
-
-### Features
-
-* misc ([40579e2](https://github.com/aayushrathor/dotfiles/commit/40579e2a1924db650a1c86d5415b8f1dc965a960))
 
 
 
