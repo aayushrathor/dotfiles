@@ -137,7 +137,8 @@ mode = waves
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
-foreground = '#F8ACFF'
+; foreground = '#F8ACFF'
+foreground = '#AFA387'
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,

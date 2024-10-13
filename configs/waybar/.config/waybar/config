@@ -6,14 +6,8 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "modules-left": [
-    "tray",
-    "clock",
-    "custom/media"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["tray", "clock", "custom/media"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "network",
     "backlight",
@@ -23,7 +17,8 @@
     "cpu",
     "memory",
     "temperature",
-    "battery"
+    "battery",
+    "custom/powermenu"
   ],
   "hyprland/window": {
     "format": "  {}",
@@ -47,19 +42,9 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "on-scroll-up": "brightness inc",
-    "on-scroll-down": "brightness dec"
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "swayosd-client --brightness raise",
+    "on-scroll-down": "swayosd-client --brightness lower"
   },
   "battery": {
     "states": {
@@ -71,19 +56,7 @@
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
     "interval": 1
   },
   "clock": {
@@ -135,23 +108,21 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "swayosd-client --output-volume mute-toggle",
     "on-click-middle": "pavucontrol",
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower",
     "interval": 1
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
     "format-source-muted": " Muted",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+    "on-click": "swayosd-client --input-volume mute-toggle",
+    "on-scroll-up": "swayosd-client --input-volume raise",
+    "on-scroll-down": "swayosd-client --input-volume lower",
     "scroll-step": 5,
     "interval": 1
   },
@@ -190,16 +161,7 @@
     "interval": 5,
     "format": " {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -210,9 +172,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty"
-    ],
+    "ignore-list": ["Alacritty"],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     }
@@ -241,11 +201,7 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/power",
-      "custom/lock",
-      "custom/reboot"
-    ]
+    "modules": ["custom/power", "custom/lock", "custom/reboot"]
   },
   "custom/lock": {
     "format": "󰍁",
@@ -263,7 +219,8 @@
     "on-click": "shutdown now"
   },
   "custom/powermenu": {
-    "on-click": "~/.config/rofi/scripts/powermenu_t6",
-    "format": ""
+    "on-click": "~/.config/hypr/scripts/wlogout",
+    "format": "  ",
+    "tooltip": false
   }
 }
