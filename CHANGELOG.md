@@ -1,3 +1,12 @@
+# [1.24.0](https://github.com/aayushrathor/dotfiles/compare/v1.23.2...v1.24.0) (2024-10-13)
+
+
+### Features
+
+* hyprland config changes ([5236df7](https://github.com/aayushrathor/dotfiles/commit/5236df7c90c3782be890b9cba1d07a2b9387cabb))
+
+
+
 ## [1.23.2](https://github.com/aayushrathor/dotfiles/compare/v1.23.1...v1.23.2) (2024-09-09)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * misc ([23e57ac](https://github.com/aayushrathor/dotfiles/commit/23e57ac8040691dd13aebf3709453f11636b43af))
-
-
-
-# [1.22.0](https://github.com/aayushrathor/dotfiles/compare/v1.21.0...v1.22.0) (2024-05-25)
-
-
-### Features
-
-* zsh monolithic updates ([b261b71](https://github.com/aayushrathor/dotfiles/commit/b261b7113ea69e81ee561665c02d327f26ce7f5b))
 
 
 
