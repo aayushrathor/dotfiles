@@ -1,3 +1,12 @@
+# [1.25.0](https://github.com/aayushrathor/dotfiles/compare/v1.24.0...v1.25.0) (2024-10-20)
+
+
+### Features
+
+* **hypr:** add hyprlock, hyprpaper, hypridle ([8955544](https://github.com/aayushrathor/dotfiles/commit/8955544604154e50bed89b2d0f26b7978ef8fadf))
+
+
+
 # [1.24.0](https://github.com/aayushrathor/dotfiles/compare/v1.23.2...v1.24.0) (2024-10-13)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * update keymap, hypr, rofi & waybar ([2beeb5c](https://github.com/aayushrathor/dotfiles/commit/2beeb5cf98ec1eea7a2e8f5477d26b6b9298bdd3))
-
-
-
-## [1.22.1](https://github.com/aayushrathor/dotfiles/compare/v1.22.0...v1.22.1) (2024-07-14)
-
-
-### Bug Fixes
-
-* misc ([23e57ac](https://github.com/aayushrathor/dotfiles/commit/23e57ac8040691dd13aebf3709453f11636b43af))
 
 
 
