@@ -15,6 +15,7 @@ configuration {
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
+    on-click-right:             " ";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }

@@ -108,6 +108,8 @@
       "phone": "",
       "portable": "",
       "car": "",
+      "hdmi": "󰽟",
+      "alsa_output.usb-KTMicro_CDS.KT_USB_Audio_2020-02-20-0000-0000-0000-00.analog-stereo": "󱡏",
       "default": ["", "", ""]
     },
     "on-click": "swayosd-client --output-volume mute-toggle",
